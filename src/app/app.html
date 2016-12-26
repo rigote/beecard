@@ -1,0 +1,21 @@
+<ion-menu [content]='menu'>
+    <ion-header>
+        <img src="assets/images/avatar.jpg" alt="" class="avatar">
+        <p><strong>Jhon Doo</strong></p>
+        <p>jhondoo@email.com</p>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item menuClose><ion-icon name="contacts"></ion-icon> Meus Cartões</button>
+            <button ion-item menuClose><ion-icon name="contact"></ion-icon> Minha Conta</button>
+            <button ion-item menuClose><ion-icon name="md-albums"></ion-icon> Todos os Cartões</button>
+            <button ion-item menuClose><ion-icon name="cafe"></ion-icon> Feed</button>
+            <button ion-item menuClose><ion-icon name="md-settings"></ion-icon> Settings</button>
+        </ion-list>
+        <div class="footer-bar-menu">
+            <button ion-item menuClose><ion-icon name="log-out"></ion-icon> Logout</button>
+        </div>
+    </ion-content>    
+</ion-menu>
+
+<ion-nav #menu [root]="rootPage"></ion-nav>
