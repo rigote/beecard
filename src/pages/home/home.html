@@ -1,7 +1,6 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      <img src="../../assets/images/bee-logo.png" alt="" width="40" class="logo">
     </ion-title>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -11,9 +10,28 @@
 
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ item }}
-    </ion-item>
-  </ion-list>
+  <div class="carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-item" href="#one!">
+      <ul>
+        <li>
+          <div class="myCard"></div>
+        </li>
+        <li>
+          <div class="myCard"></div>
+        </li>
+        <li>
+          <div class="myCard"></div>
+        </li>
+      </ul>
+      
+    </div>
+    <div class="carousel-item" href="#two!">
+      <h2>Feed</h2>
+      
+    </div>
+    <div class="carousel-item" href="#three!">
+      <h2>Todos os cartões</h2>
+      
+    </div>
+  </div>
 </ion-content>

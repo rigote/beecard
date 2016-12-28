@@ -1,8 +1,36 @@
 page-home {
-    ion-header{
-        background-color: #FFD553;
+    /*SLIDE PAGE*/
+    .scroll-content{
+        .carousel{
+            height: 100%!important;
+            .carousel-item{
+                padding: 10px;
+                overflow: scroll;
+
+                /*PERSONAL CARDS*/
+                ul{
+                    li{
+                        margin-bottom: 10px;
+                        .myCard{
+                            width: 100%;
+                            height: 140px;
+                            border: 1px solid #CCC;
+                            border-radius: 12px;
+                            background: #eaeaea;
+                        }
+                    }
+                }
+
+                .indicators{
+                    .indicator-item{
+                        background-color: #CCC;
+                        &.active{
+                            background-color: #999;
+                        }
+                    }                 
+                }
+            }            
+        }
     }
-    .logo{
-        margin-left: 35%;
-    }
+    
 }

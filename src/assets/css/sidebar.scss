@@ -1,0 +1,55 @@
+/*SIDEBAR MENU*/
+ion-menu{
+    ion-header{
+        background: $background-color-brand;
+        p{
+            font-size: 14px;
+            margin: 0px;
+            padding: 0px;
+            color: #FFF;
+        }
+        text-align: center;
+        .avatar{
+            display: block;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 10px auto;
+            -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.3);
+            -moz-box-shadow:    3px 3px 5px 0px rgba(50, 50, 50, 0.3);
+            box-shadow:         3px 3px 5px 0px rgba(50, 50, 50, 0.3);
+        }
+        button.editMenu {
+            background: none;
+            border: 2px solid #FFF;
+            border-radius: 18px;
+            padding: 3px 14px;
+            font-size: 12px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            color: #FFF;
+        }
+    }
+    ion-content{
+        ion-list{
+            button{
+                &.item-md{
+                    min-height: auto;
+                }
+                .item-inner{
+                    border: none !important;
+                    ion-label{
+                        font-size: 14px;
+                        padding: 2px;
+                    }
+                }
+            }            
+        }
+        .footer-bar-menu {
+            position: absolute;
+            bottom: 0;
+            background: #CCC;
+            width: 100%;
+        }
+    }
+}

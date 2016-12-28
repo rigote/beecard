@@ -1,47 +1,7 @@
-// http://ionicframework.com/docs/v2/theming/
+//Principal imports
 @import '../assets/css/main.scss';
 
-/*CONTENT*/
-
-
-/*SIDEBAR MENU*/
-ion-menu{
-    ion-header{
-        background-image: -webkit-gradient(
-            linear,
-            left top,
-            left bottom,
-            color-stop(0, rgb(217, 142, 57)),
-            color-stop(0.37, rgb(255, 205, 41))
-        );
-        background-image: -o-linear-gradient(bottom, rgb(217, 142, 57) 0%, rgb(255, 205, 41) 37%);
-        background-image: -moz-linear-gradient(bottom, rgb(217, 142, 57) 0%, rgb(255, 205, 41) 37%);
-        background-image: -webkit-linear-gradient(bottom, rgb(217, 142, 57) 0%, rgb(255, 205, 41) 37%);
-        background-image: -ms-linear-gradient(bottom, rgb(217, 142, 57) 0%, rgb(255, 205, 41) 37%);
-        background-image: linear-gradient(to bottom, rgb(217, 142, 57) 0%, rgb(255, 205, 41) 37%);
-        text-align: center;
-        .avatar{
-            display: block;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin: 10px auto;
-            -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.3);
-            -moz-box-shadow:    3px 3px 5px 0px rgba(50, 50, 50, 0.3);
-            box-shadow:         3px 3px 5px 0px rgba(50, 50, 50, 0.3);
-        }
-    }
-    ion-content{
-        ion-list{
-            .item-inner{
-                border: none !important;
-            }
-        }
-        .footer-bar-menu {
-            position: absolute;
-            bottom: 0;
-            background: #CCC;
-            width: 100%;
-        }
-    }
-}
+//Layout imports
+@import '../assets/css/header.scss';
+@import '../assets/css/footer.scss';
+@import '../assets/css/sidebar.scss';
