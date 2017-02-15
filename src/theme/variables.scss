@@ -37,14 +37,14 @@ $colors: (
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-$toolbar-ios-background: #faa301;
+$toolbar-ios-background: $background-color-brand;
 
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
+$toolbar-background: $background-color-brand;
 
 
 
