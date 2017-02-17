@@ -14,8 +14,13 @@ page-home {
                         .myCard{
                             width: 100%;
                             height: 200px;
-                            border: 1px solid #CCC;
                             position: relative;
+                            .front{
+                                border: 1px solid #CCC;
+                            }
+                            .back{
+                                border: 1px solid #CCC;
+                            }
                             .profile {
                                 display: inline-block;
                                 width: 45%;
