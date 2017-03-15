@@ -1,7 +1,7 @@
 /*SIDEBAR MENU*/
 ion-menu{
+    font-family: Roboto;
     ion-header{
-        background: $background-color-brand;
         p{
             font-size: 14px;
             margin: 0px;
@@ -18,6 +18,10 @@ ion-menu{
             -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.3);
             -moz-box-shadow:    3px 3px 5px 0px rgba(50, 50, 50, 0.3);
             box-shadow:         3px 3px 5px 0px rgba(50, 50, 50, 0.3);
+        }
+        .logo{
+            width: 50%;
+            padding: 10px;
         }
         button.editMenu {
             background: none;
@@ -39,10 +43,19 @@ ion-menu{
                 .item-inner{
                     border: none !important;
                     ion-label{
-                        font-size: 14px;
+                        font-size: 16px;
                         padding: 2px;
                     }
                 }
+            }
+            i{
+                padding-right: 15px;
+            }
+            .division{
+                width: 100%;
+                height: 1px;
+                background-color: #ccc;
+                margin: 10px 0;
             }            
         }
         .footer-bar-menu {

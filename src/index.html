@@ -35,14 +35,19 @@
   <ion-app></ion-app>
 
   <!-- Float Button -->
-  <div class="fixed-action-btn toolbar">
-    <a class="btn-floating btn-large">
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large wave" href="#modal1">
       <i class="material-icons"><span>+</span></i>
     </a>
-    <ul>
-      <li class="waves-effect waves-light"><a href="#!"><i class="fa fa-address-card-o" aria-hidden="true"></i><br> <span>Criar cartão</span></a></li>
-      <li class="waves-effect waves-light"><a href="#!"><i class="fa fa-qrcode" aria-hidden="true"></i><br> <span>QrCode Scan</span></a></li>
-    </ul>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal bottom-sheet">
+    <div class="modal-content">
+      <p>Botão um</p>
+      <p>Botão um</p>
+      <p>Botão um</p>
+    </div>
   </div>
 
   <!-- The polyfills js is generated during the build process -->
@@ -58,6 +63,7 @@
   <script>
     $('.carousel.carousel-slider').carousel({full_width: true});
     $("#card").flip();
+    $('.modal').modal();
   </script>
 
 </body>
