@@ -13,38 +13,39 @@
   <div class="carousel carousel-slider center" data-indicators="true">
     <div class="carousel-item" href="#one!">
       <ul>
-        <li>
+        <li *ngFor="let card of Cards">
           <div id="card" class="myCard">
             <div class="front">
-              <div class="branding-color"></div>
+              <div class="branding-color" [ngStyle]="{'background-color': card.IdentityBgColor, 'color': card.IdentityFontColor }"></div>
               <div class="profile">
-                <img src="assets/images/avatar.jpg" class="cardAvatar" alt="">
+                <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
                 <div class="logoBranding">
-                  <img src="assets/images/logo-dell.png" alt="">
+                  <img src="{{card.CompanyLogo}}" alt="">
                 </div>
               </div>
               <div class="profileData">
-                <h2>Nome Sobrenome</h2>
-                <span>Ecommerce Consultant</span>
+                <h2>{{card.FullName}}</h2>
+                <span>{{card.Occupation}}</span>
                 <ul>
-                  <li><i class="material-icons tiny fa-fw">call</i> +55 11 1111.1111</li>
-                  <li><i class="material-icons tiny fa-fw">stay_current_portrait</i> +55 11 91111.1111</li>
-                  <li><i class="material-icons tiny fa-fw">email</i> email@email.com.br</li>
+                  <li><i class="material-icons tiny fa-fw">call</i> {{card.Phone}}</li>
+                  <li><i class="material-icons tiny fa-fw">stay_current_portrait</i> {{card.Cellphone}}</li>
+                  <li><i class="material-icons tiny fa-fw">email</i> {{card.Email}}</li>
                 </ul>
                 <ul class="socialMedia">
-                  <li>um</li>
-                  <li>um</li>
-                  <li>um</li>
-                  <li>um</li>
-                  <li>um</li>
+                  <li *ngFor="let social of card.SocialMedias">
+                    <i *ngIf="social.Type == 0" class="fa fa-facebook-square" aria-hidden="true"></i>
+                    <i *ngIf="social.Type == 1" class="fa fa-linked-square" aria-hidden="true"></i>
+                    <i *ngIf="social.Type == 2" class="fa fa-twitter-square" aria-hidden="true"></i>
+                    <i *ngIf="social.Type == 3" class="fa fa-instagram" aria-hidden="true"></i>
+                  </li>
                 </ul>
               </div>
-              <div class="favorite active"></div>
+              <div *ngIf="card.IsFavorite" class="favorite active"></div>
             </div>
             <div class="back">
               <div class="brandingCover">
-                <img src="assets/images/logo-dell.png" alt="">
-                <p class="site">www.dell.com.br</p>
+                <img src="{{card.CompanyLogo}}" alt="">
+                <p class="site" [ngStyle]="{'background-color': card.IdentityBgColor, 'color': card.IdentityFontColor }">www.dell.com.br</p>
               </div>
             </div>
           </div>
