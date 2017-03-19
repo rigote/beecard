@@ -11,12 +11,16 @@ export class CardModel{
     public CompanyLogo: string;
     public CompanyName: string;
     public IsFavorite: boolean;
-    public IdentityBgColor: string;
-    public IdentityFontColor: string;
+    public Config: CardConfig;
 
     constructor(){
         this.SocialMedias = new Array<CardSocialMedia>();
     }
+}
+
+export class CardConfig{
+    public BgColor: string;
+    public FontColor: string;
 }
 
 export class CardSocialMedia{

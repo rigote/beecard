@@ -51,7 +51,7 @@
           <!-- Company Card -->
           <div id="card" class="myCard" *ngIf="card.Type == 1">
             <div class="front">
-              <div class="branding-color" [ngStyle]="{'background-color': card.IdentityBgColor, 'color': card.IdentityFontColor }"></div>
+              <div class="branding-color" [ngStyle]="{'background-color': card.Config.BgColor, 'color': card.Config.FontColor }"></div>
               <div class="profile">
                 <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
                 <div class="logoBranding">
@@ -80,7 +80,7 @@
             <div class="back">
               <div class="brandingCover">
                 <img src="{{card.CompanyLogo}}" alt="">
-                <p class="site" [ngStyle]="{'background-color': card.IdentityBgColor, 'color': card.IdentityFontColor }">{{card.Website}}</p>
+                <p class="site" [ngStyle]="{'background-color': card.Config.BgColor, 'color': card.Config.FontColor }">{{card.Website}}</p>
               </div>
             </div>
           </div>

@@ -35,8 +35,10 @@ export class HomePage {
           Website:  "www.dell.com.br",
           IsFavorite: true,
           CompanyName: "Dell",
-          IdentityBgColor: "#009dff",
-          IdentityFontColor: "#fff"
+          Config: {
+            BgColor: "#009dff",
+            FontColor: "#fff"
+          }          
         };
       }
       else {
@@ -53,8 +55,7 @@ export class HomePage {
           Website:  "",
           IsFavorite: false,
           CompanyName: null,
-          IdentityBgColor: null,
-          IdentityFontColor: null
+          Config: null
         };
       }
       cards.push(card);
