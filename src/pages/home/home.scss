@@ -1,137 +1,119 @@
 page-home {
     /*SLIDE PAGE*/
-    .scroll-content{
-        .carousel{
-            height: 100%!important;
-            .carousel-item{
-                padding: 10px;
-                overflow: scroll;
+    ion-list{
+        padding: 10px;
+        margin-bottom: 0 !important;
+        .myCard{
+            width: 100%;
+            height: 200px;
+            position: relative;
+            .front,.back{
+                box-shadow: $box-shadow-card;
+                border-radius: $border-radius-card;
+            }
+            .branding-color{
+                float: left;
+                width: 4%;
+                height: 100%;
+                border-radius: 5px 0 0 5px;
+                background-color: #CCC;
 
-                /*PERSONAL CARDS*/
-                ul{
-                    li{
-                        margin-bottom: 10px;
-                        .myCard{
-                            width: 100%;
-                            height: 200px;
-                            position: relative;
-                            .front,.back{
-                                box-shadow: $box-shadow-card;
-                                border-radius: $border-radius-card;
-                            }
-                            .branding-color{
-                                float: left;
-                                width: 4%;
-                                height: 100%;
-                                border-radius: 5px 0 0 5px;
-                                background-color: #CCC;
-
-                            }
-                            .favorite{
-                                position: absolute;
-                                top: 0;
-                                right: 10px;
-                                width: 21px;
-                                height: 30px;
-                                &.active{
-                                    background: url("../assets/images/fav-active.png") no-repeat !important;
-                                }
-                                &.inactive{
-                                    background: url('../assets/images/fav-inactive.png') no-repeat !important;
-                                }
-                            }
-                            .profile {
-                                float: left;
-                                width: 40%;
-                                height: 100%;
-                                padding: 4px;
-                                .cardAvatar{
-                                    display: block;
-                                    width: 90px;
-                                    height: 90px;
-                                    border-radius: 50%;
-                                    margin: 15px auto 0;
-                                }
-                                .logoBranding{
-                                    display: block;
-                                    width: 100%;
-                                    height: auto;
-                                    margin: 30px auto 0;
-                                    text-align: center;
-                                    img{
-                                        max-width: 30%;
-                                    }
-                                }
-                            }
-                            .profileData{
-                                float: left;
-                                width: 56%;
-                                height: 100%;
-                                padding: 4px;
-                                text-align: left;
-                                h2{
-                                    margin: 30px 0 -10px 0;
-                                    font-size: 16px;
-                                    line-height: normal;
-                                }
-                                span{
-                                    margin: 0;
-                                    font-size: 12px;
-                                    color: #333;
-                                    line-height: normal;
-                                }
-                                ul{
-                                    &.socialMedia{
-                                        width: 100%;
-                                        height: auto;
-                                        margin: 15px 0 0 0;
-                                        li{
-                                            display: inline-block;
-                                            width: 30px;
-                                            height: 30px;
-                                        }
-                                    }
-                                    li{
-                                        font-size: 12px;
-                                        color: #000;
-                                        margin: 0;
-                                    }
-                                }
-                            }
-                            .brandingCover{
-                                img{
-                                    width: 30% !important;
-                                    margin: 10% auto 0;
-                                }
-                                p{
-                                    &.site{
-                                        position: absolute;
-                                        bottom: 0;
-                                        border-radius: 0 0 5px 5px;
-                                        background: #CCC;
-                                        width: 100%;
-                                        padding: 0;
-                                        margin: 0;
-                                        font-size: 16px;
-                                        color: #FFF;
-                                        text-shadow: $text-shadow;
-                                    }
-                                }
-                            }                           
-                        }
+            }
+            .favorite{
+                position: absolute;
+                top: 0;
+                right: 10px;
+                width: 21px;
+                height: 30px;
+                &.active{
+                    background: url("../assets/images/fav-active.png") no-repeat !important;
+                }
+                &.inactive{
+                    background: url('../assets/images/fav-inactive.png') no-repeat !important;
+                }
+            }
+            .profile {
+                float: left;
+                width: 40%;
+                height: 100%;
+                padding: 4px;
+                .cardAvatar{
+                    display: block;
+                    width: 90px;
+                    height: 90px;
+                    border-radius: 50%;
+                    margin: 15px auto 0;
+                }
+                .logoBranding{
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    margin: 30px auto 0;
+                    text-align: center;
+                    img{
+                        max-width: 30%;
                     }
                 }
-                
-                .indicators{
-                    .indicator-item{
-                        background-color: #000;
-                        &.active{
-                            background-color: #333;
-                        }
-                    }                 
+            }
+            .profileData{
+                float: left;
+                width: 56%;
+                height: 100%;
+                padding: 4px;
+                text-align: left;
+                h2{
+                    margin: 30px 0 0 0;
+                    font-size: 16px;
+                    line-height: normal;
                 }
-            }            
+                span{
+                    margin: 0;
+                    font-size: 12px;
+                    color: #333;
+                    line-height: normal;
+                }
+                ul{
+                    padding-left: 0;
+                    &.socialMedia{
+                        width: 100%;
+                        height: auto;
+                        margin: 15px 0 0 0;
+                        li{
+                            display: inline-block;
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                    li{
+                        font-size: 12px;
+                        color: #000;
+                        margin: 0;
+                        list-style: none;
+                    }
+                }
+            }
+            .brandingCover{
+                img{
+                    width: 30% !important;
+                    margin: 10% 35%;
+                    float: left;
+                }
+                p{
+                    &.site{
+                        position: absolute;
+                        bottom: 0;
+                        border-radius: 0 0 5px 5px;
+                        background: #CCC;
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        font-size: 16px;
+                        color: #FFF;
+                        text-shadow: $text-shadow;
+                        text-align: center;
+                    }
+                }
+            }                           
         }
     }
-    
 }

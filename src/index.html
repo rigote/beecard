@@ -24,31 +24,14 @@
   </script>-->
 
   <link href="build/main.css" rel="stylesheet">
-  <link href="assets/css/materialicon.css" rel="stylesheet">
-  <link href="assets/css/materialize.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/materialicon.css">
 
 </head>
 <body>
 
   <!-- Ionic's root component and where the app will load -->
   <ion-app></ion-app>
-
-  <!-- Float Button -->
-  <div class="fixed-action-btn">
-    <a class="btn-floating btn-large wave" href="#modal1">
-      <i class="material-icons"><span>+</span></i>
-    </a>
-  </div>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal bottom-sheet">
-    <div class="modal-content">
-      <p>Botão um</p>
-      <p>Botão um</p>
-      <p>Botão um</p>
-    </div>
-  </div>
 
   <!-- The polyfills js is generated during the build process -->
   <script src="build/polyfills.js"></script>
@@ -57,13 +40,10 @@
   <script src="build/main.js"></script>
 
   <script src="assets/js/jquery-2.1.1.min.js"></script>
-  <script src="assets/js/materialize.min.js"></script>
   <script src="assets/js/jquery.flip.min.js"></script>
 
   <script>
-    $('.carousel.carousel-slider').carousel({full_width: true});
     $("#card").flip();
-    $('.modal').modal();
     $('[id="card"]').flip();
   </script>
 

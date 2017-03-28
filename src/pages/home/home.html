@@ -10,93 +10,83 @@
 
 
 <ion-content>
-  <div class="carousel carousel-slider center" data-indicators="true">
-    <div class="carousel-item" href="#one!">
-      <ul>
-        <li *ngFor="let card of Cards">
-          <!-- Begin: Personal Card -->
-          <div id="card" class="myCard" *ngIf="card.Type == 0">
-            <div class="front">
-              <div class="branding-color"></div>
-              <div class="profile">
-                <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
-              </div>
-              <div class="profileData">
-                <h2>{{card.FullName}}</h2>
-                <span>&nbsp;</span>
-                <ul>
-                  <li><i class="material-icons tiny fa-fw">call</i> {{card.Phone}}</li>
-                  <li><i class="material-icons tiny fa-fw">stay_current_portrait</i> {{card.Cellphone}}</li>
-                  <li><i class="material-icons tiny fa-fw">email</i> {{card.Email}}</li>
-                </ul>
-                <ul class="socialMedia">
-                  <li *ngFor="let social of card.SocialMedias">
-                    <i *ngIf="social.Type == 0" class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                    <i *ngIf="social.Type == 1" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                    <i *ngIf="social.Type == 2" class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                    <i *ngIf="social.Type == 3" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                  </li>
-                </ul>
-              </div>
-              <div *ngIf="card.IsFavorite" class="favorite active"></div>
-            </div>
-            <div class="back">
-              <div class="brandingCover">
-                <p class="site">{{card.Website}}</p>
-              </div>
-            </div>
+  <!-- Begin: Float button -->
+  <ion-fab>
+    <button ion-fab small><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+  <!-- End: Float button -->
+
+  <ion-list *ngFor="let card of Cards" class="cardList">
+    <!-- Begin: Personal Card -->
+    <div id="card" class="myCard" *ngIf="card.Type == 0">
+      <div class="front">
+        <div class="branding-color"></div>
+        <div class="profile">
+          <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
+        </div>
+        <div class="profileData">
+          <h2>{{card.FullName}}</h2>
+          <span>&nbsp;</span>
+          <ul>
+            <li><i class="fa fa-phone fa-fw" aria-hidden="true"></i> {{card.Phone}}</li>
+            <li><i class="fa fa-mobile fa-fw" aria-hidden="true"></i> {{card.Cellphone}}</li>
+            <li><i class="fa fa-envelope fa-fw" aria-hidden="true"></i> {{card.Email}}</li>
+          </ul>
+          <ul class="socialMedia">
+            <li *ngFor="let social of card.SocialMedias">
+              <i *ngIf="social.Type == 0" class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+              <i *ngIf="social.Type == 1" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+              <i *ngIf="social.Type == 2" class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+              <i *ngIf="social.Type == 3" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="card.IsFavorite" class="favorite active"></div>
+      </div>
+      <div class="back">
+        <div class="brandingCover">
+          <p class="site">{{card.Website}}</p>
+        </div>
+      </div>
+    </div>
+    <!-- End Personal Card -->
+
+    <!-- Company Card -->
+    <div id="card" class="myCard" *ngIf="card.Type == 1">
+      <div class="front">
+        <div class="branding-color" [ngStyle]="{'background-color': card.Config.BgColor, 'color': card.Config.FontColor }"></div>
+        <div class="profile">
+          <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
+          <div class="logoBranding">
+            <img src="{{card.CompanyLogo}}" alt="">
           </div>
-          <!-- End Personal Card -->
-
-          <!-- Company Card -->
-          <div id="card" class="myCard" *ngIf="card.Type == 1">
-            <div class="front">
-              <div class="branding-color" [ngStyle]="{'background-color': card.Config.BgColor, 'color': card.Config.FontColor }"></div>
-              <div class="profile">
-                <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
-                <div class="logoBranding">
-                  <img src="{{card.CompanyLogo}}" alt="">
-                </div>
-              </div>
-              <div class="profileData">
-                <h2>{{card.FullName}}</h2>
-                <span>{{card.Occupation}}</span>
-                <ul>
-                  <li><i class="material-icons tiny fa-fw">call</i> {{card.Phone}}</li>
-                  <li><i class="material-icons tiny fa-fw">stay_current_portrait</i> {{card.Cellphone}}</li>
-                  <li><i class="material-icons tiny fa-fw">email</i> {{card.Email}}</li>
-                </ul>
-                <ul class="socialMedia">
-                  <li *ngFor="let social of card.SocialMedias">
-                    <i *ngIf="social.Type == 0" class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                    <i *ngIf="social.Type == 1" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                    <i *ngIf="social.Type == 2" class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                    <i *ngIf="social.Type == 3" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                  </li>
-                </ul>
-              </div>
-              <div *ngIf="card.IsFavorite" class="favorite active"></div>
-            </div>
-            <div class="back">
-              <div class="brandingCover">
-                <img src="{{card.CompanyLogo}}" alt="">
-                <p class="site" [ngStyle]="{'background-color': card.Config.BgColor, 'color': card.Config.FontColor }">{{card.Website}}</p>
-              </div>
-            </div>
-          </div>
-          <!-- End Company Card -->
-
-        </li>
-      </ul>
-
+        </div>
+        <div class="profileData">
+          <h2>{{card.FullName}}</h2>
+          <span>{{card.Occupation}}</span>
+          <ul>
+            <li><i class="fa fa-phone fa-fw" aria-hidden="true"></i> {{card.Phone}}</li>
+            <li><i class="fa fa-mobile fa-fw" aria-hidden="true"></i> {{card.Cellphone}}</li>
+            <li><i class="fa fa-envelope fa-fw" aria-hidden="true"></i> {{card.Email}}</li>
+          </ul>
+          <ul class="socialMedia">
+            <li *ngFor="let social of card.SocialMedias">
+              <i *ngIf="social.Type == 0" class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
+              <i *ngIf="social.Type == 1" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+              <i *ngIf="social.Type == 2" class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+              <i *ngIf="social.Type == 3" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="card.IsFavorite" class="favorite active"></div>
+      </div>
+      <div class="back">
+        <div class="brandingCover">
+          <img src="{{card.CompanyLogo}}" alt="">
+          <p class="site" [ngStyle]="{'background-color': card.Config.BgColor, 'color': card.Config.FontColor }">{{card.Website}}</p>
+        </div>
+      </div>
     </div>
-    <div class="carousel-item" href="#two!">
-      <h2>Feed</h2>
-
-    </div>
-    <div class="carousel-item" href="#three!">
-      <h2>Todos os cartões</h2>
-
-    </div>
-  </div>
+    <!-- End Company Card -->
+  </ion-list>
 </ion-content>

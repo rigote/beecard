@@ -1,43 +1,9 @@
 /*RESET CONFIG*/
 .fa-fw{vertical-align: middle;} /*Icon align center*/
+body{font-family: 'Roboto', sans-serif;}
 
 /*FLOAT BUTTON*/
-.btn-floating{
-    background-color: $background-color-brand !important;
-    &.btn-large{
-        width: $size-float-button !important;
-        height: $size-float-button !important;
-        span{
-            font-size: 30px;
-            line-height: 40px;
-            font-weight: bold;
-        }
-        i{
-            line-height: $size-float-button !important;
-        }
-    }
-}
-
-.fixed-action-btn.toolbar ul li{
-    a{
-        line-height: initial !important;
-        margin-top: 10px;
-        span{
-            font-size: 12px;
-        }
-        i{
-            font-size: 22px;
-        }
-    }
-    
-}
-
-/*CAROUSEL*/
-.carousel{
-    .indicator-item{
-        background: #999 !important;
-        &.active{
-            background: #777 !important;
-        }
-    }
+ion-fab{
+    bottom: 5px !important;
+    right: 5px !important;
 }
