@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
 import { CardModel, CardType, SocialMediaType } from '../../models/CardModel';
+
+import { CreateCardPage } from '../create-card/create-card';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +12,7 @@ export class HomePage {
 
   public Cards: Array<CardModel>;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
     this.Cards = this.CreateMock();
   }
 
@@ -63,6 +65,16 @@ export class HomePage {
 
     return cards;    
 
+  }
+
+  ionViewDidLoad() {
+    // Put here the code you want to execute
+  }
+
+  presentModal() {
+    //let modal = this.modalCtrl.create();
+    let modal = this.modalCtrl.create(CreateCardPage);
+    modal.present();
   }
 
 }

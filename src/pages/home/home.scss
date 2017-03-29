@@ -116,4 +116,10 @@ page-home {
             }                           
         }
     }
+
+    /*Slide*/
+    .swiper-slide {
+        overflow-y: scroll;
+        display: block;
+    }
 }

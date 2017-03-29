@@ -12,11 +12,14 @@
 <ion-content>
   <!-- Begin: Float button -->
   <ion-fab>
-    <button ion-fab small><ion-icon name="add"></ion-icon></button>
+    <button ion-fab small (click)="presentModal()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
   <!-- End: Float button -->
 
-  <ion-list *ngFor="let card of Cards" class="cardList">
+  <ion-slides pager scroll="false">
+
+    <ion-slide>
+      <ion-list *ngFor="let card of Cards" class="cardList">
     <!-- Begin: Personal Card -->
     <div id="card" class="myCard" *ngIf="card.Type == 0">
       <div class="front">
@@ -89,4 +92,17 @@
     </div>
     <!-- End Company Card -->
   </ion-list>
+    </ion-slide>
+
+    <ion-slide>
+      <h2>Slide 2</h2>
+    </ion-slide>
+
+    <ion-slide>
+      <h2>Slide 3</h2>
+    </ion-slide>
+
+  </ion-slides>
+
+  
 </ion-content>

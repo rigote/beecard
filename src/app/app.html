@@ -4,14 +4,14 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            <button ion-item menuClose><i class="fa fa-qrcode" aria-hidden="true"></i> Scan QRCode</button>
-            <button ion-item menuClose><i class="fa fa-plus" aria-hidden="true"></i> Criar Cartão</button>
-            <button ion-item menuClose><i class="fa fa-cog" aria-hidden="true"></i> Settings</button>
+            <button ion-item menuClose (click)="openPage(pages[0])"><i class="fa fa-qrcode" aria-hidden="true"></i> Scan QRCode</button>
+            <button ion-item menuClose (click)="openPage(pages[1])"><i class="fa fa-plus" aria-hidden="true"></i> Criar Cartão</button>
             <div class="division"></div>
             <button ion-item menuClose><i class="fa fa-address-card" aria-hidden="true"></i> Meus Cartões</button>
             <button ion-item menuClose><i class="fa fa-user-circle" aria-hidden="true"></i> Minha Conta</button>
             <button ion-item menuClose><i class="fa fa-address-book" aria-hidden="true"></i> Minha Agenda</button>
             <button ion-item menuClose><i class="fa fa-rss" aria-hidden="true"></i> Feed</button>
+            <button ion-item menuClose><i class="fa fa-cog" aria-hidden="true"></i> Settings</button>
             <div class="footer-bar-menu">
                 <button ion-item menuClose><ion-icon name="log-out"></ion-icon> Logout</button>
             </div>
