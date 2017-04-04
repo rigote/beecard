@@ -4,12 +4,14 @@ import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
 import { CreateCardPage } from '../pages/create-card/create-card';
+import { FloatMainNavPage } from '../pages/float-main-nav/float-main-nav';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    CreateCardPage
+    CreateCardPage,
+    FloatMainNavPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -18,7 +20,8 @@ import { CreateCardPage } from '../pages/create-card/create-card';
   entryComponents: [
     MyApp,
     HomePage,
-    CreateCardPage
+    CreateCardPage,
+    FloatMainNavPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

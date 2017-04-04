@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /*
   Generated class for the CreateCard page.
@@ -13,14 +13,10 @@ import { NavController, NavParams, ViewController } from 'ionic-angular';
 })
 export class CreateCardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateCardPage');
-  }
-
-  dismiss() {
-    this.viewCtrl.dismiss();
   }
 
 }

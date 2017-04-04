@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
 import { CardModel, CardType, SocialMediaType } from '../../models/CardModel';
 
-import { CreateCardPage } from '../create-card/create-card';
+import { FloatMainNavPage } from '../float-main-nav/float-main-nav';
 
 @Component({
   selector: 'page-home',
@@ -73,7 +73,7 @@ export class HomePage {
 
   presentModal() {
     //let modal = this.modalCtrl.create();
-    let modal = this.modalCtrl.create(CreateCardPage);
+    let modal = this.modalCtrl.create(FloatMainNavPage);
     modal.present();
   }
 
