@@ -1,3 +1,28 @@
 page-create-card {
-
+    .photoCard{
+        display: block;
+        @include sizeAvatar();
+        border-radius: $border-radius-avatar;
+        margin: 10px auto;
+        @include shadowAvatar();
+    }
+    .editAvatar{
+        margin: 0 auto;
+        display: flex;
+        color: #999;
+        background: none;
+        font-size: 16px;
+    }
+    ion-list{
+        span{
+            color: $background-color-brand;
+            margin-top: 15px;
+            display: flex;
+            }
+        .item{
+            padding-left: 10px;
+            border: 1px solid #CCC !important;
+            margin: 5px 0;
+        }
+    }    
 }
