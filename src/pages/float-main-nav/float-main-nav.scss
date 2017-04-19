@@ -1,7 +1,7 @@
 ion-modal{  
     top: initial;
     bottom: 0;
-    height: 40%;
+    height: 50%;
     box-shadow: $box-shadow-float-menu;
 }
 
@@ -10,7 +10,6 @@ page-float-main-nav {
         .box-menu-float{
             position: absolute;
             bottom: 0;
-            box-shadow: $box-shadow-float-menu;
             height: 100%;
             i{
                 top: 5px;
@@ -18,7 +17,7 @@ page-float-main-nav {
                 position: absolute;
             }
             ul{
-                margin: 30px 10px 10px 10px;
+                margin: 15px 10px 10px 10px;
                 padding: 10px;
                 li{
                     list-style: none;
@@ -32,7 +31,6 @@ page-float-main-nav {
                             margin: 0 15px 0 0;
                             img{
                                 width: 50px;
-                                height: 50px;
                             }
                         }
                         &.description{
