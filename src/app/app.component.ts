@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { TranslateService } from '@ngx-translate/core';
 
 import { HomePage } from '../pages/home/home';
 import { CreateCardPage } from '../pages/create-card/create-card';
@@ -19,7 +20,10 @@ export class MyApp {
   pages: Array<{ title: string, component: any }>;
 
   constructor(
-    public platform: Platform) {
+    public platform: Platform, translate: TranslateService) {
+    
+    translate.setDefaultLang('pt_BR');
+    translate.use('pt_BR');
 
     this.initializeApp();
     

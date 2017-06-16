@@ -1,0 +1,8 @@
+{
+    "global" : {
+        "buttons" : {
+            "login" : "Log in",
+            "login_facebook" : "Log in with Facebook"
+        }
+    }
+}
