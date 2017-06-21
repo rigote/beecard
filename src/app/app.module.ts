@@ -11,6 +11,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http } from '@angular/http';
 
+import { FlashCardComponent } from '../components/flash-card/flash-card';
+
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -21,7 +23,8 @@ export function createTranslateLoader(http: Http) {
     HomePage,
     CreateCardPage,
     FloatMainNavPage,
-    LoginPage
+    LoginPage,
+    FlashCardComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),

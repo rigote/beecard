@@ -3,11 +3,12 @@ page-home {
     ion-list{
         padding: 10px;
         margin-bottom: 0 !important;
-        .myCard{
+        flash-card{
             width: 100%;
             height: 200px;
             position: relative;
-            .front,.back{
+            .flash-card-front, .flash-card-back{
+                width: 100%;
                 box-shadow: $box-shadow-card;
                 border-radius: $border-radius-card;
             }
