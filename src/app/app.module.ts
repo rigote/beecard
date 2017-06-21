@@ -6,6 +6,12 @@ import { HomePage } from '../pages/home/home';
 import { CreateCardPage } from '../pages/create-card/create-card';
 import { FloatMainNavPage } from '../pages/float-main-nav/float-main-nav';
 import { LoginPage } from '../pages/login/login';
+import { ScanQrCodePage } from '../pages/scan-qr-code/scan-qr-code';
+import { MainCardsPage } from '../pages/main-cards/main-cards';
+import { ListsPage } from '../pages/lists/lists';
+import { AccountPage } from '../pages/account/account';
+import { SettingsPage } from '../pages/settings/settings';
+import { FeedPage } from '../pages/feed/feed';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -24,7 +30,13 @@ export function createTranslateLoader(http: Http) {
     CreateCardPage,
     FloatMainNavPage,
     LoginPage,
-    FlashCardComponent
+    FlashCardComponent,
+    ScanQrCodePage,
+    ListsPage,
+    AccountPage,
+    SettingsPage,
+    MainCardsPage,
+    FeedPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -43,7 +55,13 @@ export function createTranslateLoader(http: Http) {
     HomePage,
     CreateCardPage,
     FloatMainNavPage,
-    LoginPage
+    LoginPage,
+    ScanQrCodePage,
+    ListsPage,
+    AccountPage,
+    SettingsPage,
+    MainCardsPage,
+    FeedPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

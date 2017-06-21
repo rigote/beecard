@@ -6,6 +6,12 @@ import { TranslateService } from '@ngx-translate/core';
 import { HomePage } from '../pages/home/home';
 import { CreateCardPage } from '../pages/create-card/create-card';
 import { LoginPage } from '../pages/login/login';
+import { ScanQrCodePage } from '../pages/scan-qr-code/scan-qr-code';
+import { MainCardsPage } from '../pages/main-cards/main-cards';
+import { ListsPage } from '../pages/lists/lists';
+import { AccountPage } from '../pages/account/account';
+import { SettingsPage } from '../pages/settings/settings';
+import { FeedPage } from '../pages/feed/feed';
 
 
 @Component({
@@ -32,6 +38,12 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Create Card', component: CreateCardPage },
       { title: 'Login', component: LoginPage },
+      { title: 'Scan QrCode', component: ScanQrCodePage },
+      { title: 'Main Cards', component: MainCardsPage },
+      { title: 'Lists', component: ListsPage },
+      { title: 'Account', component: AccountPage },
+      { title: 'Settings', component: SettingsPage },
+      { title: 'Feed', component: FeedPage }
     ];
 
   }
