@@ -33,6 +33,9 @@ ion-menu{
         }
     }
     ion-content{
+        .scroll-content{
+            overflow: hidden;
+        }
         ion-list{
             button{
                 &.item-md{

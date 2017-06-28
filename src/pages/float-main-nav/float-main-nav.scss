@@ -1,12 +1,16 @@
 ion-modal{  
     top: initial;
     bottom: 0;
-    height: 50%;
+    height: 40%;
     box-shadow: $box-shadow-float-menu;
 }
 
 page-float-main-nav {
     ion-content{
+        .scroll-content{
+            overflow: hidden;
+            z-index: 9999;
+        }
         .box-menu-float{
             position: absolute;
             bottom: 0;

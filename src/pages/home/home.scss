@@ -126,4 +126,8 @@ page-home {
         overflow-y: scroll;
         display: block;
     }
+
+    .swiper-pagination-bullet-active{
+        background: $background-color-brand;
+    }
 }
