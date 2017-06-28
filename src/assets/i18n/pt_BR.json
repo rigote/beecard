@@ -1,8 +1,53 @@
 {
-    "global" : {
-        "buttons" : {
-            "login" : "Olá mundo",
-            "login_facebook" : "Logar com Facebook"
+    "global": {
+        "buttons": {
+            "confirm": "Confirmar",
+            "register": "Registrar",
+            "Create": "Criar",
+            "yes": "Sim",
+            "No": "Não",
+            "Logoff": "Sair",
+            "Login": "Entrar"
+        },
+        "titles": {
+            "email": "Digite seu email",
+            "password": "Coloque sua senha"
+        },
+        "textbox": {
+            "": ""
+        }
+    },
+    "Pages": {
+        "Account": {
+            "": ""
+        },
+        "Create-Card": {
+            "": ""
+        },
+        "Feed": {
+            "": ""
+        },
+        "Float-Main-Nab": {
+            "": ""
+        },
+        "Home": {
+            "": ""
+        },
+        "lists": {
+            "": ""
+        },
+        "Login": {
+            "login": "Registrar",
+            "login_facebook": "Logar com Facebook"
+        },
+        "Main-Cards": {
+            "": ""
+        },
+        "Scan-qr-code": {
+            "": ""
+        },
+        "Settings": {
+            "": ""
         }
     }
 }
