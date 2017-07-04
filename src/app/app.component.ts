@@ -12,6 +12,8 @@ import { ListsPage } from '../pages/lists/lists';
 import { AccountPage } from '../pages/account/account';
 import { SettingsPage } from '../pages/settings/settings';
 import { FeedPage } from '../pages/feed/feed';
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
+import { SignupPage } from '../pages/signup/signup';
 
 
 @Component({
@@ -21,7 +23,7 @@ import { FeedPage } from '../pages/feed/feed';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = HomePage;
+  rootPage = LoginPage;
 
   pages: Array<{ title: string, component: any }>;
 

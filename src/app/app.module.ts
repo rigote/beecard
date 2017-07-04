@@ -12,6 +12,8 @@ import { ListsPage } from '../pages/lists/lists';
 import { AccountPage } from '../pages/account/account';
 import { SettingsPage } from '../pages/settings/settings';
 import { FeedPage } from '../pages/feed/feed';
+import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
+import { SignupPage } from '../pages/signup/signup';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -36,7 +38,9 @@ export function createTranslateLoader(http: Http) {
     AccountPage,
     SettingsPage,
     MainCardsPage,
-    FeedPage
+    FeedPage,
+    ForgotPasswordPage,
+    SignupPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -61,7 +65,9 @@ export function createTranslateLoader(http: Http) {
     AccountPage,
     SettingsPage,
     MainCardsPage,
-    FeedPage
+    FeedPage,
+    ForgotPasswordPage,
+    SignupPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

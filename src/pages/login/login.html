@@ -1,18 +1,20 @@
-<!--
-  Generated template for the Login page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
+  <img src="assets/images/bee-logo.png" alt="" class="logoLogin">
+  <form>
+    <ion-item>
+      <ion-label color="text" stacked>E-mail or Phone Number</ion-label>
+      <ion-input color="dark" type="email" placeholder="email@email.com"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="text" stacked>Password</ion-label>
+      <ion-input color="dark" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+    <button ion-button round full>Login</button>
+    <span class="links"><b>OR</b></span>
+    <span class="loginSocialButton"><img src="assets/images/icons/google-icon.png" alt=""> <p>Loggin with Google</p></span>
+    <span class="loginSocialButton"><img src="assets/images/icons/facebook-icon.png" alt=""> <p>Loggin with Facebook</p></span>
+  </form>
+  <span class="links"><a href="#" (click)="forgotPassword()">Forgot Password?</a></span>
+  <span class="links">Don't have an Account? <a href="#" (click)="signUp()">SignUp</a></span>
 
 </ion-content>
