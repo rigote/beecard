@@ -18,6 +18,8 @@ import { SignupPage } from '../pages/signup/signup';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http } from '@angular/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { FlashCardComponent } from '../components/flash-card/flash-card';
 
@@ -45,6 +47,7 @@ export function createTranslateLoader(http: Http) {
   imports: [
     IonicModule.forRoot(MyApp),
     HttpModule,
+    BrowserModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -69,6 +72,6 @@ export function createTranslateLoader(http: Http) {
     ForgotPasswordPage,
     SignupPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},BarcodeScanner]
 })
 export class AppModule {}

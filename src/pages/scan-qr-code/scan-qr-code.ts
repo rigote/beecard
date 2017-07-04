@@ -1,22 +1,35 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the ScanQrCode page.
+import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-scan-qr-code',
   templateUrl: 'scan-qr-code.html'
 })
 export class ScanQrCodePage {
+  
+  options: BarcodeScannerOptions;
+  results: {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private barCode: BarcodeScanner) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ScanQrCodePage');
+  }
+
+  async scanBarcode(){
+    
+    this.options = {
+      prompt: 'Scan barcode'
+    }
+
+    this.results = await this.barCode.scan(this.options);
+    console.log(this.results);
+  }
+
+  async encodeData(){
+    const results = await this.barCode.encode(this.barCode.Encode.TEXT_TYPE, 'http://www.beecard.com.br')
   }
 
 }
