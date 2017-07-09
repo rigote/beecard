@@ -1,6 +1,6 @@
 {
     "global": {
-        "buttons": {
+        "button": {
             "confirm": "Confirmar",
             "register": "Registrar",
             "Create": "Criar",
@@ -9,45 +9,179 @@
             "Logoff": "Sair",
             "Login": "Entrar"
         },
-        "titles": {
-            "email": "Digite seu email",
-            "password": "Coloque sua senha"
+        "label": {
+            "email-phone": "Email ou Telefone",
+            "email": "Email",
+            "password": "Senha"
         },
-        "textbox": {
-            "": ""
+        "placeholder": {
+            "email": "Digite seu email",
+            "password": "Digite sua senha"
         }
     },
-    "Pages": {
-        "Account": {
-            "": ""
+    "sidebar": {
+            "title": {
+             "title-sidebar" : "Menu"
+            },
+        "placeholder": {
+            "scan" : "Escanear QR-Code",
+            "create" : "Criar BeeCard",
+            "mycards" : "Meus Cartões",
+            "all-cards" : "Todos Cartões",
+            "my-lists" : "Minhas Listas",
+            "feed" : "Feed de Notícias",
+            "account" : "Minha Conta",
+            "settings" : "Configurações"
+         }
+    },
+    "page": {
+        "account": {
+            "title": {
+                "title-account" : "Minha Conta"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
         },
-        "Create-Card": {
-            "": ""
+        "create-card": {
+            "title": {
+                "title-create-card" : "Criar Cartão"
+            },
+            "button": {
+                "create-card" : "Criar Cartão"
+            },
+            "label": {
+                "fullname" : "Nome Completo",
+                "email" : "Email",
+                "phone" : "Telefone",
+                "cell" : "Celular",
+                "occupation" : "Profissão",
+                "website" : "Site",
+                "adress" : "Endereço",
+                "adress2" : "Complemento",
+                "link-twitter" : "Linkar Twitter",
+                "link-facebook" : "Linkar Facebook",
+                "link-linkedin" : "Linkar Linkedin",
+                "link-instagram" : "Linkar Instagram"
+            },
+            "placeholder": {
+                "edit-photo" : "Editar Foto",
+                "personal-info" : "Dados Pessoais",
+                "work-info" : "Trabalho",
+                "adress-info" : "Endereço",
+                "social-info" : "Social"
+            }
         },
-        "Feed": {
-            "": ""
+        "feed": {
+            "title": {
+                "title-feed" : "Feed"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
         },
-        "Float-Main-Nab": {
-            "": ""
+        "float-main-nav": {
+            "title": {
+                "title-float-main-nav" : "+"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
         },
-        "Home": {
-            "": ""
+        "home": {
+            "title": {
+                "title-home" : "Tela Inicial"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
         },
         "lists": {
-            "": ""
+            "title": {
+                "title-lists" : "Minhas Listas"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
         },
-        "Login": {
-            "login": "Registrar",
-            "login_facebook": "Logar com Facebook"
+        "login": {
+            "title": {
+                "title-login" : "Login"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
         },
-        "Main-Cards": {
-            "": ""
+        "main-cards": {
+            "title": {
+                "title-main-cards" : "Todos Cartões"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
         },
-        "Scan-qr-code": {
-            "": ""
+        "scan-qr-code": {
+           "title": {
+                "title-scan-qr-code" : "Escanear Cartão"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
         },
-        "Settings": {
-            "": ""
+        "settings": {
+            "title": {
+                "title-settings" : "Configurações"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "signup": {
+            "title": {
+                "title-signup" : "Cadastrar"
+            },
+            "button": {
+                "login": "Logar",
+                "login-google": "Logar com o Google",
+                "login-facebook": "Logar com o Facebook",
+                "login-linkedin": "Logar com o Linkedin"
+            },
+            "label": {
+            "email-phone": "Email ou Telefone",
+            "password": "Senha"
+            },
+            "placeholder": {
+            "or": "ou",
+            "forgotpw":"Esqueceu sua senha?",
+            "noacc": "Não tem uma conta? Cadastre"
+            }
         }
     }
 }
