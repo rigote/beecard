@@ -60,8 +60,8 @@
                 "cell" : "Celular",
                 "occupation" : "Profissão",
                 "website" : "Site",
-                "adress" : "Endereço",
-                "adress2" : "Complemento",
+                "address" : "Endereço",
+                "address2" : "Complemento",
                 "link-twitter" : "Linkar Twitter",
                 "link-facebook" : "Linkar Facebook",
                 "link-linkedin" : "Linkar Linkedin",
@@ -71,7 +71,7 @@
                 "edit-photo" : "Editar Foto",
                 "personal-info" : "Dados Pessoais",
                 "work-info" : "Trabalho",
-                "adress-info" : "Endereço",
+                "address-info" : "Endereço",
                 "social-info" : "Social"
             }
         },

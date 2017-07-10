@@ -1,8 +1,187 @@
 {
-    "global" : {
-        "buttons" : {
-            "login" : "Log in",
-            "login_facebook" : "Log in with Facebook"
+    "global": {
+        "button": {
+            "confirm": "Confirma",
+            "register": "Register",
+            "Create": "Create",
+            "yes": "Yes",
+            "No": "No",
+            "Logoff": "Logoff",
+            "Login": "Login"
+        },
+        "label": {
+            "email-phone": "Email or Phone",
+            "email": "Email",
+            "password": "Password"
+        },
+        "placeholder": {
+            "email": "Type your email",
+            "password": "type your password"
+        }
+    },
+    "sidebar": {
+            "title": {
+             "title-sidebar" : "Menu"
+            },
+        "placeholder": {
+            "scan" : "Scan QR-Code",
+            "create" : "Create BeeCard",
+            "mycards" : "My Cards",
+            "all-cards" : "All Cards",
+            "my-lists" : "My Lists",
+            "feed" : "Feed",
+            "account" : "My Accoutnt",
+            "settings" : "Settings"
+         }
+    },
+    "page": {
+        "account": {
+            "title": {
+                "title-account" : "My Account"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "create-card": {
+            "title": {
+                "title-create-card" : "Create Card"
+            },
+            "button": {
+                "create-card" : "Create Card"
+            },
+            "label": {
+                "fullname" : "Full Name",
+                "email" : "Email",
+                "phone" : "Phone",
+                "cell" : "Cellphone",
+                "occupation" : "Occupation",
+                "website" : "Website",
+                "address" : "Address",
+                "address2" : "Address 2",
+                "link-twitter" : "Link Twitter",
+                "link-facebook" : "Link Facebook",
+                "link-linkedin" : "Link Linkedin",
+                "link-instagram" : "Link Instagram"
+            },
+            "placeholder": {
+                "edit-photo" : "Edit Photo",
+                "personal-info" : "Personal Info",
+                "work-info" : "Job Info",
+                "address-info" : "Job Address",
+                "social-info" : "Social"
+            }
+        },
+        "feed": {
+            "title": {
+                "title-feed" : "Feed"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "float-main-nav": {
+            "title": {
+                "title-float-main-nav" : "+"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "home": {
+            "title": {
+                "title-home" : "Home"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "lists": {
+            "title": {
+                "title-lists" : "My lists"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "login": {
+            "title": {
+                "title-login" : "Login"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "main-cards": {
+            "title": {
+                "title-main-cards" : "All Cards"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "scan-qr-code": {
+           "title": {
+                "title-scan-qr-code" : "Scan Card"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "settings": {
+            "title": {
+                "title-settings" : "Settings"
+            },
+            "button": {
+            },
+            "label": {
+            },
+            "placeholder": {
+            }
+        },
+        "signup": {
+            "title": {
+                "title-signup" : "Sign Up"
+            },
+            "button": {
+                "login": "Login",
+                "login-google": "Login with Google",
+                "login-facebook": "Login with Facebook",
+                "login-linkedin": "Login with Linkedin"
+            },
+            "label": {
+            "email-phone": "Email or Phone",
+            "password": "Password"
+            },
+            "placeholder": {
+            "or": "or",
+            "forgotpw":"Forgot your password?",
+            "noacc": "Don't have an account? Register"
+            }
         }
     }
 }
