@@ -30,8 +30,8 @@ export class MyApp {
   constructor(
     public platform: Platform, translate: TranslateService) {
     
-    translate.setDefaultLang('pt_BR');
-    translate.use('pt_BR');
+    translate.setDefaultLang('en_US');
+    translate.use('en_US');
 
     this.initializeApp();
     

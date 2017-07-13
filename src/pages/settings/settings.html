@@ -1,8 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      {{ 'global.buttons.login' | translate }}
-    </ion-title>
+    <ion-title> {{ 'page.settings.title.title-settings' | translate }} </ion-title>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -11,5 +9,13 @@
 
 
 <ion-content padding>
+<ion-label>{{ "page.settings.label.language" | translate }}</ion-label>
+<button ion-button block (click)="translateToEnglish()">
+    {{ "page.settings.button.language1" | translate }}
+    </button>
+
+  <button ion-button block (click)="translateToPortuguese()">
+      {{ "page.settings.button.language2" | translate }}
+  </button>
 
 </ion-content>

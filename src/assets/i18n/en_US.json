@@ -157,8 +157,11 @@
                 "title-settings" : "Settings"
             },
             "button": {
+                "language1" : "English",
+                "language2" : "Portuguese"
             },
             "label": {
+                "language" : "Choose app language"
             },
             "placeholder": {
             }
