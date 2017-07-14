@@ -15,6 +15,7 @@
             "password": "Senha"
         },
         "placeholder": {
+            "email-phone": "Digite seu Email ou Telefone",
             "email": "Digite seu email",
             "password": "Digite sua senha"
         }
@@ -77,7 +78,7 @@
         },
         "feed": {
             "title": {
-                "title-feed" : "Feed"
+                "title-feed" : "Feed de Notícias"
             },
             "button": {
             },
