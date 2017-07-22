@@ -31,7 +31,7 @@ export class MyApp {
     public platform: Platform, translate: TranslateService) {
     
     translate.setDefaultLang('en_US');
-    translate.use('en_US');
+    translate.use('pt_br');
 
     this.initializeApp();
     

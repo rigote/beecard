@@ -52,6 +52,7 @@
                 "title-create-card" : "Criar Cartão"
             },
             "button": {
+                "edit-photo" : "Editar Foto",
                 "create-card" : "Criar Cartão"
             },
             "label": {
@@ -69,7 +70,6 @@
                 "link-instagram" : "Linkar Instagram"
             },
             "placeholder": {
-                "edit-photo" : "Editar Foto",
                 "personal-info" : "Dados Pessoais",
                 "work-info" : "Trabalho",
                 "address-info" : "Endereço",
@@ -120,9 +120,9 @@
             "placeholder": {
             }
         },
-        "login": {
+        "signup": {
             "title": {
-                "title-login" : "Login"
+                "title-login" : "Registrar"
             },
             "button": {
             },
@@ -167,9 +167,9 @@
             "placeholder": {
             }
         },
-        "signup": {
+        "login": {
             "title": {
-                "title-signup" : "Cadastrar"
+                "title-login" : "Cadastrar"
             },
             "button": {
                 "login": "Logar",
@@ -178,13 +178,14 @@
                 "login-linkedin": "Logar com o Linkedin"
             },
             "label": {
-            "email-phone": "Email ou Telefone",
-            "password": "Senha"
+                 "email-phone": "Email ou Telefone",
+                 "password": "Senha"
             },
             "placeholder": {
-            "or": "ou",
-            "forgotpw":"Esqueceu sua senha?",
-            "noacc": "Não tem uma conta? Cadastre"
+                "or": "ou",
+                "forgotpw":"Esqueceu sua senha?",
+                "noacc":"Não tem uma conta?",
+                "noacc2":"Cadastre"
             }
         }
     }

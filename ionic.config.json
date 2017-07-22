@@ -1,6 +1,5 @@
 {
   "name": "BeeCard",
   "app_id": "77cbb3b9",
-  "v2": true,
-  "typescript": true
+  "type": "ionic-angular"
 }

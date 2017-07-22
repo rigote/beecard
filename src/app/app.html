@@ -4,17 +4,17 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            <button ion-item menuClose (click)="openPage(pages[3])"><i class="fa fa-qrcode" aria-hidden="true"></i> Escanear QR-Code</button>
-            <button ion-item menuClose (click)="openPage(pages[1])"><i class="fa fa-plus" aria-hidden="true"></i> Criar BeeCard</button>
+            <button ion-item menuClose (click)="openPage(pages[3])"><i class="fa fa-qrcode" aria-hidden="true"></i>{{ 'sidebar.placeholder.scan' | translate }}</button>
+            <button ion-item menuClose (click)="openPage(pages[1])"><i class="fa fa-plus" aria-hidden="true"></i>{{ 'sidebar.placeholder.create' | translate }}</button>
             <div class="division"></div>
-            <button ion-item menuClose (click)="openPage(pages[4])"><i class="fa fa-address-card" aria-hidden="true"></i> Meus Cartões</button>
-            <button ion-item menuClose (click)="openPage(pages[0])"><i class="fa fa-user-circle" aria-hidden="true"></i> Todos Cartões</button>
-            <button ion-item menuClose (click)="openPage(pages[5])"><i class="fa fa-address-book" aria-hidden="true"></i> Minhas Listas</button>
-            <button ion-item menuClose (click)="openPage(pages[8])"><i class="fa fa-rss" aria-hidden="true"></i> Feed de Notícias</button>
+            <button ion-item menuClose (click)="openPage(pages[4])"><i class="fa fa-address-card" aria-hidden="true"></i>{{ 'sidebar.placeholder.mycards' | translate }}</button>
+            <button ion-item menuClose (click)="openPage(pages[0])"><i class="fa fa-user-circle" aria-hidden="true"></i>{{ 'sidebar.placeholder.all-cards' | translate }}</button>
+            <button ion-item menuClose (click)="openPage(pages[5])"><i class="fa fa-address-book" aria-hidden="true"></i>{{ 'sidebar.placeholder.my-lists' | translate }}</button>
+            <button ion-item menuClose (click)="openPage(pages[8])"><i class="fa fa-rss" aria-hidden="true"></i>{{ 'sidebar.placeholder.feed' | translate }}</button>
             
             <div class="footer-bar-menu">
-                <button ion-item menuClose (click)="openPage(pages[6])"><i class="fa fa-address-card" aria-hidden="true"></i> Minha Conta</button>
-                <button ion-item menuClose (click)="openPage(pages[7])"><i class="fa fa-cog" aria-hidden="true"></i> Settings</button>
+                <button ion-item menuClose (click)="openPage(pages[6])"><i class="fa fa-address-card" aria-hidden="true"></i>{{ 'sidebar.placeholder.account' | translate }}</button>
+                <button ion-item menuClose (click)="openPage(pages[7])"><i class="fa fa-cog" aria-hidden="true"></i>{{ 'sidebar.placeholder.settings' | translate }}</button>
             </div>
         </ion-list>
         

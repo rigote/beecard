@@ -15,8 +15,9 @@
             "password": "Password"
         },
         "placeholder": {
+            "email-phone": "Type your email or phone",
             "email": "Type your email",
-            "password": "type your password"
+            "password": "Type your password"
         }
     },
     "sidebar": {
@@ -30,7 +31,7 @@
             "all-cards" : "All Cards",
             "my-lists" : "My Lists",
             "feed" : "Feed",
-            "account" : "My Accoutnt",
+            "account" : "My Account",
             "settings" : "Settings"
          }
     },
@@ -51,6 +52,7 @@
                 "title-create-card" : "Create Card"
             },
             "button": {
+                "edit-photo" : "Edit Photo",
                 "create-card" : "Create Card"
             },
             "label": {
@@ -68,7 +70,6 @@
                 "link-instagram" : "Link Instagram"
             },
             "placeholder": {
-                "edit-photo" : "Edit Photo",
                 "personal-info" : "Personal Info",
                 "work-info" : "Job Info",
                 "address-info" : "Job Address",
@@ -119,9 +120,9 @@
             "placeholder": {
             }
         },
-        "login": {
+        "signup": {
             "title": {
-                "title-login" : "Login"
+                "title-signup" : "Sign Up"
             },
             "button": {
             },
@@ -166,9 +167,9 @@
             "placeholder": {
             }
         },
-        "signup": {
+        "login": {
             "title": {
-                "title-signup" : "Sign Up"
+                "title-login" : "Login"
             },
             "button": {
                 "login": "Login",
@@ -177,13 +178,14 @@
                 "login-linkedin": "Login with Linkedin"
             },
             "label": {
-            "email-phone": "Email or Phone",
-            "password": "Password"
+                "email-phone": "Email or Phone",
+                "password": "Password"
             },
             "placeholder": {
-            "or": "or",
-            "forgotpw":"Forgot your password?",
-            "noacc": "Don't have an account? Register"
+                "or": "or",
+                "forgotpw":"Forgot your password?",
+                "noacc":"Don't have an account?",
+                "noacc2":"Register"
             }
         }
     }
