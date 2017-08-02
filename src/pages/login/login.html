@@ -1,20 +1,22 @@
 <ion-content padding>
-  <img src="assets/images/bee-logo.png" alt="" class="logoLogin">
-  <form>
-    <ion-item>
-      <ion-label color="text" stacked>{{ 'global.label.email-phone' | translate }}</ion-label>
-      <ion-input color="dark" type="email" placeholder="{{ 'global.placeholder.email-phone' | translate }}" ></ion-input>>
-    </ion-item>
-    <ion-item>
-      <ion-label color="text" stacked>{{ 'global.label.password' | translate }}</ion-label>
-      <ion-input color="dark" type="password" placeholder = "{{ 'global.placeholder.password' | translate }}"></ion-input>
-    </ion-item>
-    <button ion-button round full>{{ 'page.login.button.login' | translate }}</button>
-    <span class="links"><b>{{ 'page.login.placeholder.or' | translate }}</b></span>
-    <span class="loginSocialButton"><img src="assets/images/icons/google-icon.png" alt=""> <p>{{ 'page.login.button.login-google' | translate }}</p></span>
-    <span class="loginSocialButton"><img src="assets/images/icons/facebook-icon.png" alt=""> <p>{{ 'page.login.button.login-facebook' | translate }}</p></span>
-  </form>
-  <span class="links"><a href="#" (click)="forgotPassword()">{{ 'page.login.placeholder.forgotpw' | translate }}</a></span>
-  <span class="links">{{ 'page.login.placeholder.noacc' | translate }} <a href="#" (click)="signUp()">{{ 'page.login.placeholder.noacc2' | translate }}</a></span>
+    <img src="assets/images/bee-logo.png" alt="" class="logoLogin">
+    <form>
+        <ion-item>
+            <ion-label color="text" stacked>{{ 'global.label.email-phone' | translate }}</ion-label>
+            <ion-input color="dark" type="email" placeholder="{{ 'global.placeholder.email-phone' | translate }}"></ion-input>>
+        </ion-item>
+        <ion-item>
+            <ion-label color="text" stacked>{{ 'global.label.password' | translate }}</ion-label>
+            <ion-input color="dark" type="password" placeholder="{{ 'global.placeholder.password' | translate }}"></ion-input>
+        </ion-item>
+        <button ion-button>{{ 'page.login.button.login' | translate }}</button>
+        <span class="links"><a href="#" (click)="forgotPassword()">{{ 'page.login.placeholder.forgotpw' | translate }}</a></span>
+        <span class="links">{{ 'page.login.placeholder.noacc' | translate }} <a href="#" (click)="signUp()">{{ 'page.login.placeholder.noacc2' | translate }}</a></span>
+        <span class="links"><span class="separate"></span><b>{{ 'page.login.placeholder.or' | translate }}</b></span>
+        <span class="loginSocialButton">
+          <img src="assets/images/icons/googleLogin.png" alt="">
+          <img src="assets/images/icons/facebookLogin.png" alt="">
+        </span>
+    </form>
 
 </ion-content>

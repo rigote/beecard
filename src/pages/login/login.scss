@@ -1,60 +1,78 @@
 page-login {
-    .logoLogin{
+    .logoLogin {
         width: 30%;
         margin: 0 auto;
         padding: 0;
         display: block;
     }
-    form{
-        .label-md[stacked]{
+    form {
+        margin: 25% 0;
+        .label-md[stacked] {
             font-size: 18px;
         }
-        button{
-            height: 50px !important;
-            margin: 10px 0 0 0 !important;
-            .button-inner{
-                font-size:20px;
-                text-transform: uppercase;  
+        ion-item {
+            padding-left: 0 !important;
+            .item-inner {
+                margin-bottom: 15px;
+                .input-wrapper {
+                    ion-input {
+                        font-size: 14px;
+                        font-weight: normal;
+                    }
+                }
             }
         }
-        span{
-            &.loginSocialButton{
-                border: 1px solid #CCC;
-                border-radius: 10px;
-                padding: 0;
-                margin: 0 0 10px 0;
-                height: auto;
-                float: left;
-                width: 100%;
-                background: #eaeaea;
-                img{
-                    float: left;
-                    width: 10%;
+        span {
+            float: left;
+            width: 100%;
+            text-align: center;
+            &.loginSocialButton {
+                img {
+                    width: 15%;
                     margin: 5px;
                 }
-                p{
-                    float: left;
-                    margin: 12px 5px;
-                    font-size: 18px;
-                    font-weight: bold;
-                    color: #999;
-                }
+            }
+        }
+        button {
+            width: 100%;
+            .button-inner {
+                font-size: 16px;
+                text-transform: uppercase;
+                font-weight: normal !important;
             }
         }
     }
-     span{
-        &.links{
-            font-size: 16px;
+    span {
+        &.links {
+            position: relative;
+            font-size: 14px;
             display: block;
-            margin: 20px auto;
+            margin: 10px auto;
             text-align: center;
-            b{
-                color: #666666;
-                font-size: 16px;
+            a {
+                text-decoration: none;
+                font-weight: normal;
             }
-        }        
+            b {
+                color: #666666;
+                font-size: 14px;
+                background: #FFF;
+                padding: 5px;
+                z-index: 99999;
+                text-transform: uppercase;
+            }
+            .separate {
+                background: #999;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                left: 0;
+                top: 7px;
+                z-index: -9999;
+            }
+        }
     }
-    ion-item-divider{
+    ion-item-divider {
         margin: 30px 0;
     }
 }
