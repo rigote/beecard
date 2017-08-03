@@ -1,7 +1,7 @@
 {
     "global": {
         "button": {
-            "confirm": "Confirma",
+            "confirm": "Confirm",
             "register": "Register",
             "Create": "Create",
             "yes": "Yes",
@@ -12,164 +12,145 @@
         "label": {
             "email-phone": "Email or Phone",
             "email": "Email",
-            "password": "Password"
+            "password": "Password",
+            "name": "Name",
+            "last-name": "Last Name",
+            "cellphone": "Cellphone"
         },
         "placeholder": {
             "email-phone": "Type your email or phone",
             "email": "Type your email",
-            "password": "Type your password"
+            "password": "Type your password",
+            "name": "Type your name",
+            "last-name": "Type your last name",
+            "cellphone": "Type your cellphone"
         }
     },
     "sidebar": {
-            "title": {
-             "title-sidebar" : "Menu"
-            },
+        "title": {
+            "title-sidebar": "Menu"
+        },
         "placeholder": {
-            "scan" : "Scan QR-Code",
-            "create" : "Create BeeCard",
-            "mycards" : "My Cards",
-            "all-cards" : "All Cards",
-            "my-lists" : "My Lists",
-            "feed" : "Feed",
-            "account" : "My Account",
-            "settings" : "Settings"
-         }
+            "scan": "Scan QR-Code",
+            "create": "Create BeeCard",
+            "mycards": "My Cards",
+            "all-cards": "All Cards",
+            "my-lists": "My Lists",
+            "feed": "Feed",
+            "account": "My Account",
+            "settings": "Settings"
+        }
     },
     "page": {
         "account": {
             "title": {
-                "title-account" : "My Account"
+                "title-account": "My Account"
             },
-            "button": {
-            },
-            "label": {
-            },
-            "placeholder": {
-            }
+            "button": {},
+            "label": {},
+            "placeholder": {}
         },
         "create-card": {
             "title": {
-                "title-create-card" : "Create Card"
+                "title-create-card": "Create Card"
             },
             "button": {
-                "edit-photo" : "Edit Photo",
-                "create-card" : "Create Card"
+                "edit-photo": "Edit Photo",
+                "create-card": "Create Card"
             },
             "label": {
-                "fullname" : "Full Name",
-                "email" : "Email",
-                "phone" : "Phone",
-                "cell" : "Cellphone",
-                "occupation" : "Occupation",
-                "website" : "Website",
-                "address" : "Address",
-                "address2" : "Address 2",
-                "link-twitter" : "Link Twitter",
-                "link-facebook" : "Link Facebook",
-                "link-linkedin" : "Link Linkedin",
-                "link-instagram" : "Link Instagram"
+                "fullname": "Full Name",
+                "email": "Email",
+                "phone": "Phone",
+                "cell": "Cellphone",
+                "occupation": "Occupation",
+                "website": "Website",
+                "address": "Address",
+                "address2": "Address 2",
+                "link-twitter": "Link Twitter",
+                "link-facebook": "Link Facebook",
+                "link-linkedin": "Link Linkedin",
+                "link-instagram": "Link Instagram"
             },
             "placeholder": {
-                "personal-info" : "Personal Info",
-                "work-info" : "Job Info",
-                "address-info" : "Job Address",
-                "social-info" : "Social"
+                "personal-info": "Personal Info",
+                "work-info": "Job Info",
+                "address-info": "Job Address",
+                "social-info": "Social"
             }
         },
         "feed": {
             "title": {
-                "title-feed" : "Feed"
+                "title-feed": "Feed"
             },
-            "button": {
-            },
-            "label": {
-            },
-            "placeholder": {
-            }
+            "button": {},
+            "label": {},
+            "placeholder": {}
         },
         "float-main-nav": {
             "title": {
-                "title-float-main-nav" : "+"
+                "title-float-main-nav": "+"
             },
-            "button": {
-            },
-            "label": {
-            },
-            "placeholder": {
-            }
+            "button": {},
+            "label": {},
+            "placeholder": {}
         },
         "home": {
             "title": {
-                "title-home" : "Home"
+                "title-home": "Home"
             },
-            "button": {
-            },
-            "label": {
-            },
-            "placeholder": {
-            }
+            "button": {},
+            "label": {},
+            "placeholder": {}
         },
         "lists": {
             "title": {
-                "title-lists" : "My lists"
+                "title-lists": "My lists"
             },
-            "button": {
-            },
-            "label": {
-            },
-            "placeholder": {
-            }
+            "button": {},
+            "label": {},
+            "placeholder": {}
         },
         "signup": {
             "title": {
-                "title-signup" : "Sign Up"
+                "title-signup": "Sign Up"
             },
-            "button": {
-            },
-            "label": {
-            },
-            "placeholder": {
-            }
+            "button": {},
+            "label": {},
+            "placeholder": {}
         },
         "main-cards": {
             "title": {
-                "title-main-cards" : "All Cards"
+                "title-main-cards": "All Cards"
             },
-            "button": {
-            },
-            "label": {
-            },
-            "placeholder": {
-            }
+            "button": {},
+            "label": {},
+            "placeholder": {}
         },
         "scan-qr-code": {
-           "title": {
-                "title-scan-qr-code" : "Scan Card"
+            "title": {
+                "title-scan-qr-code": "Scan Card"
             },
-            "button": {
-            },
-            "label": {
-            },
-            "placeholder": {
-            }
+            "button": {},
+            "label": {},
+            "placeholder": {}
         },
         "settings": {
             "title": {
-                "title-settings" : "Settings"
+                "title-settings": "Settings"
             },
             "button": {
-                "language1" : "English",
-                "language2" : "Portuguese"
+                "language1": "English",
+                "language2": "Portuguese"
             },
             "label": {
-                "language" : "Choose app language"
+                "language": "Choose app language"
             },
-            "placeholder": {
-            }
+            "placeholder": {}
         },
         "login": {
             "title": {
-                "title-login" : "Login"
+                "title-login": "Login"
             },
             "button": {
                 "login": "Login",
@@ -183,9 +164,9 @@
             },
             "placeholder": {
                 "or": "or",
-                "forgotpw":"Forgot your password?",
-                "noacc":"Don't have an account?",
-                "noacc2":"Register"
+                "forgotpw": "Forgot your password?",
+                "noacc": "Don't have an account?",
+                "noacc2": "Register"
             }
         }
     }

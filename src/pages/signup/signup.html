@@ -1,18 +1,37 @@
-<!--
-  Generated template for the Signup page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>{{ 'page.signup.title.title-signup' | translate }}</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>{{ 'page.signup.title.title-signup' | translate }}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+    <div class="avatar-signup">
+        <img src="assets/images/no-photo.png" alt="">
+    </div>
+    <form>
+        <ion-item>
+            <ion-label color="text" stacked>{{ 'global.label.name' | translate }}</ion-label>
+            <ion-input color="dark" type="text" placeholder="{{ 'global.placeholder.name' | translate }}"></ion-input>>
+        </ion-item>
+        <ion-item>
+            <ion-label color="text" stacked>{{ 'global.label.last-name' | translate }}</ion-label>
+            <ion-input color="dark" type="text" placeholder="{{ 'global.placeholder.last-name' | translate }}"></ion-input>>
+        </ion-item>
+        <ion-item>
+            <ion-label color="text" stacked>{{ 'global.label.email' | translate }}</ion-label>
+            <ion-input color="dark" type="email" placeholder="{{ 'global.placeholder.email' | translate }}"></ion-input>>
+        </ion-item>
+        <ion-item>
+            <ion-label color="text" stacked>{{ 'global.label.password' | translate }}</ion-label>
+            <ion-input color="dark" type="password" placeholder="{{ 'global.placeholder.password' | translate }}"></ion-input>>
+        </ion-item>
+        <ion-item>
+            <ion-label color="text" stacked>{{ 'global.label.cellphone' | translate }}</ion-label>
+            <ion-input color="dark" type="tel" placeholder="{{ 'global.placeholder.cellphone' | translate }}"></ion-input>>
+        </ion-item>
+        <button ion-button full>{{ 'global.button.confirm' | translate }}</button>
+    </form>
 </ion-content>

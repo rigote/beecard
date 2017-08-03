@@ -1,3 +1,15 @@
 page-signup {
-
+    .avatar-signup {
+        text-align: center;
+    }
+    form {
+        ion-item {
+            padding: 0 !important;
+            margin-bottom: 10px !important;
+        }
+        button {
+            margin-top: 15px;
+            display: inline-block;
+        }
+    }
 }
