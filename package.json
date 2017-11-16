@@ -43,5 +43,8 @@
     "cordova-plugin-splashscreen"
   ],
   "cordovaPlatforms": [],
-  "description": "BeeCard: An Ionic project"
+  "description": "BeeCard: An Ionic project",
+  "config": {
+    "ionic_webpack": "./src/config/webpack.config.js"
+  }
 }
