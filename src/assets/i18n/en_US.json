@@ -15,7 +15,8 @@
             "password": "Password",
             "name": "Name",
             "last-name": "Last Name",
-            "cellphone": "Cellphone"
+            "cellphone": "Cellphone",
+            "birthdate": "Birthdate"
         },
         "placeholder": {
             "email-phone": "Type your email or phone",
@@ -24,6 +25,20 @@
             "name": "Type your name",
             "last-name": "Type your last name",
             "cellphone": "Type your cellphone"
+        },
+        "alert": {
+            "error": "Error",
+            "success": "Success"            
+        },
+        "message": {
+            "invalid_data": "Invalid data",
+            "email_already_exists": "Email already exists",
+            "phone_already_exists": "Phone number already exists",            
+            "invalid_email": "Invalid email",
+            "invalid_user": "Invalid user",
+            "information_not_found": "Information is not found",
+            "unexpected_error": "Unexpected error",
+            "information_successfully_saved": "Information successfully saved!"
         }
     },
     "sidebar": {

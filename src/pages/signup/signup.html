@@ -25,6 +25,10 @@
             <ion-input color="dark" type="email" formControlName="Email" placeholder="{{ 'global.placeholder.email' | translate }}"></ion-input>>
         </ion-item>
         <ion-item>
+            <ion-label color="text" stacked>{{ 'global.label.birthdate' | translate }}</ion-label>
+            <ion-datetime  displayFormat="DD/MM/YYYY" formControlName="Birthdate"></ion-datetime>
+          </ion-item>
+        <ion-item>
             <ion-label color="text" stacked>{{ 'global.label.password' | translate }}</ion-label>
             <ion-input color="dark" type="password" formControlName="Password" placeholder="{{ 'global.placeholder.password' | translate }}"></ion-input>>
         </ion-item>
@@ -32,6 +36,6 @@
             <ion-label color="text" stacked>{{ 'global.label.cellphone' | translate }}</ion-label>
             <ion-input color="dark" type="tel" formControlName="PhoneNumber" placeholder="{{ 'global.placeholder.cellphone' | translate }}"></ion-input>>
         </ion-item>
-        <button ion-button full (click)="saveUser()">{{ 'global.button.confirm' | translate }}</button>
+        <button ion-button full (click)="saveUser()" [disabled]="disabledButton">{{ 'global.button.confirm' | translate }}</button>
     </form>
 </ion-content>

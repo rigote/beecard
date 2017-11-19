@@ -15,7 +15,8 @@
             "password": "Senha",
             "name": "Nome",
             "last-name": "Sobrenome",
-            "cellphone": "Celular"
+            "cellphone": "Celular",
+            "birthdate": "Data de Nasc."
         },
         "placeholder": {
             "email-phone": "Digite seu Email ou Telefone",
@@ -24,6 +25,20 @@
             "name": "Digite seu nome",
             "last-name": "Digite seu sobrenome",
             "cellphone": "Digite o número do seu celular"
+        },
+        "alert": {
+            "error": "Erro",
+            "success": "Sucesso"                    
+        },
+        "message": {
+            "invalid_data": "Dados inválidos",
+            "email_already_exists": "Email já cadastrado",
+            "phone_already_exists": "Número de telefone já cadastrado",
+            "invalid_email": "Email inválido",
+            "invalid_user": "Usuário inválido",
+            "information_not_found": "Informação não encontrada",
+            "unexpected_error": "Erro inesperado",
+            "information_successfully_saved": "Informação salva com sucesso!"
         }
     },
     "sidebar": {

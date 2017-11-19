@@ -23,6 +23,9 @@ export class RemoteService {
             this.users.map(res => res.json()).subscribe(data => {                
                 debugger;                
                 resolve(data);
+            },
+            err => {
+                reject(err);
             });
         });
     }
@@ -33,28 +36,46 @@ export class RemoteService {
             this.users.map(res => res.json()).subscribe(data => {
                 debugger;
                 resolve(data);
+            },
+            err => {
+                reject(err);
             });
         });
     }
 
-    addUser(model: UserModel) {
-        this.users = this.http.post(this.apiEndpoint + '/users', model);
-        this.users.map(res => res.json()).subscribe(data => {
-            debugger;
+    addUser(model: UserModel): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            this.users = this.http.post(this.apiEndpoint + '/users', model);
+            this.users.map(res => res.json()).subscribe(data => {
+                resolve(true);
+            },
+            err => {
+                reject(err);
+            });
         });
     }
 
-    updateUser(id: string, model: UserModel) {
-        this.users = this.http.put(this.apiEndpoint + '/users/' + id, model);
-        this.users.map(res => res.json()).subscribe(data => {
-            debugger;
+    updateUser(id: string, model: UserModel): Promise<boolean>  {
+        return new Promise((resolve, reject) => {
+            this.users = this.http.put(this.apiEndpoint + '/users/' + id, model);
+            this.users.map(res => res.json()).subscribe(data => {
+                debugger;
+            },
+            err => {
+                
+            });
         });
     }
 
-    removeUser(id: string) {
-        this.users = this.http.delete(this.apiEndpoint + '/users/' + id);
-        this.users.map(res => res.json()).subscribe(data => {
-            debugger;
+    removeUser(id: string): Promise<boolean>  {
+        return new Promise((resolve, reject) => {
+            this.users = this.http.delete(this.apiEndpoint + '/users/' + id);
+            this.users.map(res => res.json()).subscribe(data => {
+                debugger;
+            },
+            err => {
+                
+            });
         });
     }
 
