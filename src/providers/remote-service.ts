@@ -20,8 +20,9 @@ export class RemoteService {
     getUser(id: string): Promise<UserModel> {
         return new Promise((resolve, reject) => {            
             this.users = this.http.get(this.apiEndpoint + '/users/' + id);
-            this.users.map(res => res.json()).subscribe(data => {                
-                debugger;                
+            this.users.map(res => {
+                if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {           
                 resolve(data);
             },
             err => {
@@ -33,7 +34,9 @@ export class RemoteService {
     getUsers(): Promise<Array<UserModel>> {
         return new Promise((resolve, reject) => {
             this.users = this.http.get(this.apiEndpoint + '/users');
-            this.users.map(res => res.json()).subscribe(data => {
+            this.users.map(res => {
+                if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {
                 debugger;
                 resolve(data);
             },
@@ -46,7 +49,9 @@ export class RemoteService {
     addUser(model: UserModel): Promise<boolean> {
         return new Promise((resolve, reject) => {
             this.users = this.http.post(this.apiEndpoint + '/users', model);
-            this.users.map(res => res.json()).subscribe(data => {
+                this.users.map(res => {
+                    if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {
                 resolve(true);
             },
             err => {
@@ -58,11 +63,13 @@ export class RemoteService {
     updateUser(id: string, model: UserModel): Promise<boolean>  {
         return new Promise((resolve, reject) => {
             this.users = this.http.put(this.apiEndpoint + '/users/' + id, model);
-            this.users.map(res => res.json()).subscribe(data => {
-                debugger;
+            this.users.map(res => {
+                if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {
+                resolve(true);
             },
             err => {
-                
+                reject(err);
             });
         });
     }
@@ -70,11 +77,13 @@ export class RemoteService {
     removeUser(id: string): Promise<boolean>  {
         return new Promise((resolve, reject) => {
             this.users = this.http.delete(this.apiEndpoint + '/users/' + id);
-            this.users.map(res => res.json()).subscribe(data => {
-                debugger;
+            this.users.map(res => {
+                if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {
+                resolve(true);
             },
             err => {
-                
+                reject(err);
             });
         });
     }

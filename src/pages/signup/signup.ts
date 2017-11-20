@@ -94,6 +94,8 @@ export class SignupPage {
 
     this.remoteServiceProvider.addUser(this.user).then(success => {      
       this.disabledButton = false;
+
+      this.successAlert("information_successfully_saved", () => {});
     }, error => {
 
       this.disabledButton = false;
@@ -102,10 +104,6 @@ export class SignupPage {
 
       if (error.status == 404)
         message = "information_not_found";
-      else if (error.status == 201) {
-        this.successAlert("information_successfully_saved");
-        return false;        
-      }        
       else {
         var responseBody = typeof error._body != "undefined" ? JSON.parse(error._body) : "";
 
@@ -115,26 +113,36 @@ export class SignupPage {
           message = "unexpected_error";
       }
         
-      this.errorAlert(message);
+      this.errorAlert(message, () => {});
 
     });;
     
   }
 
-  successAlert(message: string) {
+  successAlert(message: string, callback: Function) {
     let alert = this.alertCtrl.create({
       title: this.translate.instant("global.alert.success"),
       subTitle: this.translate.instant("global.message." + message),
-      buttons: ['OK']
+      buttons: [{
+        text: 'OK',
+        handler: () => { 
+          callback.call(this); 
+        }
+      }]
     });
     alert.present();
   }
 
-  errorAlert(message: string) {
+  errorAlert(message: string, callback: Function) {
     let alert = this.alertCtrl.create({
       title: this.translate.instant("global.alert.error"),
       subTitle: this.translate.instant("global.message." + message),
-      buttons: ['OK']
+      buttons: [{
+        text: 'OK',
+        handler: () => { 
+          callback.call(this); 
+        }
+      }]
     });
     alert.present();
   }
