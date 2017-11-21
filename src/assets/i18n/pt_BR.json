@@ -38,7 +38,19 @@
             "invalid_user": "Usuário inválido",
             "information_not_found": "Informação não encontrada",
             "unexpected_error": "Erro inesperado",
-            "information_successfully_saved": "Informação salva com sucesso!"
+            "information_successfully_saved": "Informação salva com sucesso!",
+            "birthdate_must_be_lower_than_current_date": "Data de nascimento deve ser menor que a data atual",
+            "firstname_required": "Nome é obrigatório",
+            "firstname_length": "Nome deve ter o tamanho entre 2 a 160 caracteres",
+            "lastname_required": "Sobrenome é obrigatório",
+            "lastname_length": "Sobrenome deve ter o tamanho entre 2 a 160 caracteres",
+            "email_required": "Email é obrigatório",
+            "email_length": "Email deve ter o tamanho entre 5 a 160 caracteres",
+            "password_required": "Senha é obrigatória",
+            "password_length": "Senha deve ter o tamanho entre 6 a 20 caracteres",
+            "phonenumber_required": "Telefone é obrigatório",
+            "phonenumber_length": "Telefone deve ter no mínimo 10 caracteres",
+            "birthdate_required": "Data de nascimento é obrigatória"
         }
     },
     "sidebar": {

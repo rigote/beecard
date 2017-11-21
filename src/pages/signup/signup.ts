@@ -66,20 +66,73 @@ export class SignupPage {
     
     this.disabledButton = true;
 
-    if (this.form.invalid && this.form.dirty) {
-      let alert = this.alertCtrl.create({
-        title: this.translate.instant("global.alert.error"),
-        subTitle: this.translate.instant("global.message.invalid_data"),
-        buttons: ['OK']
-      });
-      alert.present();
+    var userForm = this.form.value;   
 
+    if (this.form.invalid || this.form.dirty) {
+      
       this.disabledButton = false;
+      
+      if (this.form.controls['Firstname'].errors) {
+        if (this.form.controls['Firstname'].errors.required)
+          this.errorAlert("firstname_required", () => {});
 
-      return false;
+        if (this.form.controls['Firstname'].errors.minlength || this.form.controls['Firstname'].errors.maxlength)
+          this.errorAlert("firstname_length", () => {});
+
+        return false;
+      }      
+
+      if (this.form.controls['Lastname'].errors) {
+        if (this.form.controls['Lastname'].errors.required)
+          this.errorAlert("lastname_required", () => {});
+
+        if (this.form.controls['Lastname'].errors.minlength || this.form.controls['Lastname'].errors.maxlength)
+          this.errorAlert("lastname_length", () => {});
+
+        return false;
+      }
+
+      if (this.form.controls['Email'].errors) {
+        if (this.form.controls['Email'].errors.required)
+          this.errorAlert("email_required", () => {});
+
+        if (this.form.controls['Email'].errors.minlength || this.form.controls['Email'].errors.maxlength)
+          this.errorAlert("email_length", () => {});
+
+        return false;
+      }
+
+      if (this.form.controls['Birthdate'].errors) {
+        if (this.form.controls['Birthdate'].errors.required)
+          this.errorAlert("birthdate_required", () => {});
+
+        if (new Date(userForm.Birthdate).getTime() > Date.now())
+          this.errorAlert("birthdate_must_be_lower_than_current_date", () => {});
+
+        return false;
+      } 
+
+      if (this.form.controls['Password'].errors) {
+        if (this.form.controls['Password'].errors.required)
+          this.errorAlert("password_required", () => {});
+
+        if (this.form.controls['Password'].errors.minlength || this.form.controls['Password'].errors.maxlength)
+          this.errorAlert("password_length", () => {});
+
+        return false;
+      }
+
+      if (this.form.controls['PhoneNumber'].errors) {
+        if (this.form.controls['PhoneNumber'].errors.required)
+          this.errorAlert("phonenumber_required", () => {});
+
+        if (this.form.controls['PhoneNumber'].errors.minlength)
+          this.errorAlert("phonenumber_length", () => {});
+
+        return false;
+      }
+
     }
-
-    var userForm = this.form.value;
 
     this.user = new UserModel();
     this.user.updateModel(userForm.Firstname, 
@@ -87,7 +140,7 @@ export class SignupPage {
                           userForm.Email, 
                           userForm.Password,
                           userForm.PhoneNumber, 
-                          new Date(userForm.PhoneNumber), 
+                          new Date(userForm.Birthdate), 
                           null, 
                           null, 
                           true);

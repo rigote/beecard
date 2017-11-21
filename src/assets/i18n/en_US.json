@@ -38,7 +38,19 @@
             "invalid_user": "Invalid user",
             "information_not_found": "Information is not found",
             "unexpected_error": "Unexpected error",
-            "information_successfully_saved": "Information successfully saved!"
+            "information_successfully_saved": "Information successfully saved!",
+            "birthdate_must_be_lower_than_current_date": "Birthdate must be lower than the current date",
+            "firstname_required": "Firstname is required",
+            "firstname_length": "Firstname must have the length between 2 and 160 characters",
+            "lastname_required": "Lastname is required",
+            "lastname_length": "Lastname must have the length between 2 and 160 characters",
+            "email_required": "Email is required",
+            "email_length": "Email must have the length between 5 and 160 characters",
+            "password_required": "Password is required",
+            "password_length": "Password must have the length between 6 and 20 characters",
+            "phonenumber_required": "Phone number is required",
+            "phonenumber_length": "Phone number must have at least 10 characters",
+            "birthdate_required": "Birthdate is required"
         }
     },
     "sidebar": {
