@@ -5,6 +5,7 @@ import { UserModel } from '../../models/UserModel';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { debug } from 'util';
+import { HomePage } from '../home/home';
 
 /*
   Generated class for the Signup page.
@@ -148,7 +149,26 @@ export class SignupPage {
     this.remoteServiceProvider.addUser(this.user).then(success => {      
       this.disabledButton = false;
 
-      this.successAlert("information_successfully_saved", () => {});
+      this.successAlert("information_successfully_saved", () => {
+        this.remoteServiceProvider.generateToken(userForm.Email, userForm.Password).then(token => {
+          localStorage.setItem("access_token", token);
+          this.navCtrl.push(HomePage);
+        }, error => {
+          
+          let message: string;
+          
+          if (error.status == 400) {
+            var responseBody = typeof error._body != "undefined" ? JSON.parse(error._body) : "";
+    
+            if (responseBody != "")
+              message = responseBody.error_description;
+            else
+              message = "unexpected_error";
+          }
+    
+          this.errorAlert(message, () => {});
+        });
+      });
     }, error => {
 
       this.disabledButton = false;
