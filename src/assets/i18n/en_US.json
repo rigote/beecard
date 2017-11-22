@@ -50,7 +50,9 @@
             "password_length": "Password must have the length between 6 and 20 characters",
             "phonenumber_required": "Phone number is required",
             "phonenumber_length": "Phone number must have at least 10 characters",
-            "birthdate_required": "Birthdate is required"
+            "birthdate_required": "Birthdate is required",
+            "username_required": "Username is required",
+            "incorrect_user_password": "Incorrect username or password"
         }
     },
     "sidebar": {

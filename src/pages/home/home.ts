@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
 import { CardModel, CardType, SocialMediaType } from '../../models/CardModel';
-
+import { RemoteService } from '../../providers/remote-service';
 import { FloatMainNavPage } from '../float-main-nav/float-main-nav';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +13,20 @@ export class HomePage {
 
   public Cards: Array<CardModel>;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, 
+              public modalCtrl: ModalController,
+              public remoteServiceProvider: RemoteService) {
+
+    var token = localStorage.getItem("access_token");
+    
+    if (typeof token != 'undefined') {
+      this.remoteServiceProvider.validateToken(token).then(success => {
+        console.log('Sucesso');        
+      }, error => {
+        this.navCtrl.push(LoginPage);
+      });
+    }
+
     this.Cards = this.CreateMock();
   }
 

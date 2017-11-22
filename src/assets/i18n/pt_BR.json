@@ -50,7 +50,9 @@
             "password_length": "Senha deve ter o tamanho entre 6 a 20 caracteres",
             "phonenumber_required": "Telefone é obrigatório",
             "phonenumber_length": "Telefone deve ter no mínimo 10 caracteres",
-            "birthdate_required": "Data de nascimento é obrigatória"
+            "birthdate_required": "Data de nascimento é obrigatória",
+            "username_required": "Usuário é obrigatório",
+            "incorrect_user_password": "Usuário ou senha incorreto"
         }
     },
     "sidebar": {
