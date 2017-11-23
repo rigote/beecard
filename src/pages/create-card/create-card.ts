@@ -49,7 +49,20 @@ export class CreateCardPage {
         Validators.minLength(5),
         Validators.maxLength(100),
         Validators.required
-      ])]
+      ])],
+      PhoneNumber: ['', Validators.compose([])],
+      Cellphone: ['', Validators.compose([])],
+      Occupation: ['', Validators.compose([])],
+      Website: ['', Validators.compose([])],
+      Address: ['', Validators.compose([])],
+      Address2: ['', Validators.compose([])],
+      PostalCode: ['', Validators.compose([])],
+      Neighborhood: ['', Validators.compose([])],
+      City: ['', Validators.compose([])],
+      Twitter: ['', Validators.compose([])],
+      Facebook: ['', Validators.compose([])],
+      Linkedin: ['', Validators.compose([])],
+      Instagram: ['', Validators.compose([])],
     });
 
   }
