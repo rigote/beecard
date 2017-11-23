@@ -9,7 +9,7 @@
             <ion-label color="text" stacked>{{ 'global.label.password' | translate }}</ion-label>
             <ion-input color="dark" type="password" formControlName="Password" placeholder="{{ 'global.placeholder.password' | translate }}"></ion-input>
         </ion-item>
-        <button ion-button (click)="login()">{{ 'page.login.button.login' | translate }}</button>
+        <button ion-button (click)="login()" [disabled]="disabledButton">{{ 'page.login.button.login' | translate }}</button>
         <span class="links"><a href="#" (click)="forgotPassword()">{{ 'page.login.placeholder.forgotpw' | translate }}</a></span>
         <span class="links">{{ 'page.login.placeholder.noacc' | translate }} <a href="#" (click)="signUp()">{{ 'page.login.placeholder.noacc2' | translate }}</a></span>
         <span class="links"><span class="separate"></span><b>{{ 'page.login.placeholder.or' | translate }}</b></span>

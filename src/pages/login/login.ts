@@ -70,10 +70,13 @@ export class LoginPage {
     }
 
     this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(token => {
+      this.disabledButton = false;
       localStorage.setItem("access_token", token);
       this.navCtrl.push(HomePage);
     }, error => {
       
+      this.disabledButton = false;
+
       let message: string;
       
       if (error.status == 400) {

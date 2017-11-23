@@ -12,6 +12,11 @@ export class CardModel{
     public CompanyName: string;
     public IsFavorite: boolean;
     public Config: CardConfig;
+    public Address: string;
+    public Address2: string;
+    public PostalCode: string;
+    public City: string;
+    public Neighborhood: string;
 
     constructor(){
         this.SocialMedias = new Array<CardSocialMedia>();

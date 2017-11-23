@@ -54,7 +54,12 @@ export class HomePage {
           Config: {
             BgColor: "#009dff",
             FontColor: "#fff"
-          }          
+          },
+          Address: "",
+          Address2: "",
+          PostalCode: "",
+          Neighborhood: "",
+          City: ""         
         };
       }
       else {
@@ -71,7 +76,12 @@ export class HomePage {
           Website:  "",
           IsFavorite: false,
           CompanyName: null,
-          Config: null
+          Config: null,
+          Address: "",
+          Address2: "",
+          PostalCode: "",
+          Neighborhood: "",
+          City: ""
         };
       }
       cards.push(card);

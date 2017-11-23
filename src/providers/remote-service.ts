@@ -5,6 +5,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { UserModel } from '../models/UserModel';
+import { CardModel } from '../models/CardModel';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -62,9 +63,12 @@ export class RemoteService {
     // User Methods
     ///////////////
 
-    getUser(id: string): Promise<UserModel> {
-        return new Promise((resolve, reject) => {            
-            this.users = this.http.get(this.apiEndpoint + '/users/' + id);
+    getUser(token: string, id: string): Promise<UserModel> {
+        return new Promise((resolve, reject) => {    
+            let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+            let options = new RequestOptions({ headers: headers }); 
+
+            this.users = this.http.get(this.apiEndpoint + '/users/' + id, options);
             this.users.map(res => {
                 if (res && res._body.length > 0) return res.json();
             }).subscribe(data => {           
@@ -76,9 +80,12 @@ export class RemoteService {
         });
     }
 
-    getUsers(): Promise<Array<UserModel>> {
+    getUsers(token: string): Promise<Array<UserModel>> {
         return new Promise((resolve, reject) => {
-            this.users = this.http.get(this.apiEndpoint + '/users');
+            let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+            let options = new RequestOptions({ headers: headers }); 
+
+            this.users = this.http.get(this.apiEndpoint + '/users', options);
             this.users.map(res => {
                 if (res && res._body.length > 0) return res.json();
             }).subscribe(data => {
@@ -105,9 +112,12 @@ export class RemoteService {
         });
     }
 
-    updateUser(id: string, model: UserModel): Promise<boolean>  {
+    updateUser(token: string, id: string, model: UserModel): Promise<boolean>  {
         return new Promise((resolve, reject) => {
-            this.users = this.http.put(this.apiEndpoint + '/users/' + id, model);
+            let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+            let options = new RequestOptions({ headers: headers }); 
+
+            this.users = this.http.put(this.apiEndpoint + '/users/' + id, model, options);
             this.users.map(res => {
                 if (res && res._body.length > 0) return res.json();
             }).subscribe(data => {
@@ -119,11 +129,35 @@ export class RemoteService {
         });
     }
 
-    removeUser(id: string): Promise<boolean>  {
+    removeUser(token: string, id: string): Promise<boolean>  {
         return new Promise((resolve, reject) => {
-            this.users = this.http.delete(this.apiEndpoint + '/users/' + id);
+            let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+            let options = new RequestOptions({ headers: headers }); 
+
+            this.users = this.http.delete(this.apiEndpoint + '/users/' + id, options);
             this.users.map(res => {
                 if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {
+                resolve(true);
+            },
+            err => {
+                reject(err);
+            });
+        });
+    }
+
+    ///////////////
+    // Card Methods
+    ///////////////
+
+    addPersonalCard(token: string, userId: string, model: CardModel): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+            let options = new RequestOptions({ headers: headers }); 
+
+            this.users = this.http.post(this.apiEndpoint + '/users/' + userId + '/cards', model, options);
+                this.users.map(res => {
+                    if (res && res._body.length > 0) return res.json();
             }).subscribe(data => {
                 resolve(true);
             },

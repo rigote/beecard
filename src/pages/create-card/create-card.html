@@ -16,58 +16,71 @@
     <img src="assets/images/avatar.jpg" alt="" class="photoCard">
     <button class="editAvatar">{{ 'page.create-card.button.edit-photo' | translate }}</button>
     <span>{{ 'page.create-card.placeholder.personal-info' | translate }}</span>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="text" value="" placeholder="{{ 'page.create-card.label.fullname' | translate }}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="email" value="" placeholder="{{ 'page.create-card.label.email' | translate }}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="tel" value="" placeholder="{{ 'page.create-card.label.phone' | translate }}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="tel" value="" placeholder="{{ 'page.create-card.label.cell' | translate }}"></ion-input>
-    </ion-item>
-    <span>{{ 'page.create-card.placeholder.work-info' | translate }}</span>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="text" value="" placeholder="{{ 'page.create-card.label.occupation' | translate }}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="url" value="" placeholder="{{ 'page.create-card.label.website' | translate }}"></ion-input>
-    </ion-item>
-    <span>{{ 'page.create-card.placeholder.address-info' | translate }}</span>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="text" value="" placeholder="{{ 'page.create-card.label.address' | translate }}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="text" value="" placeholder="{{ 'page.create-card.label.address2' | translate }}"></ion-input>
-    </ion-item>
-    <span>{{ 'page.create-card.placeholder.social-info' | translate }}</span>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="url" value="" placeholder="{{ 'page.create-card.label.link-twitter' | translate }}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="url" value="" placeholder="{{ 'page.create-card.label.link-facebook' | translate }}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="url" value="" placeholder="{{ 'page.create-card.label.link-linkedin' | translate }}"></ion-input>
-    </ion-item>
-    <ion-item>
-      <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
-      <ion-input type="url" value="" placeholder="{{ 'page.create-card.label.link-instagram' | translate }}"></ion-input>
-    </ion-item>
-  </ion-list>
-  <button ion-button full>{{ 'page.create-card.button.create-card' | translate }}</button>
-
+    <form [formGroup]="form">
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Fullname" placeholder="{{ 'page.create-card.label.fullname' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="email" formControlName="Email" placeholder="{{ 'page.create-card.label.email' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="tel" formControlName="PhoneNumber" placeholder="{{ 'page.create-card.label.phone' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="tel" formControlName="Cellphone" placeholder="{{ 'page.create-card.label.cell' | translate }}"></ion-input>
+      </ion-item>
+      <span>{{ 'page.create-card.placeholder.work-info' | translate }}</span>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Occupation" placeholder="{{ 'page.create-card.label.occupation' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="url" formControlName="Website" placeholder="{{ 'page.create-card.label.website' | translate }}"></ion-input>
+      </ion-item>
+      <span>{{ 'page.create-card.placeholder.address-info' | translate }}</span>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Address" placeholder="{{ 'page.create-card.label.address' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Address2" placeholder="{{ 'page.create-card.label.address2' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="PostalCode" placeholder="{{ 'page.create-card.label.postalCode' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Neighborhood" placeholder="{{ 'page.create-card.label.neighborhood' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="City" placeholder="{{ 'page.create-card.label.city' | translate }}"></ion-input>
+      </ion-item>
+      <span>{{ 'page.create-card.placeholder.social-info' | translate }}</span>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="url" formControlName="Firstname" placeholder="{{ 'page.create-card.label.link-twitter' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="url" formControlName="Firstname" placeholder="{{ 'page.create-card.label.link-facebook' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="url" formControlName="Firstname" placeholder="{{ 'page.create-card.label.link-linkedin' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="url" formControlName="Firstname" placeholder="{{ 'page.create-card.label.link-instagram' | translate }}"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button full (click)="createCard()" [disabled]="disabledButton">{{ 'page.create-card.button.create-card' | translate }}</button>
+  </form>
 </ion-content>
