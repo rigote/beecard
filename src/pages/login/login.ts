@@ -38,7 +38,7 @@ export class LoginPage {
 
     if (typeof token != 'undefined') {
       this.remoteServiceProvider.validateToken(token).then(success => {
-        this.navCtrl.push(HomePage);
+        this.navCtrl.push(HomePage, { hideBackButton: true });
       }, error => {
         console.log('Token inválido');
       });
@@ -69,10 +69,13 @@ export class LoginPage {
 
     }
 
-    this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(token => {
+    this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(auth => {
       this.disabledButton = false;
-      localStorage.setItem("access_token", token);
-      this.navCtrl.push(HomePage);
+
+      localStorage.setItem("access_token", auth.Token);
+      localStorage.setItem("client_id", auth.ClientId);
+
+      this.navCtrl.push(HomePage, { hideBackButton: true });
     }, error => {
       
       this.disabledButton = false;

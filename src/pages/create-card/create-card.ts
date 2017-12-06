@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
-import { CardModel } from '../../models/CardModel';
+import { CardModel, CardType } from '../../models/CardModel';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { RemoteService } from '../../providers/remote-service';
 import { LoginPage } from '../login/login';
+import { userInfo } from 'os';
+import { MainCardsPage } from '../main-cards/main-cards';
 
 /*
   Generated class for the CreateCard page.
@@ -21,6 +23,8 @@ export class CreateCardPage {
   public form: FormGroup;
   card: CardModel;
   disabledButton: boolean = false;
+  token: string;
+  clientId: string;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -29,10 +33,11 @@ export class CreateCardPage {
               private fb: FormBuilder,
               private translate: TranslateService) {
 
-    var token = localStorage.getItem("access_token");
+    this.token = localStorage.getItem("access_token");
+    this.clientId = localStorage.getItem("client_id");
     
-    if (typeof token != 'undefined') {
-      this.remoteServiceProvider.validateToken(token).then(success => {
+    if (typeof this.token != 'undefined') {
+      this.remoteServiceProvider.validateToken(this.token).then(success => {
         console.log('Sucesso');        
       }, error => {
         this.navCtrl.push(LoginPage);
@@ -98,6 +103,34 @@ export class CreateCardPage {
       }
     }
 
+    let cardModel = new CardModel();
+
+    cardModel.updateModel(null, cardForm.Fullname, CardType.Personal, cardForm.Occupation, cardForm.PhoneNumber, 
+      cardForm.Cellphone, cardForm.Email, cardForm.Website, cardForm.Facebook, cardForm.Twitter, cardForm.Linkedin, cardForm.Instagram, 
+      null, null, cardForm.Address, cardForm.Address2, cardForm.PostalCode, cardForm.City, cardForm.Neighborhood);
+
+      this.remoteServiceProvider.addPersonalCard(this.token, this.clientId, cardModel).then(success => {      
+        this.disabledButton = false;
+  
+        this.successAlert("information_successfully_saved", () => {
+          this.navCtrl.push(MainCardsPage, { hideBackButton: true });
+        });
+      }, error => {            
+          this.disabledButton = false;
+
+          let message: string;
+          
+          if (error.status == 400) {
+            var responseBody = typeof error._body != "undefined" ? JSON.parse(error._body) : "";
+    
+            if (responseBody != "")
+              message = responseBody.error_description;
+            else
+              message = "unexpected_error";
+          }
+    
+          this.errorAlert(message, () => {});          
+      });
   }
 
   successAlert(message: string, callback: Function) {

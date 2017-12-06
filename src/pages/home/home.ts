@@ -15,6 +15,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, 
               public modalCtrl: ModalController,
+              private view: ViewController,
+              private navParams: NavParams,
               public remoteServiceProvider: RemoteService) {
 
     var token = localStorage.getItem("access_token");
@@ -35,54 +37,50 @@ export class HomePage {
     var cards = new Array<CardModel>();
 
     for (let i: number = 0; i < 10; i++){
-      let card: CardModel;
+      let card: CardModel = new CardModel();
 
-      if (i < 5) {
-        card = {
-          AvatarImage: "assets/images/avatar.jpg",
-          Cellphone: "+55 11 98000-8000",
-          CompanyLogo: "assets/images/logo-dell.png",
-          Email: "stark@stark.com",
-          FullName: "Tony Stark",
-          Occupation: "CEO",
-          Phone: "+55 11 3874-4600",
-          SocialMedias: [{ Type: SocialMediaType.Linkedin, Url: "http://linkedin.com" }],
-          Type: CardType.Company,
-          Website:  "www.dell.com.br",
-          IsFavorite: true,
-          CompanyName: "Dell",
-          Config: {
-            BgColor: "#009dff",
-            FontColor: "#fff"
-          },
-          Address: "",
-          Address2: "",
-          PostalCode: "",
-          Neighborhood: "",
-          City: ""         
+      if (i < 5) {        
+        card.AvatarImage = "assets/images/avatar.jpg";
+        card.Cellphone = "+55 11 98000-8000";
+        card.CompanyLogo = "assets/images/logo-dell.png";
+        card.Email = "stark@stark.com";
+        card.FullName = "Tony Stark";
+        card.Occupation = "CEO";
+        card.Phone = "+55 11 3874-4600";
+        card.SocialMedias = [{ Type: SocialMediaType.Linkedin, Url: "http://linkedin.com" }];
+        card.Type = CardType.Company;
+        card.Website = "www.dell.com.br";
+        card.IsFavorite = true;
+        card.CompanyName = "Dell";
+        card.Config = {
+          BgColor: "#009dff",
+          FontColor: "#fff"
         };
+        card.Address = "";
+        card.Address2 = "";
+        card.PostalCode = "";
+        card.Neighborhood = "";
+        card.City = "";        
       }
       else {
-        card = {
-          AvatarImage: "assets/images/avatar.jpg",
-          Cellphone: "+55 11 98000-8999",
-          CompanyLogo: null,
-          Email: "teste@teste.com",
-          FullName: "João do Teste",
-          Occupation: null,
-          Phone: "+55 11 3874-4000",
-          SocialMedias: [{ Type: SocialMediaType.Facebook, Url: "http://facebook.com" }, { Type: SocialMediaType.Twitter, Url: "http://twitter.com" }],
-          Type: CardType.Personal,
-          Website:  "",
-          IsFavorite: false,
-          CompanyName: null,
-          Config: null,
-          Address: "",
-          Address2: "",
-          PostalCode: "",
-          Neighborhood: "",
-          City: ""
-        };
+        card.AvatarImage = "assets/images/avatar.jpg";
+        card.Cellphone = "+55 11 98000-8999";
+        card.CompanyLogo = null;
+        card.Email = "teste@teste.com";
+        card.FullName = "João do Teste";
+        card.Occupation = null;
+        card.Phone = "+55 11 3874-4000";
+        card.SocialMedias = [{ Type: SocialMediaType.Facebook, Url: "http://facebook.com" }, { Type: SocialMediaType.Twitter, Url: "http://twitter.com" }];
+        card.Type = CardType.Personal;
+        card.Website =  "";
+        card.IsFavorite = false;
+        card.CompanyName = null;
+        card.Config = null;
+        card.Address = "";
+        card.Address2 = "";
+        card.PostalCode = "";
+        card.Neighborhood = "";
+        card.City = "";
       }
       cards.push(card);
     }
@@ -99,6 +97,11 @@ export class HomePage {
     //let modal = this.modalCtrl.create();
     let modal = this.modalCtrl.create(FloatMainNavPage);
     modal.present();
+  }
+
+  ionViewWillEnter() {
+    if (typeof this.navParams.get('hideBackButton') != 'undefined')
+      this.view.showBackButton(false);
   }
 
 }

@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { UserModel } from '../models/UserModel';
 import { CardModel } from '../models/CardModel';
+import { AuthModel } from '../models/AuthModel';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -24,7 +25,7 @@ export class RemoteService {
     // Token Methods
     ////////////////
 
-    generateToken(username: string, password: string): Promise<string> {
+    generateToken(username: string, password: string): Promise<AuthModel> {
         return new Promise((resolve, reject) => {     
             let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
             let options = new RequestOptions({ headers: headers });
@@ -34,7 +35,11 @@ export class RemoteService {
             this.token.map(res => {
                 if (res && res._body.length > 0) return res.json();
             }).subscribe(data => {           
-                resolve(data.access_token);
+                let authData = new AuthModel();
+                authData.Token = data.access_token;
+                authData.ClientId = data.client_id;
+
+                resolve(authData);
             },
             err => {
                 reject(err);

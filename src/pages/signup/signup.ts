@@ -6,6 +6,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { debug } from 'util';
 import { HomePage } from '../home/home';
+import { AuthModel } from '../../models/AuthModel';
 
 /*
   Generated class for the Signup page.
@@ -150,10 +151,13 @@ export class SignupPage {
       this.disabledButton = false;
 
       this.successAlert("information_successfully_saved", () => {
-        this.remoteServiceProvider.generateToken(userForm.Email, userForm.Password).then(token => {
+        this.remoteServiceProvider.generateToken(userForm.Email, userForm.Password).then(auth => {
           this.disabledButton = false;
-          localStorage.setItem("access_token", token);
-          this.navCtrl.push(HomePage);
+          
+          localStorage.setItem("access_token", auth.Token);
+          localStorage.setItem("client_id", auth.ClientId);
+
+          this.navCtrl.push(HomePage, { hideBackButton: true });
         }, error => {
           
           this.disabledButton = false;
@@ -191,7 +195,7 @@ export class SignupPage {
         
       this.errorAlert(message, () => {});
 
-    });;
+    });
     
   }
 
