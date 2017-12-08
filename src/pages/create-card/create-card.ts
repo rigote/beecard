@@ -4,9 +4,11 @@ import { CardModel, CardType } from '../../models/CardModel';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { RemoteService } from '../../providers/remote-service';
+import { StorageService } from '../../providers/storage-service';
 import { LoginPage } from '../login/login';
 import { userInfo } from 'os';
 import { MainCardsPage } from '../main-cards/main-cards';
+import { UserStorageModel } from '../../models/StorageModel';
 
 /*
   Generated class for the CreateCard page.
@@ -20,24 +22,23 @@ import { MainCardsPage } from '../main-cards/main-cards';
 })
 export class CreateCardPage {
 
-  public form: FormGroup;
+  form: FormGroup;
   card: CardModel;
   disabledButton: boolean = false;
-  token: string;
-  clientId: string;
+  userData: UserStorageModel;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public remoteServiceProvider: RemoteService,
               public alertCtrl: AlertController,
               private fb: FormBuilder,
-              private translate: TranslateService) {
+              private translate: TranslateService,
+              public storage: StorageService) {
 
-    this.token = localStorage.getItem("access_token");
-    this.clientId = localStorage.getItem("client_id");
+    this.userData = this.storage.getUserData();
     
-    if (typeof this.token != 'undefined') {
-      this.remoteServiceProvider.validateToken(this.token).then(success => {
+    if (this.userData.AccessToken != null) {
+      this.remoteServiceProvider.validateToken(this.userData.AccessToken).then(success => {
         console.log('Sucesso');        
       }, error => {
         this.navCtrl.push(LoginPage);
@@ -109,7 +110,7 @@ export class CreateCardPage {
       cardForm.Cellphone, cardForm.Email, cardForm.Website, cardForm.Facebook, cardForm.Twitter, cardForm.Linkedin, cardForm.Instagram, 
       null, null, cardForm.Address, cardForm.Address2, cardForm.PostalCode, cardForm.City, cardForm.Neighborhood);
 
-      this.remoteServiceProvider.addPersonalCard(this.token, this.clientId, cardModel).then(success => {      
+      this.remoteServiceProvider.addPersonalCard(this.userData.AccessToken, this.userData.ClientId, cardModel).then(success => {      
         this.disabledButton = false;
   
         this.successAlert("information_successfully_saved", () => {

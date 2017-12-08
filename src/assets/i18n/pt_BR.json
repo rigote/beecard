@@ -16,7 +16,8 @@
             "name": "Nome",
             "last-name": "Sobrenome",
             "cellphone": "Celular",
-            "birthdate": "Data de Nasc."
+            "birthdate": "Data de Nasc.",
+            "confirmPassword": "Confirme a senha"
         },
         "placeholder": {
             "email-phone": "Digite seu Email ou Telefone",
@@ -24,7 +25,8 @@
             "password": "Digite sua senha",
             "name": "Digite seu nome",
             "last-name": "Digite seu sobrenome",
-            "cellphone": "Digite o número do seu celular"
+            "cellphone": "Digite o número do seu celular",
+            "confirmPassword": "Confirme a senha"
         },
         "alert": {
             "error": "Erro",
@@ -52,7 +54,9 @@
             "phonenumber_length": "Telefone deve ter no mínimo 10 caracteres",
             "birthdate_required": "Data de nascimento é obrigatória",
             "username_required": "Usuário é obrigatório",
-            "incorrect_user_password": "Usuário ou senha incorreto"
+            "incorrect_user_password": "Usuário ou senha incorreto",
+            "password_confirmation_not_match": "Confirmação de senha está diferente da senha inserida",
+            "fullname_required": "Nome é obrigatório"
         }
     },
     "sidebar": {

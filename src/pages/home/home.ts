@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 import { NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
 import { CardModel, CardType, SocialMediaType } from '../../models/CardModel';
 import { RemoteService } from '../../providers/remote-service';
+import { StorageService } from '../../providers/storage-service';
 import { FloatMainNavPage } from '../float-main-nav/float-main-nav';
 import { LoginPage } from '../login/login';
+import { UserStorageModel } from '../../models/StorageModel';
 
 @Component({
   selector: 'page-home',
@@ -17,16 +19,19 @@ export class HomePage {
               public modalCtrl: ModalController,
               private view: ViewController,
               private navParams: NavParams,
-              public remoteServiceProvider: RemoteService) {
+              public remoteServiceProvider: RemoteService,
+              public storage: StorageService) {
 
-    var token = localStorage.getItem("access_token");
+    let userData = this.storage.getUserData();
     
-    if (typeof token != 'undefined') {
-      this.remoteServiceProvider.validateToken(token).then(success => {
+    if (userData.AccessToken != null) {
+      this.remoteServiceProvider.validateToken(userData.AccessToken).then(success => {
         console.log('Sucesso');        
       }, error => {
-        this.navCtrl.push(LoginPage);
+        this.navCtrl.push(LoginPage, { hideBackButton: true });
       });
+    } else {
+      this.navCtrl.push(LoginPage, { hideBackButton: true });
     }
 
     this.Cards = this.CreateMock();

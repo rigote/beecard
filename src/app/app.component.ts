@@ -14,7 +14,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { FeedPage } from '../pages/feed/feed';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { SignupPage } from '../pages/signup/signup';
-
+import { StorageService } from '../providers/storage-service';
 
 @Component({
   templateUrl: 'app.html'
@@ -28,10 +28,16 @@ export class MyApp {
   pages: Array<{ title: string, component: any }>;
 
   constructor(
-    public platform: Platform, translate: TranslateService) {
+    public platform: Platform, translate: TranslateService, storage: StorageService) {
     
-    translate.setDefaultLang('en_US');
-    translate.use('pt_br');
+    translate.setDefaultLang('pt_BR');
+
+    let language = storage.getLanguage();
+
+    if (language != null)
+      translate.use(language);
+    else
+      storage.setLanguage('pt_BR');
 
     this.initializeApp();
     

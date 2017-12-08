@@ -7,6 +7,9 @@ import { SignupPage } from '../signup/signup';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 import { TranslateService } from '@ngx-translate/core';
+import { StorageService } from '../../providers/storage-service';
+import { UserStorageModel } from '../../models/StorageModel';
+import { STATUS_CODES } from 'http';
 
 @Component({
   selector: 'page-login',
@@ -23,7 +26,8 @@ export class LoginPage {
               public alertCtrl: AlertController, 
               private fb: FormBuilder,
               public remoteServiceProvider: RemoteService,
-              private translate: TranslateService) {
+              private translate: TranslateService,
+              public storage: StorageService) {
 
     this.form = this.fb.group({
       Username: ['', Validators.compose([
@@ -34,10 +38,10 @@ export class LoginPage {
       ])]
     });
 
-    var token = localStorage.getItem("access_token");
+    let userData = this.storage.getUserData();
 
-    if (typeof token != 'undefined') {
-      this.remoteServiceProvider.validateToken(token).then(success => {
+    if (userData.AccessToken != null) {
+      this.remoteServiceProvider.validateToken(userData.AccessToken).then(success => {
         this.navCtrl.push(HomePage, { hideBackButton: true });
       }, error => {
         console.log('Token inválido');
@@ -71,10 +75,7 @@ export class LoginPage {
 
     this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(auth => {
       this.disabledButton = false;
-
-      localStorage.setItem("access_token", auth.Token);
-      localStorage.setItem("client_id", auth.ClientId);
-
+      this.storage.setUserData(auth.Token, auth.ClientId);
       this.navCtrl.push(HomePage, { hideBackButton: true });
     }, error => {
       
