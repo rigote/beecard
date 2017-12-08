@@ -9,13 +9,19 @@
 
 
 <ion-content padding>
-<ion-label>{{ "page.settings.label.language" | translate }}</ion-label>
-<button ion-button block (click)="translateToEnglish()">
-    {{ "page.settings.button.language1" | translate }}
-    </button>
+  <ion-list>
+    <ion-item>
+        <ion-label>{{ "page.settings.label.language" | translate }}</ion-label>
+        <ion-select interface="popover" [(ngModel)]="language" (ionChange)="changeLanguage()">
+          <ion-option value="en_US">{{ "page.settings.button.language1" | translate }}</ion-option>
+          <ion-option value="pt_BR">{{ "page.settings.button.language2" | translate }}</ion-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+  <br />
 
-  <button ion-button block (click)="translateToPortuguese()">
-      {{ "page.settings.button.language2" | translate }}
+  <button ion-button block (click)="logoff()">
+    {{ "global.button.Logoff" | translate }}
   </button>
 
 </ion-content>

@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { RemoteService } from '../providers/remote-service';
+import { StorageService } from '../providers/storage-service';
 
 import { HomePage } from '../pages/home/home';
 import { CreateCardPage } from '../pages/create-card/create-card';
@@ -73,6 +74,6 @@ export function createTranslateLoader(http: Http) {
     ForgotPasswordPage,
     SignupPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, BarcodeScanner, RemoteService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, BarcodeScanner, RemoteService, StorageService]
 })
 export class AppModule {}

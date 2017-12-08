@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { debug } from 'util';
 import { HomePage } from '../home/home';
 import { AuthModel } from '../../models/AuthModel';
+import { StorageService } from '../../providers/storage-service';
 
 /*
   Generated class for the Signup page.
@@ -22,15 +23,18 @@ import { AuthModel } from '../../models/AuthModel';
 export class SignupPage {
 
   public form: FormGroup;
-  user: UserModel;
-  disabledButton: boolean = false;
+  public user: UserModel;
+  public disabledButton: boolean = false;  
+  public strongRegex: RegExp = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+  public mediumRegex: RegExp = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
 
   constructor(public navCtrl: NavController, 
               public alertCtrl: AlertController,
               public navParams: NavParams, 
               public remoteServiceProvider: RemoteService,
               private fb: FormBuilder,
-              private translate: TranslateService) {
+              private translate: TranslateService,
+              public storage: StorageService) {
 
     this.form = this.fb.group({
       Firstname: ['', Validators.compose([
@@ -53,6 +57,7 @@ export class SignupPage {
         Validators.maxLength(20),
         Validators.required
       ])],
+      ConfirmPassword: ['', Validators.compose([])],
       PhoneNumber: ['', Validators.compose([
         Validators.minLength(10),
         Validators.required
@@ -124,6 +129,11 @@ export class SignupPage {
         return false;
       }
 
+      if (userForm.Password != userForm.ConfirmPassword) {
+        this.errorAlert("password_confirmation_not_match", () => {});
+        return false;
+      }
+
       if (this.form.controls['PhoneNumber'].errors) {
         if (this.form.controls['PhoneNumber'].errors.required)
           this.errorAlert("phonenumber_required", () => {});
@@ -153,10 +163,7 @@ export class SignupPage {
       this.successAlert("information_successfully_saved", () => {
         this.remoteServiceProvider.generateToken(userForm.Email, userForm.Password).then(auth => {
           this.disabledButton = false;
-          
-          localStorage.setItem("access_token", auth.Token);
-          localStorage.setItem("client_id", auth.ClientId);
-
+          this.storage.setUserData(auth.Token, auth.ClientId);
           this.navCtrl.push(HomePage, { hideBackButton: true });
         }, error => {
           
@@ -197,6 +204,19 @@ export class SignupPage {
 
     });
     
+  }
+
+  validatePassword(value: string): number{   
+    if(this.strongRegex.test(value)) {
+      return 3;
+    } else if(this.mediumRegex.test(value)) {
+      return 2;
+    } else if (typeof value != 'undefined' && value.length > 6) {
+      return 1;
+    } else {
+      return 0;
+    }
+
   }
 
   successAlert(message: string, callback: Function) {

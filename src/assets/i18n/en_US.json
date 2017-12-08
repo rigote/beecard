@@ -16,7 +16,8 @@
             "name": "Name",
             "last-name": "Last Name",
             "cellphone": "Cellphone",
-            "birthdate": "Birthdate"
+            "birthdate": "Birthdate",
+            "confirmPassword": "Confirm the password"
         },
         "placeholder": {
             "email-phone": "Type your email or phone",
@@ -24,7 +25,8 @@
             "password": "Type your password",
             "name": "Type your name",
             "last-name": "Type your last name",
-            "cellphone": "Type your cellphone"
+            "cellphone": "Type your cellphone",
+            "confirmPassword": "Confirm the password"
         },
         "alert": {
             "error": "Error",
@@ -52,7 +54,9 @@
             "phonenumber_length": "Phone number must have at least 10 characters",
             "birthdate_required": "Birthdate is required",
             "username_required": "Username is required",
-            "incorrect_user_password": "Incorrect username or password"
+            "incorrect_user_password": "Incorrect username or password",
+            "password_confirmation_not_match": "Password confirmation value is different than password value",
+            "fullname_required": "Name is required"
         }
     },
     "sidebar": {
