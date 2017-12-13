@@ -164,7 +164,7 @@ export class SignupPage {
         this.remoteServiceProvider.generateToken(userForm.Email, userForm.Password).then(auth => {
           this.disabledButton = false;
           this.storage.setUserData(auth.Token, auth.ClientId);
-          this.navCtrl.push(HomePage, { hideBackButton: true });
+          this.navCtrl.setRoot(HomePage);
         }, error => {
           
           this.disabledButton = false;

@@ -28,7 +28,7 @@ export class SettingsPage {
 
   logoff(){
     this.storage.clearStorageData();
-    this.navCtrl.push(LoginPage, { hideBackButton: true });
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }
