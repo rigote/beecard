@@ -2,5 +2,7 @@
   "name": "BeeCard",
   "app_id": "77cbb3b9",
   "type": "ionic-angular",
-  "integrations": {}
+  "integrations": {
+    "cordova": {}
+  }
 }
