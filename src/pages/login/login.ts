@@ -42,7 +42,7 @@ export class LoginPage {
 
     if (userData.AccessToken != null) {
       this.remoteServiceProvider.validateToken(userData.AccessToken).then(success => {
-        this.navCtrl.push(HomePage, { hideBackButton: true });
+        this.navCtrl.setRoot(HomePage);
       }, error => {
         console.log('Token inválido');
       });
@@ -76,7 +76,7 @@ export class LoginPage {
     this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(auth => {
       this.disabledButton = false;
       this.storage.setUserData(auth.Token, auth.ClientId);
-      this.navCtrl.push(HomePage, { hideBackButton: true });
+      this.navCtrl.setRoot(HomePage);
     }, error => {
       
       this.disabledButton = false;
