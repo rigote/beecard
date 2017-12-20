@@ -27,6 +27,317 @@
   <ion-slides pager scroll="false">
 
     <ion-slide>
+
+        <div class="phone" ng-app="delivcard">
+            <div class="phone__screen">
+              <div class="phone__scroll-cont">
+                <div class="phone__content" ng-controller="DelivCtrl">
+                  <section ng-repeat="card in cards" 
+                           class="card theme-purple"
+                           data-color="#BA68C8">
+                    <div class="card__map">
+                      <div class="card__map__inner"></div>
+                    </div>
+                    <section class="card__part card__part-1">
+                      <div class="card__part__inner">
+                        <header class="card__header">
+                          <div class="card__header__close-btn"></div>
+                          <span class="card__header__id"># 2121</span>
+                          <span class="card__header__price">1221</span>
+                        </header>
+                        <div class="card__stats" ng-style="{'background-image': 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-1.jpg)'}">
+                          <div class="card__stats__item card__stats__item--req">
+                            <p class="card__stats__type">Requests</p>
+                            <span class="card__stats__value">2112</span>
+                          </div>
+                          <div class="card__stats__item card__stats__item--pledge">
+                            <p class="card__stats__type">Pledge</p>
+                            <span class="card__stats__value">1221</span>
+                          </div>
+                          <div class="card__stats__item card__stats__item--weight">
+                            <p class="card__stats__type">Weight</p>
+                            <span class="card__stats__value">1212 oz</span>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="card__part card__part-2">
+                      <div class="card__part__side m--back">
+                        <div class="card__part__inner card__face">
+                          <div class="card__face__colored-side"></div>
+                          <h3 class="card__face__price">1212</h3>
+                          <div class="card__face__divider"></div>
+                          <div class="card__face__path"></div>
+                          <div class="card__face__from-to">
+                            <p>2112</p>
+                            <p>2112</p>
+                          </div>
+                          <div class="card__face__deliv-date">
+                            1221
+                            <p>1212</p>
+                          </div>
+                          <div class="card__face__stats card__face__stats--req">
+                            Requests
+                            <p>1112</p>
+                          </div>
+                          <div class="card__face__stats card__face__stats--pledge">
+                            Pledge
+                            <p>211212</p>
+                          </div>
+                          <div class="card__face__stats card__face__stats--weight">
+                            Weight
+                            <p class="card__face__stats__weight">
+                              <span ng-show="card.weight < 60">Light</span>
+                              <span ng-show="card.weight > 60">Heavy</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card__part__side m--front">
+                        <div class="card__sender">
+                          <h4 class="card__sender__heading">Sender</h4>
+                          <div class="card__sender__img-cont">
+                            <div class="card__sender__img-cont__inner">
+                              <img ng-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg" class="card__sender__img" />
+                            </div>
+                          </div>
+                          <div class="card__sender__name-and-rating">
+                            <p class="card__sender__name">2121</p>
+                            <p class="card__sender__rating card__sender__rating-211212">
+                              <span class="card__sender__rating__star">&#9733;</span>
+                              <span class="card__sender__rating__star">&#9733;</span>
+                              <span class="card__sender__rating__star">&#9733;</span>
+                              <span class="card__sender__rating__star">&#9733;</span>
+                              <span class="card__sender__rating__star">&#9733;</span>
+                              <span class="card__sender__rating__count">121212</span>
+                            </p>
+                            <p class="card__sender__address">
+                              122112
+                            </p>
+                          </div>
+                          <div class="card__receiver">
+                            <div class="card__receiver__inner">
+                              <div class="card__sender__img-cont">
+                                <div class="card__sender__img-cont__inner">
+                                  <img ng-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg" class="card__sender__img" />
+                                </div>
+                              </div>
+                              <div class="card__sender__name-and-rating">
+                                <p class="card__sender__name">121212</p>
+                                <p class="card__sender__address">
+                                  2112
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="card__path-big"></div>
+                        </div>
+                        <div class="card__from-to">
+                          <div class="card__from-to__inner">
+                            <div class="card__text card__text--left">
+                              <p class="card__text__heading">From</p>
+                              <p class="card__text__middle">1221</p>
+                              <p class="card__text__bottom">1212</p>
+                            </div>
+                            <div class="card__text card__text--right">
+                              <p class="card__text__heading">To</p>
+                              <p class="card__text__middle">2121</p>
+                              <p class="card__text__bottom">2121</p>
+                            </div>
+                          </div>
+                        </div>
+                        <section class="card__part card__part-3">
+                          <div class="card__part__side m--back"></div>
+                          <div class="card__part__side m--front">
+                            <div class="card__timings">
+                              <div class="card__timings__inner">
+                                <div class="card__text card__text--left">
+                                  <p class="card__text__heading">Delivery Date</p>
+                                  <p class="card__text__middle">2121</p>
+                                  <p class="card__text__bottom">2112</p>
+                                </div>
+                                <div class="card__text card__text--right">
+                                  <p class="card__text__heading">Request Deadline</p>
+                                  <p class="card__text__middle">2112</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card__timer">60 min 00 sec</div>
+                            <section class="card__part card__part-4">
+                              <div class="card__part__side m--back"></div>
+                              <div class="card__part__side m--front">
+                                <button type="button" class="card__request-btn">
+                                  <span class="card__request-btn__text-1">Request</span>
+                                  <span class="card__request-btn__text-2">Start</span>
+                                </button>
+                                <p class="card__counter">2112 people have sent a request</p>
+                              </div>
+                            </section>
+                          </div>
+                        </section>
+                      </div>
+                    </section>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone" ng-app="delivcard">
+              <div class="phone__screen">
+                <div class="phone__scroll-cont">
+                  <div class="phone__content" ng-controller="DelivCtrl">
+                    <section ng-repeat="card in cards" 
+                             class="card theme-purple"
+                             data-color="#BA68C8">
+                      <div class="card__map">
+                        <div class="card__map__inner"></div>
+                      </div>
+                      <section class="card__part card__part-1">
+                        <div class="card__part__inner">
+                          <header class="card__header">
+                            <div class="card__header__close-btn"></div>
+                            <span class="card__header__id"># 2121</span>
+                            <span class="card__header__price">1221</span>
+                          </header>
+                          <div class="card__stats" ng-style="{'background-image': 'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-1.jpg)'}">
+                            <div class="card__stats__item card__stats__item--req">
+                              <p class="card__stats__type">Requests</p>
+                              <span class="card__stats__value">2112</span>
+                            </div>
+                            <div class="card__stats__item card__stats__item--pledge">
+                              <p class="card__stats__type">Pledge</p>
+                              <span class="card__stats__value">1221</span>
+                            </div>
+                            <div class="card__stats__item card__stats__item--weight">
+                              <p class="card__stats__type">Weight</p>
+                              <span class="card__stats__value">1212 oz</span>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <section class="card__part card__part-2">
+                        <div class="card__part__side m--back">
+                          <div class="card__part__inner card__face">
+                            <div class="card__face__colored-side"></div>
+                            <h3 class="card__face__price">1212</h3>
+                            <div class="card__face__divider"></div>
+                            <div class="card__face__path"></div>
+                            <div class="card__face__from-to">
+                              <p>2112</p>
+                              <p>2112</p>
+                            </div>
+                            <div class="card__face__deliv-date">
+                              1221
+                              <p>1212</p>
+                            </div>
+                            <div class="card__face__stats card__face__stats--req">
+                              Requests
+                              <p>1112</p>
+                            </div>
+                            <div class="card__face__stats card__face__stats--pledge">
+                              Pledge
+                              <p>211212</p>
+                            </div>
+                            <div class="card__face__stats card__face__stats--weight">
+                              Weight
+                              <p class="card__face__stats__weight">
+                                <span ng-show="card.weight < 60">Light</span>
+                                <span ng-show="card.weight > 60">Heavy</span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="card__part__side m--front">
+                          <div class="card__sender">
+                            <h4 class="card__sender__heading">Sender</h4>
+                            <div class="card__sender__img-cont">
+                              <div class="card__sender__img-cont__inner">
+                                <img ng-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg" class="card__sender__img" />
+                              </div>
+                            </div>
+                            <div class="card__sender__name-and-rating">
+                              <p class="card__sender__name">2121</p>
+                              <p class="card__sender__rating card__sender__rating-211212">
+                                <span class="card__sender__rating__star">&#9733;</span>
+                                <span class="card__sender__rating__star">&#9733;</span>
+                                <span class="card__sender__rating__star">&#9733;</span>
+                                <span class="card__sender__rating__star">&#9733;</span>
+                                <span class="card__sender__rating__star">&#9733;</span>
+                                <span class="card__sender__rating__count">121212</span>
+                              </p>
+                              <p class="card__sender__address">
+                                122112
+                              </p>
+                            </div>
+                            <div class="card__receiver">
+                              <div class="card__receiver__inner">
+                                <div class="card__sender__img-cont">
+                                  <div class="card__sender__img-cont__inner">
+                                    <img ng-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg" class="card__sender__img" />
+                                  </div>
+                                </div>
+                                <div class="card__sender__name-and-rating">
+                                  <p class="card__sender__name">121212</p>
+                                  <p class="card__sender__address">
+                                    2112
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card__path-big"></div>
+                          </div>
+                          <div class="card__from-to">
+                            <div class="card__from-to__inner">
+                              <div class="card__text card__text--left">
+                                <p class="card__text__heading">From</p>
+                                <p class="card__text__middle">1221</p>
+                                <p class="card__text__bottom">1212</p>
+                              </div>
+                              <div class="card__text card__text--right">
+                                <p class="card__text__heading">To</p>
+                                <p class="card__text__middle">2121</p>
+                                <p class="card__text__bottom">2121</p>
+                              </div>
+                            </div>
+                          </div>
+                          <section class="card__part card__part-3">
+                            <div class="card__part__side m--back"></div>
+                            <div class="card__part__side m--front">
+                              <div class="card__timings">
+                                <div class="card__timings__inner">
+                                  <div class="card__text card__text--left">
+                                    <p class="card__text__heading">Delivery Date</p>
+                                    <p class="card__text__middle">2121</p>
+                                    <p class="card__text__bottom">2112</p>
+                                  </div>
+                                  <div class="card__text card__text--right">
+                                    <p class="card__text__heading">Request Deadline</p>
+                                    <p class="card__text__middle">2112</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="card__timer">60 min 00 sec</div>
+                              <section class="card__part card__part-4">
+                                <div class="card__part__side m--back"></div>
+                                <div class="card__part__side m--front">
+                                  <button type="button" class="card__request-btn">
+                                    <span class="card__request-btn__text-1">Request</span>
+                                    <span class="card__request-btn__text-2">Start</span>
+                                  </button>
+                                  <p class="card__counter">2112 people have sent a request</p>
+                                </div>
+                              </section>
+                            </div>
+                          </section>
+                        </div>
+                      </section>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+
       <ion-list *ngFor="let card of Cards" class="cardList">
 
         <!-- New Card -->
