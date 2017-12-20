@@ -1,0 +1,25 @@
+page-card-profile {
+    .boxProfile{
+        .cardAvatar{
+            display: block;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        h2{
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        span{
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 16px;
+            display: block;
+        }
+    }
+}
