@@ -7,7 +7,7 @@
       <button ion-button icon-only>
         <i class="fa fa-search fa-lg" aria-hidden="true"></i>
       </button>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="listActionsPage($event)">
         <i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>
       </button>
     </ion-buttons>
@@ -27,6 +27,7 @@
   <ion-slides pager scroll="false">
 
     <ion-slide>
+
       <ion-list *ngFor="let card of Cards" class="cardList">
 
         <!-- New Card -->
@@ -34,12 +35,12 @@
           <ion-grid>
             <ion-row>
               <ion-col col-auto>
-                <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
+                <img src="{{card.AvatarImage}}" class="cardAvatar" alt="" (click)="cardProfileModal()">
               </ion-col>
               <ion-col>
                 <ion-row>
                   <ion-col col-10>
-                    <h2>{{card.FullName}}</h2>
+                    <h2 (click)="cardProfileModal()">{{card.FullName}}</h2>
                     <span>{{card.Occupation}}</span>
                     <span>{{card.Email}}</span>
                   </ion-col>
@@ -58,7 +59,7 @@
                 <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>E-mail</ion-col>
               <ion-col>
                 <i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i>Whatsapp</ion-col>
-              <ion-col>
+              <ion-col (click)="cardProfileModal()">
                 <i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i>Mais</ion-col>
             </ion-row>
           </ion-grid>
