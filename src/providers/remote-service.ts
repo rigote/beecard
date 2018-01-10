@@ -15,6 +15,7 @@ export class RemoteService {
 
     private token: Observable<any>;
     private users: Observable<any>;
+    private personalCards: Observable<any>;
 
     constructor (private http: Http) {
     }
@@ -165,6 +166,40 @@ export class RemoteService {
                     if (res && res._body.length > 0) return res.json();
             }).subscribe(data => {
                 resolve(true);
+            },
+            err => {
+                reject(err);
+            });
+        });
+    }
+
+    getPersonalCard(token: string, userId: string, cardId: string): Promise<CardModel> {
+        return new Promise((resolve, reject) => {
+            let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+            let options = new RequestOptions({ headers: headers }); 
+
+            this.personalCards = this.http.get(this.apiEndpoint + '/users/' + userId + '/cards/' + cardId, options);
+            this.personalCards.map(res => {
+                if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {
+                resolve(data);
+            },
+            err => {
+                reject(err);
+            });
+        });
+    }
+
+    getPersonalCards(token: string, userId: string, page: number = 1, pageSize: number = 20): Promise<Array<CardModel>> {
+        return new Promise((resolve, reject) => {
+            let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+            let options = new RequestOptions({ headers: headers }); 
+
+            this.personalCards = this.http.get(this.apiEndpoint + '/users/' + userId + '/cards/?page=' + page + '&size=' + pageSize, options);
+            this.personalCards.map(res => {
+                if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {
+                resolve(data.Items);
             },
             err => {
                 reject(err);

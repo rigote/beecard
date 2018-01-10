@@ -2,6 +2,8 @@ import { CardTitle } from "ionic-angular/components/card/card-title";
 import { link } from "fs";
 
 export class CardModel{
+    public Id: string;
+    public UserId: string;
     public AvatarImage: string;    
     public FullName: string;
     public Type: CardType;

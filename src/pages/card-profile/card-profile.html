@@ -14,10 +14,10 @@
   
   <ion-content padding>
     <div class="boxProfile">
-      <img src="assets/images/avatar.jpg" class="cardAvatar" alt="">
-      <h2>Matheus de Souza Rigote</h2>
-      <span>Analista Programador</span>
-      <img src="assets/images/branding.png" alt="" class="branding">
+      <img *ngIf="card.AvatarImage" src="{{card.AvatarImage}}" class="cardAvatar" alt="">
+      <h2>{{card.FullName}}</h2>
+      <span>{{card.Occupation}}</span>
+      <img *ngIf="card.CompanyLogo" src="{{card.CompanyLogo}}" alt="" class="branding">
     </div>
     
   </ion-content>
