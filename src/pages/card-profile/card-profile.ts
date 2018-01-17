@@ -4,6 +4,7 @@ import { CardModel } from '../../models/CardModel';
 import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
 import { LoginPage } from '../login/login';
+import { debug } from 'util';
 
 /*
   Generated class for the MainCards page.
@@ -42,15 +43,17 @@ export class CardProfilePage {
     }
 
     this.cardId = navParams.get('cardId');
-    this.userId = navParams.get('userId')       
+    this.userId = navParams.get('userId');
   }
 
   ionViewDidLoad() {
+    debugger;
     this.remoteServiceProvider.getPersonalCard(this.token, this.userId, this.cardId).then(card => {
-      console.log('Sucesso');
       debugger;
+      console.log('Sucesso');
       this.card = card;
     }, error => {
+      debugger;
       console.log(error);
     }); 
   }

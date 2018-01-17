@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
       <ion-title>
-       Matheus Souza Rigote
+       {{card?.FullName}}
       </ion-title>
       <ion-buttons start>
         <button ion-button icon-only (click)="dismiss()">
@@ -14,54 +14,45 @@
   
   <ion-content padding>
     
-    <div class="boxCardProfile">
+    <div class="boxCardProfile" *ngIf="card">
       <div class="boxProfile">
-        <img src="assets/images/avatar.jpg" class="cardAvatar" alt="">
-        <h2>Matheus de Souza Rigote</h2>
-        <span>Analista Programador</span>
-        <img src="assets/images/branding.png" alt="" class="branding">
+        <img src="{{card.AvatarImage}}" class="cardAvatar" alt="" *ngIf="card.AvatarImage" />
+        <h2>{{card.FullName}}</h2>
+        <span>{{card.Occupation}}</span>
+        <img src="{{card.CompanyLogo}}" alt="" class="branding" *ngIf="card.CompanyLogo" />
         <div class="social">
           <ul>
-            <li><a href="#"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a></li>
+            <li *ngFor="let socialMedia of card.SocialMedias"><a href="{{socialMedia.Url}}">
+              <i [ngClass]="{'fa-facebook': socialMedia.Type == 0, 'fa-linkedin': socialMedia.Type == 1, 'fa-twitter': socialMedia.Type == 2, 'fa-instagram': socialMedia.Type == 3, 'fa-google-plus': socialMedia.Type == 4, 'fa-youtube': socialMedia.Type == 5}" class="fa fa-lg" aria-hidden="true"></i>
+            </a></li>
           </ul>
         </div>
       </div>
       
       <div class="box">
         <h2>Biografia</h2>
-        <p>Webdesign, formado em Processamento de dados pela Faculdade Anhanguera. Inglês intermediário. Atuação no desenvolvimento de portais e websites, otimização de sites e lojas virtuais, desenvolvimento de projetos em ferramentas CMS Wordpress e Magento, vivência em coordenar marketing digital para empresas em ferramentas google, yahoo e Ask. Conhecimentos avançados em linguagens XML, PHP, AJAX, HTML. Realização de projetos de media online de divulgação em diversas medias de publicidades e redes sociais como youtube, twitter, facebook, Delicios. Experiência em gerenciamento e gestão de e-commerce de e-commerce, desenvolvimento de campanhas online para divulgação de produtos, e-mail marketing, marketing digital. Disponibilidade para viagens</p>
+        <p>{{card.Bio}}</p>
       </div>
 
       <div class="box">
         <h2>Trabalho</h2>
-        <p><b>Profissão:</b> Analista Programador Senior</p>
-        <p><b>Site:</b> http://www.rigotedesign.com.br</p>
-        <p><b>Telefone:</b> +55 11 3864-4476</p>
+        <p><b>Profissão:</b> {{card.Occupation}}</p>
+        <p><b>Site:</b> <a href="{{card.Website}}">{{card.Website}}</a></p>
+        <p><b>Telefone:</b> {{card.Phone}}</p>
+        <p><b>Celular:</b> {{card.Cellphone}}</p>
       </div>
   
       <div class="box">
         <h2>Endereço</h2>
-        <p><b>Logradouro:</b> Av. Francisco Matarazzo, 1500</p>
-        <p><b>Bairro:</b> Água Branca | <b>Cidade:</b> São Paulo - SP</p>
-        <p><b>CEP:</b> 05001-100</p>
-        <p><b>Complemento:</b> Torre New York - 6º Andar</p>
+        <p><b>Logradouro:</b> {{card.Address}}</p>
+        <p><b>Bairro:</b> {{card.Neighborhood}} | <b>Cidade:</b> {{card.City}} - {{card.State}}</p>
+        <p><b>CEP:</b> {{card.PostalCode}}</p>
+        <p><b>Complemento:</b> {{card.Address2}}</p>
       </div>
   
       <div class="box">
         <h2>Qualificações</h2>
-        <ion-badge>CSS</ion-badge>
-        <ion-badge>HTML5</ion-badge>
-        <ion-badge>ES6</ion-badge>
-        <ion-badge>Angular 4</ion-badge>
-        <ion-badge>ReactJs</ion-badge>
-        <ion-badge>React Native</ion-badge>
-        <ion-badge>NodeJs</ion-badge>
-        <ion-badge>MongoDB</ion-badge>
+        <ion-badge *ngFor="let qualification of card.Qualifications">{{qualification}}</ion-badge>
       </div>
     </div>
     

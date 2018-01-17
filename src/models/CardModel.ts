@@ -22,9 +22,13 @@ export class CardModel{
     public PostalCode: string;
     public City: string;
     public Neighborhood: string;
+    public State: string;
+    public Bio: string;
+    public Qualifications: Array<string>;
 
     constructor(){
         this.SocialMedias = new Array<CardSocialMedia>();
+        this.Qualifications = new Array<string>();
     }
 
     updateModel(avatarImage: string,
@@ -116,5 +120,7 @@ export enum SocialMediaType{
     Facebook = 0,
     Linkedin = 1,
     Twitter = 2,
-    Instagram = 3
+    Instagram = 3,
+    GooglePlus = 4,
+    Youtube = 5
 }
