@@ -1,25 +1,101 @@
 page-card-profile {
-    .boxProfile{
-        .cardAvatar{
-            display: block;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto;
+    ion-content{
+        background-color: #F4F4F4 !important;
+    }
+    .boxCardProfile{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        .boxProfile{
+            width: 100%;
+            height: auto;
+            display: inline-block;
+            background: #FFF;
+            padding-top: 10px;
+            position: relative;
+            .cardAvatar{
+                display: block;
+                width: 128px;
+                height: 128px;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            h2{
+                width: 90%;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            span{
+                width: 90%;
+                margin: 0 auto;
+                text-align: center;
+                font-size: 16px;
+                display: block;
+            }
+            .branding{
+                width: 120px;
+                margin: 10px auto;
+                display: block;
+            }
+            .social{
+                width: 100%;
+                text-align: center;
+                margin: 0;
+                ul{
+                    -webkit-padding-start: 0px !important;
+                    li{
+                        list-style: none;
+                        display: inline-block;
+                        border-radius: 50%;
+                        border: 2px solid color($colors, primary);
+                        padding: 10px;
+                        width: 40px;
+                        height: 40px;
+                        text-align: center;
+                        line-height: 20px;
+                        margin: 0 3px;
+                        a{
+                            color: #333;
+                        }
+                    }
+                }
+            }
         }
-        h2{
-            width: 90%;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        span{
-            width: 90%;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 16px;
-            display: block;
+        .box{
+            display: inline-block;
+            width: 95%;
+            min-height: 150px;
+            height: auto;
+            background: #FFF;
+            margin: 10px;
+            padding: 10px;
+            border-left: 3px solid color($colors, primary);
+            position: relative;
+            h2{
+                font-size: 16px;
+            }
+            p{
+                text-align: justify;
+            }
+            ion-badge{
+                font-size: 16px;
+                font-weight: normal;
+                background-color: #eaeaea;
+                color: #666;
+                padding: 5px 10px;
+                margin: 8px 2px;
+            }
+            .branding{
+                width: 120px;
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 5px;
+            }
         }
     }
 }
