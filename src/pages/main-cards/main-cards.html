@@ -36,12 +36,14 @@
           </ion-col>
         </ion-row>
         <ion-row class="actions">
-          <ion-col>
+          <ion-col *ngIf="card.Cellphone || card.Phone" (click)="makeCall(card)">
             <i class="fa fa-phone fa-lg" aria-hidden="true"></i>Call</ion-col>
-          <ion-col>
+          <ion-col *ngIf="card.Email">
             <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>E-mail</ion-col>
-          <ion-col>
-            <i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i>Whatsapp</ion-col>
+          <ion-col *ngIf="card.Cellphone">
+            <a href="{{getWhatsappUrl(card.Cellphone)}}">
+              <i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i>Whatsapp
+            </a></ion-col>
           <ion-col (click)="cardProfileModal(card)">
             <i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i>Mais</ion-col>
         </ion-row>

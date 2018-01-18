@@ -20,7 +20,7 @@
         <h2>{{card.FullName}}</h2>
         <span>{{card.Occupation}}</span>
         <img src="{{card.CompanyLogo}}" alt="" class="branding" *ngIf="card.CompanyLogo" />
-        <div class="social">
+        <div *ngIf="card.SocialMedias" class="social">
           <ul>
             <li *ngFor="let socialMedia of card.SocialMedias"><a href="{{socialMedia.Url}}">
               <i [ngClass]="{'fa-facebook': socialMedia.Type == 0, 'fa-linkedin': socialMedia.Type == 1, 'fa-twitter': socialMedia.Type == 2, 'fa-instagram': socialMedia.Type == 3, 'fa-google-plus': socialMedia.Type == 4, 'fa-youtube': socialMedia.Type == 5}" class="fa fa-lg" aria-hidden="true"></i>
@@ -29,28 +29,28 @@
         </div>
       </div>
       
-      <div class="box">
+      <div *ngIf="card.Bio" class="box">
         <h2>Biografia</h2>
         <p>{{card.Bio}}</p>
       </div>
 
-      <div class="box">
+      <div *ngIf="card.Occupation || card.Website || card.Phone || card.Cellphone" class="box">
         <h2>Trabalho</h2>
-        <p><b>Profissão:</b> {{card.Occupation}}</p>
-        <p><b>Site:</b> <a href="{{card.Website}}">{{card.Website}}</a></p>
-        <p><b>Telefone:</b> {{card.Phone}}</p>
-        <p><b>Celular:</b> {{card.Cellphone}}</p>
+        <p *ngIf="card.Occupation"><b>Profissão:</b> {{card.Occupation}}</p>
+        <p *ngIf="card.Website"><b>Site:</b> <a href="{{card.Website}}">{{card.Website}}</a></p>
+        <p *ngIf="card.Phone"><b>Telefone:</b> {{card.Phone}}</p>
+        <p *ngIf="card.Cellphone"><b>Celular:</b> {{card.Cellphone}}</p>
       </div>
   
-      <div class="box">
+      <div *ngIf="card.Address || card.Neighborhood || card.PostalCode || card.Address2" class="box">
         <h2>Endereço</h2>
-        <p><b>Logradouro:</b> {{card.Address}}</p>
-        <p><b>Bairro:</b> {{card.Neighborhood}} | <b>Cidade:</b> {{card.City}} - {{card.State}}</p>
-        <p><b>CEP:</b> {{card.PostalCode}}</p>
-        <p><b>Complemento:</b> {{card.Address2}}</p>
+        <p *ngIf="card.Address"><b>Logradouro:</b> {{card.Address}}</p>
+        <p *ngIf="card.Neighborhood"><b>Bairro:</b> {{card.Neighborhood}} | <b>Cidade:</b> {{card.City}} - {{card.State}}</p>
+        <p *ngIf="card.PostalCode"><b>CEP:</b> {{card.PostalCode}}</p>
+        <p *ngIf="card.Address2"><b>Complemento:</b> {{card.Address2}}</p>
       </div>
   
-      <div class="box">
+      <div *ngIf="card.Qualifications" class="box">
         <h2>Qualificações</h2>
         <ion-badge *ngFor="let qualification of card.Qualifications">{{qualification}}</ion-badge>
       </div>

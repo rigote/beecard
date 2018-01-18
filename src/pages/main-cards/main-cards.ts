@@ -7,6 +7,9 @@ import { LoginPage } from '../login/login';
 import { CardProfilePage } from '../card-profile/card-profile';
 import { ListActionsPage } from '../list-actions/list-actions';
 import { FloatMainNavPage } from '../float-main-nav/float-main-nav';
+import { formatUrlPart } from 'ionic-angular/navigation/url-serializer';
+import { CallNumber } from '@ionic-native/call-number';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 /*
   Generated class for the MainCards page.
@@ -27,7 +30,9 @@ export class MainCardsPage {
               public remoteServiceProvider: RemoteService,
               public storage: StorageService,
               public modalCtrl: ModalController,
-              public popoverCtrl: PopoverController) {
+              public popoverCtrl: PopoverController,
+              private callNumber: CallNumber,
+              private emailComposer: EmailComposer) {
 
     let userData = this.storage.getUserData();
     
@@ -66,6 +71,32 @@ export class MainCardsPage {
     popover.present({
       ev:event
     });
+  }
+
+  composeEmail(email){
+    
+  }
+
+  makeCall(card: CardModel){
+
+    let number: string = null;
+
+    if (card.Cellphone)
+      number = this.formatPhoneNumber(card.Cellphone).toString();
+    else if (card.Phone)
+      number = this.formatPhoneNumber(card.Phone).toString();
+
+    this.callNumber.callNumber(number, true)
+      .then(() => console.log('Launched dialer!'))
+      .catch(() => console.log('Error launching dialer'));
+  }
+
+  getWhatsappUrl(cellphone: string): string{
+    return 'https://api.whatsapp.com/send?phone=' + this.formatPhoneNumber(cellphone).toString();
+  }
+
+  formatPhoneNumber(number: string): number{
+    return parseInt(number.replace(/\D/g, ''), 10);
   }
 
   ionViewDidLoad() {

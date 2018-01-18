@@ -28,34 +28,30 @@ export class CardProfilePage {
               public viewCtrl: ViewController,
               public remoteServiceProvider: RemoteService,
               public storage: StorageService) {
-
     let userData = this.storage.getUserData();
+    this.cardId = navParams.get('cardId');
+    this.userId = navParams.get('userId');
     
     if (userData.AccessToken != null) {
       this.remoteServiceProvider.validateToken(userData.AccessToken).then(success => {
         console.log('Sucesso');        
         this.token = userData.AccessToken;
+
+        this.remoteServiceProvider.getPersonalCard(this.token, this.userId, this.cardId).then(card => {
+            console.log('Sucesso');
+            this.card = card;
+          }, error => {
+            console.log(error);
+          }); 
       }, error => {
         this.navCtrl.setRoot(LoginPage);
       });
     } else {
       this.navCtrl.setRoot(LoginPage);
     }
-
-    this.cardId = navParams.get('cardId');
-    this.userId = navParams.get('userId');
   }
 
   ionViewDidLoad() {
-    debugger;
-    this.remoteServiceProvider.getPersonalCard(this.token, this.userId, this.cardId).then(card => {
-      debugger;
-      console.log('Sucesso');
-      this.card = card;
-    }, error => {
-      debugger;
-      console.log(error);
-    }); 
   }
 
   dismiss() {

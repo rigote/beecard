@@ -26,6 +26,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { FlashCardComponent } from '../components/flash-card/flash-card';
+import { CallNumber } from '@ionic-native/call-number';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -80,6 +82,6 @@ export function createTranslateLoader(http: Http) {
     CardProfilePage,
     ListActionsPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, BarcodeScanner, RemoteService, StorageService]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, BarcodeScanner, RemoteService, StorageService, CallNumber, EmailComposer]
 })
 export class AppModule {}
