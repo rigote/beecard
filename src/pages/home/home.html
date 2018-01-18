@@ -18,11 +18,14 @@
 <ion-content>
   <!-- Begin: Float button -->
   <ion-fab>
-    <button ion-fab><ion-icon name="add"></ion-icon></button>
+    <button ion-fab>
+      <ion-icon name="add"></ion-icon>
+    </button>
     <ion-fab-list side="top">
-      <button ion-fab><ion-icon name="md-qr-scanner"></ion-icon></button>
-      <button ion-fab><ion-icon name="body"></ion-icon></button>
-      <button ion-fab><ion-icon name="share-alt"></ion-icon></button>
+      <button ion-fab><ion-icon name="share-alt"></ion-icon><ion-label>Compartilhar Cartão</ion-label></button>
+      <button ion-fab (click)="FavScanQr()"><ion-icon name="md-qr-scanner"></ion-icon><ion-label>Escanear Cartão</ion-label></button>
+      <button ion-fab (click)="FavCreateCardPage()"><ion-icon name="body"></ion-icon><ion-label>Criar Cartão</ion-label>
+      </button>
     </ion-fab-list>
   </ion-fab>
   <!-- End: Float button -->

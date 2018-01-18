@@ -8,6 +8,8 @@ import { LoginPage } from '../login/login';
 import { CardProfilePage } from '../card-profile/card-profile';
 import { UserStorageModel } from '../../models/StorageModel';
 import { ListActionsPage } from '../list-actions/list-actions';
+import { CreateCardPage } from '../create-card/create-card';
+import { ScanQrCodePage } from '../scan-qr-code/scan-qr-code';
 
 @Component({
   selector: 'page-home',
@@ -101,7 +103,7 @@ export class HomePage {
   ionViewDidLoad() {
     // Put here the code you want to execute
   }
-
+    
   presentModal() {
     //let modal = this.modalCtrl.create();
     let modal = this.modalCtrl.create(FloatMainNavPage);
@@ -125,4 +127,11 @@ export class HomePage {
       this.view.showBackButton(false);
   }
 
+  FavScanQr() {
+    this.navCtrl.push(ScanQrCodePage);
+  }
+
+  FavCreateCardPage() {
+    this.navCtrl.push(CreateCardPage);
+  }
 }
