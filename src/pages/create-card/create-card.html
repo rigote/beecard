@@ -32,14 +32,30 @@
         <i class="fa fa-mobile fa-fw" item-left aria-hidden="true"></i>
         <ion-input type="tel" formControlName="Cellphone" placeholder="{{ 'page.create-card.label.cell' | translate }}"></ion-input>
       </ion-item>
-      <span>{{ 'page.create-card.placeholder.work-info' | translate }}</span>
-      <ion-item>
-        <i class="fa fa-id-badge fa-fw" item-left aria-hidden="true"></i>
-        <ion-input type="text" formControlName="Occupation" placeholder="{{ 'page.create-card.label.occupation' | translate }}"></ion-input>
-      </ion-item>
       <ion-item>
         <i class="fa fa-link fa-fw" item-left aria-hidden="true"></i>
         <ion-input type="url" formControlName="Website" placeholder="{{ 'page.create-card.label.website' | translate }}"></ion-input>
+      </ion-item>
+      <span>{{ 'page.create-card.placeholder.bio' | translate }}</span>
+      <ion-item>
+          <i class="fa fa-pencil fa-fw" item-left aria-hidden="true"></i>
+        <ion-textarea formControlName="Bio" name="Bio" placeholder="{{ 'page.create-card.label.bio' | translate }}"></ion-textarea>
+      </ion-item>
+      <span>{{ 'page.create-card.placeholder.work-info' | translate }}</span>
+      <ion-item>
+        <i class="fa fa-briefcase fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Occupation" placeholder="{{ 'page.create-card.label.occupation' | translate }}"></ion-input>
+      </ion-item>      
+      <span>{{ 'page.create-card.placeholder.skill' | translate }}</span>
+      <ion-item>
+        <i class="fa fa-mortar-board fa-fw" item-left aria-hidden="true"></i>        
+        <ion-input type="text" formControlName="Skill" placeholder="{{ 'page.create-card.label.skill' | translate }}"></ion-input>        
+        <button ion-button icon-only item-right (click)="addSkill()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-item>
+      <ion-item *ngIf="skillList.length > 0">
+        <ion-badge *ngFor="let skillItem of skillList">{{skillItem}}</ion-badge>
       </ion-item>
       <span>{{ 'page.create-card.placeholder.address-info' | translate }}</span>
       <ion-item>
@@ -62,6 +78,10 @@
         <i class="fa fa-map-marker fa-fw" item-left aria-hidden="true"></i>
         <ion-input type="text" formControlName="City" placeholder="{{ 'page.create-card.label.city' | translate }}"></ion-input>
       </ion-item>
+      <ion-item>
+          <i class="fa fa-map-marker fa-fw" item-left aria-hidden="true"></i>
+          <ion-input type="text" formControlName="State" placeholder="{{ 'page.create-card.label.state' | translate }}"></ion-input>
+        </ion-item>
       <span>{{ 'page.create-card.placeholder.social-info' | translate }}</span>
       <ion-item>
         <i class="fa fa-twitter fa-fw" item-left aria-hidden="true"></i>
@@ -78,6 +98,14 @@
       <ion-item>
         <i class="fa fa-instagram fa-fw" item-left aria-hidden="true"></i>
         <ion-input type="url" formControlName="Instagram" placeholder="{{ 'page.create-card.label.link-instagram' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-google-plus fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="url" formControlName="GooglePlus" placeholder="{{ 'page.create-card.label.link-google-plus' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-youtube fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="url" formControlName="Youtube" placeholder="{{ 'page.create-card.label.link-youtube' | translate }}"></ion-input>
       </ion-item>
     </ion-list>
     <button ion-button full (click)="createCard()" [disabled]="disabledButton">{{ 'page.create-card.button.create-card' | translate }}</button>

@@ -103,16 +103,24 @@
                 "postalCode": "CEP",
                 "neighborhood": "Bairro",
                 "city": "Cidade",
+                "state": "State",
+                "number": "Número",
                 "link-twitter": "Linkar Twitter",
                 "link-facebook": "Linkar Facebook",
                 "link-linkedin": "Linkar Linkedin",
-                "link-instagram": "Linkar Instagram"
+                "link-instagram": "Linkar Instagram",
+                "link-google-plus": "Linkar Google Plus",
+                "link-youtube": "Linkar Youtube",
+                "skill": "Skill",
+                "bio": "Biografia"
             },
             "placeholder": {
                 "personal-info": "Dados Pessoais",
                 "work-info": "Trabalho",
                 "address-info": "Endereço",
-                "social-info": "Social"
+                "social-info": "Social",
+                "skill": "Qualificação",
+                "bio": "Biografia"
             }
         },
         "feed": {

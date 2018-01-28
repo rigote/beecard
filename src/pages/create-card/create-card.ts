@@ -25,7 +25,8 @@ export class CreateCardPage {
   form: FormGroup;
   card: CardModel;
   disabledButton: boolean = false;
-  userData: UserStorageModel;
+  userData: UserStorageModel;  
+  skillList: Array<string> = new Array<string>();
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -62,15 +63,28 @@ export class CreateCardPage {
       Website: ['', Validators.compose([])],
       Address: ['', Validators.compose([])],
       Address2: ['', Validators.compose([])],
+      Number: ['', Validators.compose([])],
       PostalCode: ['', Validators.compose([])],
       Neighborhood: ['', Validators.compose([])],
       City: ['', Validators.compose([])],
+      State: ['', Validators.compose([])],
       Twitter: ['', Validators.compose([])],
       Facebook: ['', Validators.compose([])],
       Linkedin: ['', Validators.compose([])],
       Instagram: ['', Validators.compose([])],
+      GooglePlus: ['', Validators.compose([])],
+      Youtube: ['', Validators.compose([])],
+      Bio: ['', Validators.compose([])],
+      Skill: ['', Validators.compose([])]
     });
 
+  }
+
+  addSkill(){
+    if (this.form.controls['Skill'].value != "" && this.skillList.indexOf(this.form.controls['Skill'].value) == -1)
+      this.skillList.push(this.form.controls['Skill'].value);
+
+    this.form.controls['Skill'].reset();
   }
 
   createCard(){
@@ -107,8 +121,9 @@ export class CreateCardPage {
     let cardModel = new CardModel();
 
     cardModel.updateModel(null, cardForm.Fullname, CardType.Personal, cardForm.Occupation, cardForm.PhoneNumber, 
-      cardForm.Cellphone, cardForm.Email, cardForm.Website, cardForm.Facebook, cardForm.Twitter, cardForm.Linkedin, cardForm.Instagram, 
-      null, null, cardForm.Address, cardForm.Address2, cardForm.PostalCode, cardForm.City, cardForm.Neighborhood);
+      cardForm.Cellphone, cardForm.Email, cardForm.Website, cardForm.Facebook, cardForm.Twitter, cardForm.Linkedin, cardForm.Instagram, cardForm.GooglePlus, cardForm.Youtube, 
+      null, null, cardForm.Address, cardForm.Address2, cardForm.Number, cardForm.PostalCode, cardForm.City, cardForm.Neighborhood, cardForm.State, cardForm.Bio, 
+      this.skillList);
 
       this.remoteServiceProvider.addPersonalCard(this.userData.AccessToken, this.userData.ClientId, cardModel).then(success => {      
         this.disabledButton = false;

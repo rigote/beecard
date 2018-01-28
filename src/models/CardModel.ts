@@ -19,16 +19,17 @@ export class CardModel{
     public Config: CardConfig;
     public Address: string;
     public Address2: string;
+    public Number: string;
     public PostalCode: string;
     public City: string;
     public Neighborhood: string;
     public State: string;
     public Bio: string;
-    public Qualifications: Array<string>;
+    public Skills: Array<string>;
 
     constructor(){
         this.SocialMedias = new Array<CardSocialMedia>();
-        this.Qualifications = new Array<string>();
+        this.Skills = new Array<string>();
     }
 
     updateModel(avatarImage: string,
@@ -43,13 +44,19 @@ export class CardModel{
                 twitter: string,
                 linkedin: string,
                 instagram: string,
+                googlePlus: string,
+                youtube: string,
                 companyLogo: string,
                 companyName: string,
                 address: string,
                 address2: string,
+                number: string,
                 postalCode: string,
                 city: string,
-                neighborhood: string) {
+                neighborhood: string,
+                state: string,
+                bio: string,
+                skills: Array<string>) {
         this.AvatarImage = avatarImage;
         this.FullName = fullName;
         this.Type = type,
@@ -91,13 +98,33 @@ export class CardModel{
             this.SocialMedias.push(inMedia);
         }
 
+        if (googlePlus != null && googlePlus.length > 0) {
+            let gpMedia = new CardSocialMedia();
+            gpMedia.Type =  SocialMediaType.GooglePlus;
+            gpMedia.Url = googlePlus;
+            
+            this.SocialMedias.push(gpMedia);
+        }
+
+        if (youtube != null && youtube.length > 0) {
+            let ytMedia = new CardSocialMedia();
+            ytMedia.Type =  SocialMediaType.Youtube;
+            ytMedia.Url = youtube;
+            
+            this.SocialMedias.push(ytMedia);
+        }
+
         this.CompanyLogo = companyLogo;
         this.CompanyName = companyName;
         this.Address = address;
         this.Address2 = address2;
+        this.Number = number;
         this.PostalCode = postalCode;
         this.City = city;
         this.Neighborhood = neighborhood;
+        this.State = state;
+        this.Bio = bio;
+        this.Skills = skills;
     }
 }
 

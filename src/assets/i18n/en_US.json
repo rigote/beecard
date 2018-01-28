@@ -103,16 +103,24 @@
                 "postalCode": "Postal Code",
                 "neighborhood": "Neighborhood",
                 "city": "City",
+                "state": "State",
+                "number": "Number",
                 "link-twitter": "Link Twitter",
                 "link-facebook": "Link Facebook",
                 "link-linkedin": "Link Linkedin",
-                "link-instagram": "Link Instagram"
+                "link-instagram": "Link Instagram",
+                "link-google-plus": "Link Google Plus",
+                "link-youtube": "Link Youtube",
+                "skill": "Skill",
+                "bio": "Bio"
             },
             "placeholder": {
                 "personal-info": "Personal Info",
                 "work-info": "Job Info",
                 "address-info": "Job Address",
-                "social-info": "Social"
+                "social-info": "Social",
+                "skill": "Skill",
+                "bio": "Bio"
             }
         },
         "feed": {
