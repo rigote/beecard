@@ -7,7 +7,9 @@
             "yes": "Sim",
             "No": "Não",
             "Logoff": "Sair",
-            "Login": "Entrar"
+            "Login": "Entrar",
+            "camera": "Camera",
+            "photo_library": "Biblioteca de Fotos"
         },
         "label": {
             "email-phone": "Email ou Telefone",
@@ -56,7 +58,8 @@
             "username_required": "Usuário é obrigatório",
             "incorrect_user_password": "Usuário ou senha incorreto",
             "password_confirmation_not_match": "Confirmação de senha está diferente da senha inserida",
-            "fullname_required": "Nome é obrigatório"
+            "fullname_required": "Nome é obrigatório",
+            "select_local_pick_image": "Selecione o local que você deseja selecionar uma image"
         }
     },
     "sidebar": {

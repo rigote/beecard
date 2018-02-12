@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, Platform } from 'ionic-angular';
 import { CardModel, CardType } from '../../models/CardModel';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
@@ -9,6 +9,8 @@ import { LoginPage } from '../login/login';
 import { userInfo } from 'os';
 import { MainCardsPage } from '../main-cards/main-cards';
 import { UserStorageModel } from '../../models/StorageModel';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { PhotoLibrary } from '@ionic-native/photo-library';
 
 /*
   Generated class for the CreateCard page.
@@ -26,7 +28,16 @@ export class CreateCardPage {
   card: CardModel;
   disabledButton: boolean = false;
   userData: UserStorageModel;  
-  skillList: Array<string> = new Array<string>();
+  skillList: Array<string> = new Array<string>();  
+  public options: CameraOptions = {
+    quality: 60,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE,
+    cameraDirection: this.camera.Direction.FRONT,
+    saveToPhotoAlbum: false
+  };
+  base64Image: string;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -34,7 +45,10 @@ export class CreateCardPage {
               public alertCtrl: AlertController,
               private fb: FormBuilder,
               private translate: TranslateService,
-              public storage: StorageService) {
+              public storage: StorageService,
+              private camera: Camera,
+              private photoLibrary: PhotoLibrary,
+              public platform: Platform) {
 
     this.userData = this.storage.getUserData();
     
@@ -175,6 +189,60 @@ export class CreateCardPage {
       }]
     });
     alert.present();
+  }
+
+  editAvatar() {
+    let selectOption = this.alertCtrl.create({
+      title: this.translate.instant("page.create-card.button.edit-photo"),
+      message: this.translate.instant("global.message.select_local_pick_image"),
+      buttons: [
+        {
+          text: this.translate.instant("global.button.camera"),
+          handler: () => {
+            this.takePhoto();
+          }
+        },
+        {
+          text: this.translate.instant("global.button.photo_library"),
+          handler: () => {
+            this.photoLibrary.requestAuthorization().then(() => {
+              this.photoLibrary.getLibrary().subscribe({
+                next: library => {
+                  library.forEach(function(libraryItem) {
+                    console.log(libraryItem.id);          // ID of the photo
+                    console.log(libraryItem.photoURL);    // Cross-platform access to photo
+                    console.log(libraryItem.thumbnailURL);// Cross-platform access to thumbnail
+                    console.log(libraryItem.fileName);
+                    console.log(libraryItem.width);
+                    console.log(libraryItem.height);
+                    console.log(libraryItem.creationDate);
+                    console.log(libraryItem.latitude);
+                    console.log(libraryItem.longitude);
+                    console.log(libraryItem.albumIds);    // array of ids of appropriate AlbumItem, only of includeAlbumsData was used
+                  });
+                },
+                error: err => { console.log('could not get photos'); },
+                complete: () => { console.log('done getting photos'); }
+              });
+            })
+            .catch(err => console.log('permissions weren\'t granted'));
+          }
+        }
+      ]
+    });
+    selectOption.present();
+  }
+
+  takePhoto(){
+    this.camera.getPicture(this.options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
+      }, (err) => {
+        this.base64Image = null;
+        console.log(err);
+      // Handle error
+      });
   }
 
   ionViewDidLoad() {

@@ -12,9 +12,10 @@
 
 <ion-content padding>
   <form [formGroup]="form">
-    <ion-list no-lines>
-      <img src="assets/images/avatar.jpg" alt="" class="photoCard">
-      <button class="editAvatar">{{ 'page.create-card.button.edit-photo' | translate }}</button>
+    <ion-list no-lines>      
+      <img src="assets/images/avatar.jpg" *ngIf="!base64Image" alt="" class="photoCard" />
+      <img src="{{base64Image}}" *ngIf="base64Image" alt="" class="photoCard" />
+      <button class="editAvatar" (click)="editAvatar()">{{ 'page.create-card.button.edit-photo' | translate }}</button>
       <span>{{ 'page.create-card.placeholder.personal-info' | translate }}</span>
       <ion-item>
         <i class="fa fa-user-circle fa-fw" item-left aria-hidden="true"></i>
