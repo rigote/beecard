@@ -9,7 +9,8 @@
             "Logoff": "Sair",
             "Login": "Entrar",
             "camera": "Camera",
-            "photo_library": "Biblioteca de Fotos"
+            "photo_library": "Biblioteca de Fotos",
+            "cancel": "Cancelar"
         },
         "label": {
             "email-phone": "Email ou Telefone",
@@ -59,7 +60,7 @@
             "incorrect_user_password": "Usuário ou senha incorreto",
             "password_confirmation_not_match": "Confirmação de senha está diferente da senha inserida",
             "fullname_required": "Nome é obrigatório",
-            "select_local_pick_image": "Selecione o local que você deseja selecionar uma image"
+            "select_local_pick_image": "Selecione o local que você deseja selecionar uma imagem"
         }
     },
     "sidebar": {

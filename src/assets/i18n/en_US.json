@@ -9,7 +9,8 @@
             "Logoff": "Logoff",
             "Login": "Login",
             "camera": "Camera",
-            "photo_library": "Photo Library"
+            "photo_library": "Photo Library",
+            "cancel": "Cancel"
         },
         "label": {
             "email-phone": "Email or Phone",

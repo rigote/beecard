@@ -1,7 +1,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>{{ 'page.signup.title.title-signup' | translate }}</ion-title>
+        <ion-title>{{ 'page.signup.title.title-login' | translate }}</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -9,7 +9,7 @@
 
 <ion-content padding>
     <div class="avatar-signup">
-        <img src="assets/images/no-photo.png" alt="">
+        <img src="{{avatarImage}}" alt="" (click)="editAvatar()" />
     </div>
     <form [formGroup]="form">
         <ion-item>

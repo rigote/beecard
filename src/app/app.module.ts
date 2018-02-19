@@ -30,6 +30,7 @@ import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { Camera } from '@ionic-native/camera';
 import { PhotoLibrary } from '@ionic-native/photo-library';
+import { PhotoServiceProvider } from '../providers/photo-service';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -92,7 +93,8 @@ export function createTranslateLoader(http: Http) {
     CallNumber, 
     EmailComposer, 
     Camera,
-    PhotoLibrary
+    PhotoLibrary,
+    PhotoServiceProvider
   ]
 })
 export class AppModule {}

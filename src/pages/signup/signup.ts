@@ -8,13 +8,8 @@ import { debug } from 'util';
 import { HomePage } from '../home/home';
 import { AuthModel } from '../../models/AuthModel';
 import { StorageService } from '../../providers/storage-service';
+import { PhotoServiceProvider } from '../../providers/photo-service';
 
-/*
-  Generated class for the Signup page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html',
@@ -27,6 +22,7 @@ export class SignupPage {
   public disabledButton: boolean = false;  
   public strongRegex: RegExp = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
   public mediumRegex: RegExp = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+  public avatarImage: string = "assets/images/no-photo.png";
 
   constructor(public navCtrl: NavController, 
               public alertCtrl: AlertController,
@@ -34,7 +30,8 @@ export class SignupPage {
               public remoteServiceProvider: RemoteService,
               private fb: FormBuilder,
               private translate: TranslateService,
-              public storage: StorageService) {
+              public storage: StorageService,
+              public photoService: PhotoServiceProvider) {
 
     this.form = this.fb.group({
       Firstname: ['', Validators.compose([
@@ -67,6 +64,15 @@ export class SignupPage {
       ])],
     });
 
+  }
+
+  editAvatar() {
+    let title: string = this.translate.instant("global.message.select_local_pick_image");
+    let buttonCancel: string = this.translate.instant("global.button.cancel");
+    let buttonCamera: string = this.translate.instant("global.button.camera");
+    let buttonPhotoLibrary: string = this.translate.instant("global.button.photo_library");
+
+    this.photoService.SelectImage(title, buttonCamera, buttonPhotoLibrary, buttonCancel).then(photo => { this.avatarImage = photo; }).catch(err => { this.avatarImage = "assets/images/no-photo.png"; });;
   }
 
   saveUser(){
