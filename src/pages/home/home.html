@@ -7,9 +7,6 @@
       <button ion-button icon-only>
         <i class="fa fa-search fa-lg" aria-hidden="true"></i>
       </button>
-      <button ion-button icon-only (click)="listActionsPage($event)">
-        <i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>
-      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -22,9 +19,17 @@
       <ion-icon name="add"></ion-icon>
     </button>
     <ion-fab-list side="top">
-      <button ion-fab><ion-icon name="share-alt"></ion-icon><ion-label>Compartilhar Cartão</ion-label></button>
-      <button ion-fab (click)="FavScanQr()"><ion-icon name="md-qr-scanner"></ion-icon><ion-label>Escanear Cartão</ion-label></button>
-      <button ion-fab (click)="FavCreateCardPage()"><ion-icon name="body"></ion-icon><ion-label>Criar Cartão</ion-label>
+      <button ion-fab>
+        <ion-icon name="share-alt"></ion-icon>
+        <ion-label>Compartilhar Cartão</ion-label>
+      </button>
+      <button ion-fab (click)="FavScanQr()">
+        <ion-icon name="md-qr-scanner"></ion-icon>
+        <ion-label>Escanear Cartão</ion-label>
+      </button>
+      <button ion-fab (click)="FavCreateCardPage()">
+        <ion-icon name="body"></ion-icon>
+        <ion-label>Criar Cartão</ion-label>
       </button>
     </ion-fab-list>
   </ion-fab>
@@ -33,6 +38,8 @@
   <ion-slides pager scroll="false">
 
     <ion-slide>
+
+      <h2>Meus cartões</h2>
 
       <ion-list *ngFor="let card of Cards" class="cardList">
 
@@ -72,86 +79,6 @@
         </div>
         <!-- Fim New Card -->
 
-
-
-        <!-- Begin: Personal Card -->
-        <flash-card *ngIf="card.Type == 0">
-          <div class="flash-card-front">
-            <div class="branding-color"></div>
-            <div class="profile">
-              <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
-            </div>
-            <div class="profileData">
-              <h2>{{card.FullName}}</h2>
-              <span>&nbsp;</span>
-              <ul>
-                <li>
-                  <i class="fa fa-phone fa-fw" aria-hidden="true"></i> {{card.Phone}}</li>
-                <li>
-                  <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> {{card.Cellphone}}</li>
-                <li>
-                  <i class="fa fa-envelope fa-fw" aria-hidden="true"></i> {{card.Email}}</li>
-              </ul>
-              <ul class="socialMedia">
-                <li *ngFor="let social of card.SocialMedias">
-                  <i *ngIf="social.Type == 0" class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                  <i *ngIf="social.Type == 1" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                  <i *ngIf="social.Type == 2" class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                  <i *ngIf="social.Type == 3" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                </li>
-              </ul>
-            </div>
-            <div *ngIf="card.IsFavorite" class="favorite active"></div>
-          </div>
-          <div class="flash-card-back">
-            <div class="brandingCover">
-              <p class="site">{{card.Website}}</p>
-            </div>
-          </div>
-        </flash-card>
-        <!-- End Personal Card -->
-
-        <!-- Company Card -->
-        <flash-card *ngIf="card.Type == 1">
-          <div class="flash-card-front">
-            <div class="branding-color" [ngStyle]="{'background-color': card.Config.BgColor, 'color': card.Config.FontColor }"></div>
-            <div class="profile">
-              <img src="{{card.AvatarImage}}" class="cardAvatar" alt="">
-              <div class="logoBranding">
-                <img src="{{card.CompanyLogo}}" alt="">
-              </div>
-            </div>
-            <div class="profileData">
-              <h2>{{card.FullName}}</h2>
-              <span>{{card.Occupation}}</span>
-              <ul>
-                <li>
-                  <i class="fa fa-phone fa-fw" aria-hidden="true"></i> {{card.Phone}}</li>
-                <li>
-                  <i class="fa fa-mobile fa-fw" aria-hidden="true"></i> {{card.Cellphone}}</li>
-                <li>
-                  <i class="fa fa-envelope fa-fw" aria-hidden="true"></i> {{card.Email}}</li>
-              </ul>
-              <ul class="socialMedia">
-                <li *ngFor="let social of card.SocialMedias">
-                  <i *ngIf="social.Type == 0" class="fa fa-facebook-square fa-2x" aria-hidden="true"></i>
-                  <i *ngIf="social.Type == 1" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
-                  <i *ngIf="social.Type == 2" class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
-                  <i *ngIf="social.Type == 3" class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-                </li>
-              </ul>
-            </div>
-            <div *ngIf="card.IsFavorite" class="favorite active"></div>
-          </div>
-
-          <div class="flash-card-back">
-            <div class="brandingCover">
-              <img src="{{card.CompanyLogo}}" alt="">
-              <p class="site" [ngStyle]="{'background-color': card.Config.BgColor, 'color': card.Config.FontColor }">{{card.Website}}</p>
-            </div>
-          </div>
-        </flash-card>
-        <!-- End Company Card -->
       </ion-list>
     </ion-slide>
 
