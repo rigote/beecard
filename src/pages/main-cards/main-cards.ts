@@ -5,7 +5,6 @@ import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
 import { LoginPage } from '../login/login';
 import { CardProfilePage } from '../card-profile/card-profile';
-import { ListActionsPage } from '../list-actions/list-actions';
 import { FloatMainNavPage } from '../float-main-nav/float-main-nav';
 import { formatUrlPart } from 'ionic-angular/navigation/url-serializer';
 import { CallNumber } from '@ionic-native/call-number';
@@ -64,13 +63,6 @@ export class MainCardsPage {
   cardProfileModal(card: CardModel){
     let modal = this.modalCtrl.create(CardProfilePage, { userId: card.UserId, cardId: card.Id });
     modal.present();
-  }
-
-  listActionsPage(event) {
-    let popover = this.popoverCtrl.create(ListActionsPage);
-    popover.present({
-      ev:event
-    });
   }
 
   composeEmail(email){
