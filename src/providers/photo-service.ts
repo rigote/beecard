@@ -2,7 +2,6 @@ import { Injectable, Component } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { Platform, ActionSheetController } from 'ionic-angular'
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { PhotoLibrary } from '@ionic-native/photo-library';
 
 @Injectable()
 export class PhotoServiceProvider {

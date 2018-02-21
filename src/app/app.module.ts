@@ -28,7 +28,6 @@ import { FlashCardComponent } from '../components/flash-card/flash-card';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { Camera } from '@ionic-native/camera';
-import { PhotoLibrary } from '@ionic-native/photo-library';
 import { PhotoServiceProvider } from '../providers/photo-service';
 
 export function createTranslateLoader(http: Http) {
@@ -90,7 +89,6 @@ export function createTranslateLoader(http: Http) {
     CallNumber, 
     EmailComposer, 
     Camera,
-    PhotoLibrary,
     PhotoServiceProvider
   ]
 })

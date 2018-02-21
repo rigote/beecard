@@ -12,17 +12,32 @@ page-create-card {
         color: #999;
         background: none;
         font-size: 16px;
+    } 
+    .item-md{
+        padding-left: 0;
     }
-    ion-list{
-        span{
-            color: $background-color-brand;
-            margin-top: 15px;
-            display: flex;
-            }
-        .item{
-            padding-left: 10px;
-            border: 1px solid #CCC !important;
-            margin: 5px 0;
+
+    ion-item-group{
+        ion-item-divider{
+            margin-top: 20px;
+            background: #eaeaea !important;
+            text-transform: uppercase !important;
+            padding-left: 10px !important;
+            color: #333 !important;
         }
-    }    
+        ion-item{
+            .item-inner{
+                overflow: visible;
+                padding-right: 0 !important;
+                width: 100%;
+                word-break: break-all;
+            }
+            .button-inner{
+                padding: 5px;
+            }
+            ion-badge{
+                margin: 5px;
+            }
+        }
+    }
 }
