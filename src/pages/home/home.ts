@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController, ViewController, NavParams, PopoverController } from 'ionic-angular';
+import { NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
 import { CardModel, CardType, SocialMediaType } from '../../models/CardModel';
 import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
@@ -7,7 +7,6 @@ import { FloatMainNavPage } from '../float-main-nav/float-main-nav';
 import { LoginPage } from '../login/login';
 import { CardProfilePage } from '../card-profile/card-profile';
 import { UserStorageModel } from '../../models/StorageModel';
-import { ListActionsPage } from '../list-actions/list-actions';
 import { CreateCardPage } from '../create-card/create-card';
 import { ScanQrCodePage } from '../scan-qr-code/scan-qr-code';
 
@@ -24,8 +23,7 @@ export class HomePage {
               private view: ViewController,
               private navParams: NavParams,
               public remoteServiceProvider: RemoteService,
-              public storage: StorageService,
-              public popoverCtrl: PopoverController
+              public storage: StorageService
             ) {
 
     let userData = this.storage.getUserData();
@@ -113,13 +111,6 @@ export class HomePage {
   cardProfileModal(){
     let modal = this.modalCtrl.create(CardProfilePage);
     modal.present();
-  }
-
-  listActionsPage(event) {
-    let popover = this.popoverCtrl.create(ListActionsPage);
-    popover.present({
-      ev:event
-    });
   }
 
   ionViewWillEnter() {

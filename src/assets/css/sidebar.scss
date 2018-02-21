@@ -1,8 +1,10 @@
 /*SIDEBAR MENU*/
 ion-menu{
     font-family: Roboto;
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{border-bottom: none;}
     ion-header{
-        background: #EAEAEA !important;
+        background: #EAEAEA url("../../assets/images/bg-sidebar.jpg") !important;
+        position: relative;
         p{
             font-size: 14px;
             margin: 0px;
@@ -12,10 +14,10 @@ ion-menu{
         text-align: center;
         .avatar{
             display: block;
-            @include sizeAvatar();
+            @include sizeAvatarCard();
             border-radius: $border-radius-avatar;
-            margin: 10px auto;
             @include shadowAvatar();
+            margin: 10px;
         }
         .logo{
             width: 50%;
@@ -30,6 +32,47 @@ ion-menu{
             margin: 0 0 10px 0;
             text-transform: uppercase;
             color: #FFF;
+        }
+        h4{
+            color: #FFF;
+            text-transform: uppercase;
+            font-weight: normal;
+            font-size: 16px;
+            text-align: left;
+            display: block;
+            margin: 0 0 5px 10px;
+            text-shadow: $text-shadow;
+        }
+        span{
+            text-align: left;
+            color: #FFF;
+            display: block;
+            margin: 0 0 5px 10px;
+            text-shadow: $text-shadow;
+            &.logout{
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+            }
+            &.notification{
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                .numNotification{
+                    background: #FFF;
+                    text-align: center;
+                    color: red;
+                    padding: 2px;
+                    border-radius: $border-radius-avatar;
+                    position: absolute;
+                    bottom: -2px;
+                    right: -5px;
+                    font-size: 8px;
+                    text-shadow: none;
+                    font-weight: bold;
+                    box-shadow: $box-shadow-card;
+                }
+            }
         }
     }
     ion-content{
