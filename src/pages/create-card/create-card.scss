@@ -35,10 +35,12 @@ page-create-card {
                 overflow: visible;
                 padding-right: 0 !important;
                 width: 100%;
-                word-break: break-all;
             }
             .button-inner{
                 padding: 5px;
+            }
+            ion-label{
+                white-space: normal;
             }
             ion-badge{
                 margin: 5px;
