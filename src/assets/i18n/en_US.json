@@ -135,6 +135,14 @@
             "label": {},
             "placeholder": {}
         },
+        "phisical-cards": {
+            "title": {
+                "title-feed": "Phisical Cards"
+            },
+            "button": {},
+            "label": {},
+            "placeholder": {}
+        },
         "float-main-nav": {
             "title": {
                 "title-float-main-nav": "+"

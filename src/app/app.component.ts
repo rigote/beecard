@@ -12,6 +12,7 @@ import { ListsPage } from '../pages/lists/lists';
 import { AccountPage } from '../pages/account/account';
 import { SettingsPage } from '../pages/settings/settings';
 import { FeedPage } from '../pages/feed/feed';
+import { PhisicalCardsPage } from '../pages/phisical-cards/phisical-cards';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { SignupPage } from '../pages/signup/signup';
 import { StorageService } from '../providers/storage-service';
@@ -51,7 +52,8 @@ export class MyApp {
       { title: 'Lists', component: ListsPage },
       { title: 'Account', component: AccountPage },
       { title: 'Settings', component: SettingsPage },
-      { title: 'Feed', component: FeedPage }
+      { title: 'Feed', component: FeedPage },
+      { title: 'Cartões Físicos', component: PhisicalCardsPage }
     ];
 
   }

@@ -75,7 +75,8 @@
             "my-lists": "Minhas Listas",
             "feed": "Feed de Notícias",
             "account": "Minha Conta",
-            "settings": "Configurações"
+            "settings": "Configurações",
+            "phisical-cards":"Cartões físicos"
         }
     },
     "page": {
@@ -130,6 +131,14 @@
         "feed": {
             "title": {
                 "title-feed": "Feed de Notícias"
+            },
+            "button": {},
+            "label": {},
+            "placeholder": {}
+        },
+        "phisical-cards": {
+            "title": {
+                "title-feed": "Cartões Físicos"
             },
             "button": {},
             "label": {},
