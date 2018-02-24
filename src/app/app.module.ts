@@ -17,6 +17,7 @@ import { FeedPage } from '../pages/feed/feed';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { SignupPage } from '../pages/signup/signup';
 import { CardProfilePage } from './../pages/card-profile/card-profile';
+import { PhisicalCardsPage } from '../pages/phisical-cards/phisical-cards';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -50,7 +51,8 @@ export function createTranslateLoader(http: Http) {
     FeedPage,
     ForgotPasswordPage,
     SignupPage,
-    CardProfilePage
+    CardProfilePage,
+    PhisicalCardsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -79,7 +81,8 @@ export function createTranslateLoader(http: Http) {
     FeedPage,
     ForgotPasswordPage,
     SignupPage,
-    CardProfilePage
+    CardProfilePage,
+    PhisicalCardsPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler}, 

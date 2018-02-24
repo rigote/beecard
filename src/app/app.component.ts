@@ -2,6 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { TranslateService } from '@ngx-translate/core';
+import { NgModule } from '@angular/core';
+import { IonicApp, IonicModule } from 'ionic-angular';
+
 
 import { HomePage } from '../pages/home/home';
 import { CreateCardPage } from '../pages/create-card/create-card';
@@ -20,6 +23,25 @@ import { StorageService } from '../providers/storage-service';
 @Component({
   templateUrl: 'app.html'
 })
+
+@NgModule({
+  declarations: [
+    MyApp,
+    HomePage,
+    PhisicalCardsPage
+  ],
+  imports: [
+    IonicModule.forRoot(MyApp)
+  ],
+  bootstrap: [IonicApp],
+  entryComponents: [
+    MyApp,
+    HomePage,
+    PhisicalCardsPage
+  ],
+  providers: []
+})
+
 
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
