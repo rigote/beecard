@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { RemoteService } from '../../providers/remote-service';
 import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 import { HomePage } from '../home/home';
@@ -23,7 +23,8 @@ export class LoginPage {
   
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
-              public alertCtrl: AlertController, 
+              public alertCtrl: AlertController,
+              private loadingCtrl: LoadingController, 
               private fb: FormBuilder,
               public remoteServiceProvider: RemoteService,
               private translate: TranslateService,
@@ -51,10 +52,13 @@ export class LoginPage {
   }
 
   login() {
+    let loader = this.loadingCtrl.create({ content: "Autenticando..." });
+    loader.present();
+
     var formLogin = this.form.value;
 
     if (this.form.invalid || this.form.dirty) {
-      
+      loader.dismiss();
       this.disabledButton = false;
       
       if (this.form.controls['Username'].errors) {
@@ -74,6 +78,7 @@ export class LoginPage {
     }
 
     this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(auth => {
+      loader.dismiss();
       this.disabledButton = false;
       this.storage.setUserData(auth.Token, auth.ClientId);
       this.navCtrl.setRoot(HomePage);
