@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController, PopoverController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, PopoverController, LoadingController } from 'ionic-angular';
 import { CardModel } from '../../models/CardModel';
 import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
@@ -30,6 +30,7 @@ export class MainCardsPage {
               public storage: StorageService,
               public modalCtrl: ModalController,
               public popoverCtrl: PopoverController,
+              private loadingCtrl: LoadingController, 
               private callNumber: CallNumber,
               private emailComposer: EmailComposer) {
 
@@ -46,8 +47,10 @@ export class MainCardsPage {
     }
 
     remoteServiceProvider.getPersonalCards(userData.AccessToken, userData.ClientId).then(cards => {
-      console.log('Sucesso');
+      let loader = this.loadingCtrl.create({ content: "Carregando cartões..." });
+      loader.present();
       this.Cards = cards;
+      loader.dismiss();
     }, error => {
       console.log(error);
     });
