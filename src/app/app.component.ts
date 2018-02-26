@@ -28,7 +28,7 @@ export class MyApp {
   pages: Array<{ title: string, component: any }>;
 
   constructor(
-    public platform: Platform, translate: TranslateService, storage: StorageService) {
+    public platform: Platform, translate: TranslateService, public storage: StorageService) {
     
     translate.setDefaultLang('pt_BR');
 
@@ -65,5 +65,10 @@ export class MyApp {
 
   openPage(page){
     this.nav.setRoot(page.component);
+  }
+
+  logoff(){
+    this.storage.clearStorageData();
+    this.nav.setRoot(LoginPage);
   }
 }

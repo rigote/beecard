@@ -3,8 +3,8 @@
         <img src="assets/images/avatar.jpg" alt="" class="avatar">
         <h4>João Trabalhador</h4>
         <span>email@email.com.br</span>
-        <span class="logout"><i class="fa fa-power-off fa-lg" aria-hidden="true"></i> Log-out</span>
-        <span class="notification"><i class="fa fa-bell fa-lg" aria-hidden="true"></i><div class="numNotification">10</div></span>        
+        <span class="logout" menuClose (click)="logoff()"><i class="fa fa-power-off fa-lg" aria-hidden="true"></i> Log-out</span>
+        <span class="notification" menuClose (click)="openPage(pages[8])"><i class="fa fa-bell fa-lg" aria-hidden="true"></i><div class="numNotification">10</div></span>        
     </ion-header>
     <ion-content>
         <ion-list>
@@ -14,7 +14,6 @@
             <button ion-item menuClose (click)="openPage(pages[4])"><i class="fa fa-address-card" aria-hidden="true"></i>{{ 'sidebar.placeholder.mycards' | translate }}</button>
             <button ion-item menuClose (click)="openPage(pages[0])"><i class="fa fa-user-circle" aria-hidden="true"></i>{{ 'sidebar.placeholder.all-cards' | translate }}</button>
             <button ion-item menuClose (click)="openPage(pages[5])"><i class="fa fa-address-book" aria-hidden="true"></i>{{ 'sidebar.placeholder.my-lists' | translate }}</button>
-            <button ion-item menuClose (click)="openPage(pages[8])"><i class="fa fa-rss" aria-hidden="true"></i>{{ 'sidebar.placeholder.feed' | translate }}</button>
             <button ion-item menuClose (click)="openPage(pages[6])"><i class="fa fa-address-card" aria-hidden="true"></i>{{ 'sidebar.placeholder.account' | translate }}</button>
             <button ion-item menuClose (click)="openPage(pages[7])"><i class="fa fa-cog" aria-hidden="true"></i>{{ 'sidebar.placeholder.settings' | translate }}</button>
         </ion-list>
