@@ -78,9 +78,9 @@ export class LoginPage {
     }
 
     this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(auth => {
-      loader.dismiss();
       this.disabledButton = false;
       this.storage.setUserData(auth.Token, auth.ClientId);
+      loader.dismiss();
       this.navCtrl.setRoot(HomePage);
     }, error => {
       
