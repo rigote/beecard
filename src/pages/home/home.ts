@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController, ViewController, NavParams } from 'ionic-angular';
+import { NavController, ModalController, ViewController, NavParams, FabContainer } from 'ionic-angular';
 import { CardModel, CardType, SocialMediaType } from '../../models/CardModel';
 import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
@@ -10,6 +10,8 @@ import { UserStorageModel } from '../../models/StorageModel';
 import { CreateCardPage } from '../create-card/create-card';
 import { ScanQrCodePage } from '../scan-qr-code/scan-qr-code';
 
+import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -18,12 +20,16 @@ export class HomePage {
 
   public Cards: Array<CardModel>;
 
+  options: BarcodeScannerOptions;
+  results: {};
+
   constructor(public navCtrl: NavController, 
               public modalCtrl: ModalController,
               private view: ViewController,
               private navParams: NavParams,
               public remoteServiceProvider: RemoteService,
-              public storage: StorageService
+              public storage: StorageService,
+              private barCode: BarcodeScanner
             ) {
 
     let userData = this.storage.getUserData();
@@ -118,11 +124,22 @@ export class HomePage {
       this.view.showBackButton(false);
   }
 
-  FavScanQr() {
-    this.navCtrl.push(ScanQrCodePage);
+  async scanBarcode(){
+    
+    this.options = {
+      prompt: 'Scan barcode'
+    }
+
+    this.results = await this.barCode.scan(this.options);
+    console.log(this.results);
   }
 
-  FavCreateCardPage() {
+  async encodeData(){
+    const results = await this.barCode.encode(this.barCode.Encode.TEXT_TYPE, 'http://www.beecard.com.br')
+  }
+
+  FavCreateCardPage(fab: FabContainer) {
+    fab.close();
     this.navCtrl.push(CreateCardPage);
   }
 }
