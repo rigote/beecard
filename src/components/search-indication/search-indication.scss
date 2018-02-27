@@ -1,0 +1,17 @@
+search-indication {
+    ion-card{
+        ion-card-content{
+            .client{
+                display: inline-block;
+                margin-right: 5px;
+                text-align: center;
+                img{
+                    object-fit: cover;
+                    display: block;
+                    @include sizeAvatarSearch();
+                    border-radius: $border-radius-avatar;
+                }
+            }            
+        }
+    }
+}

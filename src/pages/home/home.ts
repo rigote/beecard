@@ -9,6 +9,7 @@ import { CardProfilePage } from '../card-profile/card-profile';
 import { UserStorageModel } from '../../models/StorageModel';
 import { CreateCardPage } from '../create-card/create-card';
 import { ScanQrCodePage } from '../scan-qr-code/scan-qr-code';
+import { SearchPage } from '../search/search';
 
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
@@ -141,5 +142,9 @@ export class HomePage {
   FavCreateCardPage(fab: FabContainer) {
     fab.close();
     this.navCtrl.push(CreateCardPage);
+  }
+
+  searchPage(){
+    this.navCtrl.push(SearchPage);
   }
 }
