@@ -131,6 +131,10 @@ $ionicons-font-path: "../assets/fonts";
             vertical-align: top;
             display: block;
         }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
         i{
             &.settings{
                 margin: 10px auto 0;
