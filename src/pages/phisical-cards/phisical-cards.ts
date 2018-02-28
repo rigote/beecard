@@ -58,13 +58,15 @@ export class PhisicalCardsPage {
 
   analyze() {
     let loader = this.loadingCtrl.create({
-     content: 'Please wait...'
+     content: 'Please wait........'
     });
     loader.present();
     (<any>window).OCRAD(document.getElementById('image'), text => {
       loader.dismissAll();
-      alert(text);
+      ////alert(text);
       console.log(text);
+    }, (err) => {
+      console.log(`ERROR -> ${JSON.stringify(err)}`);
     });
   }
 
