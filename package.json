@@ -93,6 +93,8 @@
       },
       "call-number": {}
     },
-    "platforms": []
+    "platforms": [
+      "ios"
+    ]
   }
 }
