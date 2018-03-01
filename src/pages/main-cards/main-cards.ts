@@ -70,22 +70,16 @@ export class MainCardsPage {
     modal.present();
   }
 
-  composeEmail(email: string): void{
-    console.log('Email function ' + email.toString());
+  composeEmail(card: CardModel): void{
     
-        //Now we know we can send
         let emailparam = {
-          to: 'Alias <' + email.toString() + '>',
-          
+          to: card.FullName + ' <' + card.Email + '>',
           subject: '[Beecard]',
           body: 'Venha conhecer o Beecard.',
           isHtml: true,
         };
         
-        // Send a text message using default options
-        this.emailComposer.open(emailparam);
-  
-     
+        this.emailComposer.open(emailparam);   
   }
 
   makeCall(card: CardModel){
