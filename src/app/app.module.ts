@@ -17,7 +17,11 @@ import { FeedPage } from '../pages/feed/feed';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { SignupPage } from '../pages/signup/signup';
 import { CardProfilePage } from './../pages/card-profile/card-profile';
+<<<<<<< HEAD
 import { PhisicalCardsPage } from '../pages/phisical-cards/phisical-cards';
+=======
+import { SearchPage } from '../pages/search/search';
+>>>>>>> master
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -30,6 +34,9 @@ import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { Camera } from '@ionic-native/camera';
 import { PhotoServiceProvider } from '../providers/photo-service';
+import { SearchIndicationComponent } from '../components/search-indication/search-indication';
+import { SearchHeaderComponent } from '../components/search-header/search-header';
+import { SearchResultComponent } from '../components/search-result/search-result';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -52,7 +59,14 @@ export function createTranslateLoader(http: Http) {
     ForgotPasswordPage,
     SignupPage,
     CardProfilePage,
+<<<<<<< HEAD
     PhisicalCardsPage
+=======
+    SearchIndicationComponent,
+    SearchHeaderComponent,
+    SearchResultComponent,
+    SearchPage
+>>>>>>> master
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -82,7 +96,11 @@ export function createTranslateLoader(http: Http) {
     ForgotPasswordPage,
     SignupPage,
     CardProfilePage,
+<<<<<<< HEAD
     PhisicalCardsPage
+=======
+    SearchPage
+>>>>>>> master
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler}, 

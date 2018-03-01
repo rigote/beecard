@@ -4,7 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="searchPage()">
         <i class="fa fa-search fa-lg" aria-hidden="true"></i>
       </button>
     </ion-buttons>
@@ -14,20 +14,20 @@
 
 <ion-content>
   <!-- Begin: Float button -->
-  <ion-fab>
+  <ion-fab #fab>
     <button ion-fab>
       <ion-icon name="add"></ion-icon>
     </button>
     <ion-fab-list side="top">
-      <button ion-fab>
+      <button ion-fab (click)="encodeData(fab)">
         <ion-icon name="share-alt"></ion-icon>
         <ion-label>Compartilhar Cartão</ion-label>
       </button>
-      <button ion-fab (click)="FavScanQr()">
+      <button ion-fab (click)="scanBarcode(fab)">
         <ion-icon name="md-qr-scanner"></ion-icon>
         <ion-label>Escanear Cartão</ion-label>
       </button>
-      <button ion-fab (click)="FavCreateCardPage()">
+      <button ion-fab (click)="FavCreateCardPage(fab)">
         <ion-icon name="body"></ion-icon>
         <ion-label>Criar Cartão</ion-label>
       </button>

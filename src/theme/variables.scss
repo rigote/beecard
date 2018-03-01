@@ -28,6 +28,7 @@ $size-float-button: 48px;
 /*AVATAR CONFIG*/
 @mixin sizeAvatar(){width: 120px; height: 120px;} //Tamanho da imagem avatar cartão
 @mixin sizeAvatarCard(){width: 80px; height: 80px;} //Tamanho da imagem avatar criação de cartão
+@mixin sizeAvatarSearch(){width: 60px; height: 60px;}
 @mixin shadowAvatar(){
    -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.3);
    -moz-box-shadow:    3px 3px 5px 0px rgba(50, 50, 50, 0.3);
@@ -129,6 +130,10 @@ $ionicons-font-path: "../assets/fonts";
             text-align: left;
             vertical-align: top;
             display: block;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
         }
         i{
             &.settings{

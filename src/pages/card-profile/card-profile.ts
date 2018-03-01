@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ViewController } from 'ionic-angular';
+import { NavController, NavParams, ViewController, LoadingController } from 'ionic-angular';
 import { CardModel } from '../../models/CardModel';
 import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
@@ -26,6 +26,7 @@ export class CardProfilePage {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public viewCtrl: ViewController,
+              private loadingCtrl: LoadingController,
               public remoteServiceProvider: RemoteService,
               public storage: StorageService) {
     let userData = this.storage.getUserData();
@@ -34,12 +35,13 @@ export class CardProfilePage {
     
     if (userData.AccessToken != null) {
       this.remoteServiceProvider.validateToken(userData.AccessToken).then(success => {
-        console.log('Sucesso');        
+        let loader = this.loadingCtrl.create({ content: "Carregando perfil..." });
+        loader.present();        
         this.token = userData.AccessToken;
 
         this.remoteServiceProvider.getPersonalCard(this.token, this.userId, this.cardId).then(card => {
-            console.log('Sucesso');
             this.card = card;
+            loader.dismiss();
           }, error => {
             console.log(error);
           }); 

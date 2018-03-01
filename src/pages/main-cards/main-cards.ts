@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController, PopoverController } from 'ionic-angular';
+import { NavController, NavParams, ModalController, PopoverController, LoadingController } from 'ionic-angular';
 import { CardModel } from '../../models/CardModel';
 import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
@@ -9,6 +9,8 @@ import { FloatMainNavPage } from '../float-main-nav/float-main-nav';
 import { formatUrlPart } from 'ionic-angular/navigation/url-serializer';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
+
+
 
 /*
   Generated class for the MainCards page.
@@ -30,6 +32,7 @@ export class MainCardsPage {
               public storage: StorageService,
               public modalCtrl: ModalController,
               public popoverCtrl: PopoverController,
+              private loadingCtrl: LoadingController, 
               private callNumber: CallNumber,
               private emailComposer: EmailComposer) {
 
@@ -46,8 +49,10 @@ export class MainCardsPage {
     }
 
     remoteServiceProvider.getPersonalCards(userData.AccessToken, userData.ClientId).then(cards => {
-      console.log('Sucesso');
+      let loader = this.loadingCtrl.create({ content: "Carregando cartões..." });
+      loader.present();
       this.Cards = cards;
+      loader.dismiss();
     }, error => {
       console.log(error);
     });
@@ -65,8 +70,16 @@ export class MainCardsPage {
     modal.present();
   }
 
-  composeEmail(email){
+  composeEmail(card: CardModel): void{
     
+        let emailparam = {
+          to: card.FullName + ' <' + card.Email + '>',
+          subject: '[Beecard]',
+          body: 'Venha conhecer o Beecard.',
+          isHtml: true,
+        };
+        
+        this.emailComposer.open(emailparam);   
   }
 
   makeCall(card: CardModel){
@@ -87,6 +100,7 @@ export class MainCardsPage {
     return 'https://api.whatsapp.com/send?phone=' + this.formatPhoneNumber(cellphone).toString();
   }
 
+  
   formatPhoneNumber(number: string): number{
     return parseInt(number.replace(/\D/g, ''), 10);
   }
