@@ -10,6 +10,8 @@ import { formatUrlPart } from 'ionic-angular/navigation/url-serializer';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
 
+
+
 /*
   Generated class for the MainCards page.
 
@@ -68,8 +70,22 @@ export class MainCardsPage {
     modal.present();
   }
 
-  composeEmail(email){
+  composeEmail(email: string): void{
+    console.log('Email function ' + email.toString());
     
+        //Now we know we can send
+        let emailparam = {
+          to: 'Alias <' + email.toString() + '>',
+          
+          subject: '[Beecard]',
+          body: 'Venha conhecer o Beecard.',
+          isHtml: true,
+        };
+        
+        // Send a text message using default options
+        this.emailComposer.open(emailparam);
+  
+     
   }
 
   makeCall(card: CardModel){
@@ -90,6 +106,7 @@ export class MainCardsPage {
     return 'https://api.whatsapp.com/send?phone=' + this.formatPhoneNumber(cellphone).toString();
   }
 
+  
   formatPhoneNumber(number: string): number{
     return parseInt(number.replace(/\D/g, ''), 10);
   }

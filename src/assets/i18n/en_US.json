@@ -169,7 +169,8 @@
         },
         "main-cards": {
             "title": {
-                "title-main-cards": "All Cards"
+                "title-main-cards": "All Cards",
+                "title-my-cards": "My Cards"
             },
             "button": {},
             "label": {},

@@ -169,7 +169,8 @@
         },
         "main-cards": {
             "title": {
-                "title-main-cards": "Todos Cartões"
+                "title-main-cards": "Todos Cartões",
+                "title-my-cards": "Meus Cartões"
             },
             "button": {},
             "label": {},
