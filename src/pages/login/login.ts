@@ -52,7 +52,7 @@ export class LoginPage {
   }
 
   login() {
-    let loader = this.loadingCtrl.create({ content: this.translate.instant("global.message.login") });
+    let loader = this.loadingCtrl.create({ content: this.translate.instant("global.message.login_authentication") });
     loader.present();
 
     var formLogin = this.form.value;
