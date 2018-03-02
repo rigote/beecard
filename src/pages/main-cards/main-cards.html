@@ -36,11 +36,12 @@
           </ion-col>
         </ion-row>
         <ion-row class="actions">
-          <ion-col *ngIf="card.Cellphone || card.Phone" (click)="makeCall(card)">
-            <i class="fa fa-phone fa-lg" aria-hidden="true"></i>Call</ion-col>
+          <ion-col *ngIf="card.Cellphone || card.Phone" >
+              <a href="{{makeCall(card)}}">
+            <i class="fa fa-phone fa-lg" aria-hidden="true"></i>Call
+              </a></ion-col>
           
             <ion-col (click)="composeEmail(card)">
-              
               <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>E-mail
               </ion-col>
 

@@ -26,7 +26,7 @@
     "@ngx-translate/core": "^7.2.2",
     "@ngx-translate/http-loader": "^0.1.0",
     "call-number": "^1.0.1",
-    "cordova-ios": "4.5.4",
+    "cordova-ios": "^4.5.4",
     "cordova-plugin-add-swift-support": "^1.7.1",
     "cordova-plugin-camera": "^4.0.2",
     "cordova-plugin-device": "1.1.4",

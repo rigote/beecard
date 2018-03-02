@@ -60,7 +60,8 @@
             "incorrect_user_password": "Incorrect username or password",
             "password_confirmation_not_match": "Password confirmation value is different than password value",
             "fullname_required": "Name is required",
-            "select_local_pick_image": "Select the local where you would like to pick a image"
+            "select_local_pick_image": "Select the local where you would like to pick a image",
+            "load_cards": "Loading cards"
         }
     },
     "sidebar": {

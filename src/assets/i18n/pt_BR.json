@@ -60,7 +60,10 @@
             "incorrect_user_password": "Usuário ou senha incorreto",
             "password_confirmation_not_match": "Confirmação de senha está diferente da senha inserida",
             "fullname_required": "Nome é obrigatório",
-            "select_local_pick_image": "Selecione o local que você deseja selecionar uma imagem"
+            "select_local_pick_image": "Selecione o local que você deseja selecionar uma imagem",
+            "load_cards": "Carregando cartões",
+            "load_profile": "Carregando perfil",
+            "login_authentication": "Autenticação em progresso"
         }
     },
     "sidebar": {

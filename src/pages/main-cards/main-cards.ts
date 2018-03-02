@@ -9,6 +9,7 @@ import { FloatMainNavPage } from '../float-main-nav/float-main-nav';
 import { formatUrlPart } from 'ionic-angular/navigation/url-serializer';
 import { CallNumber } from '@ionic-native/call-number';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { TranslateService } from '@ngx-translate/core';
 
 
 
@@ -34,7 +35,8 @@ export class MainCardsPage {
               public popoverCtrl: PopoverController,
               private loadingCtrl: LoadingController, 
               private callNumber: CallNumber,
-              private emailComposer: EmailComposer) {
+              private emailComposer: EmailComposer,
+              private translate: TranslateService) {
 
     let userData = this.storage.getUserData();
     
@@ -49,7 +51,7 @@ export class MainCardsPage {
     }
 
     remoteServiceProvider.getPersonalCards(userData.AccessToken, userData.ClientId).then(cards => {
-      let loader = this.loadingCtrl.create({ content: "Carregando cartões..." });
+      let loader = this.loadingCtrl.create({ content: this.translate.instant("global.message.load_cards")});
       loader.present();
       this.Cards = cards;
       loader.dismiss();
@@ -82,18 +84,19 @@ export class MainCardsPage {
         this.emailComposer.open(emailparam);   
   }
 
-  makeCall(card: CardModel){
-
+  makeCall(card: CardModel): string{
     let number: string = null;
 
     if (card.Cellphone)
       number = this.formatPhoneNumber(card.Cellphone).toString();
     else if (card.Phone)
       number = this.formatPhoneNumber(card.Phone).toString();
-
+/*
     this.callNumber.callNumber(number, true)
       .then(() => console.log('Launched dialer!'))
-      .catch(() => console.log('Error launching dialer'));
+      .catch((e) => console.log('Error launching dialer'));
+*/
+      return 'tel:' + number;
   }
 
   getWhatsappUrl(cellphone: string): string{
