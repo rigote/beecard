@@ -50,9 +50,9 @@
         <p *ngIf="card.Address2"><b>Complemento:</b> {{card.Address2}}</p>
       </div>
   
-      <div *ngIf="card.Qualifications" class="box">
+      <div *ngIf="card.Skills.length > 0" class="box">
         <h2>Qualificações</h2>
-        <ion-badge *ngFor="let qualification of card.Qualifications">{{qualification}}</ion-badge>
+        <ion-badge *ngFor="let qualification of card.Skills">{{qualification}}</ion-badge>
       </div>
     </div>
     

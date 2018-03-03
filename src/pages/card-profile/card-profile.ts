@@ -5,7 +5,7 @@ import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
 import { LoginPage } from '../login/login';
 import { TranslateService } from '@ngx-translate/core';
-import { debug } from 'util';
+//import { debug } from 'util';
 
 /*
   Generated class for the MainCards page.
