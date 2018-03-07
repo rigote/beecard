@@ -4,7 +4,8 @@ import { CardModel } from '../../models/CardModel';
 import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
 import { LoginPage } from '../login/login';
-import { debug } from 'util';
+import { TranslateService } from '@ngx-translate/core';
+//import { debug } from 'util';
 
 /*
   Generated class for the MainCards page.
@@ -27,6 +28,7 @@ export class CardProfilePage {
               public navParams: NavParams, 
               public viewCtrl: ViewController,
               private loadingCtrl: LoadingController,
+              private translate: TranslateService,
               public remoteServiceProvider: RemoteService,
               public storage: StorageService) {
     let userData = this.storage.getUserData();
@@ -35,7 +37,7 @@ export class CardProfilePage {
     
     if (userData.AccessToken != null) {
       this.remoteServiceProvider.validateToken(userData.AccessToken).then(success => {
-        let loader = this.loadingCtrl.create({ content: "Carregando perfil..." });
+        let loader = this.loadingCtrl.create({ content: this.translate.instant("global.message.load_profile")});
         loader.present();        
         this.token = userData.AccessToken;
 
