@@ -1,15 +1,16 @@
 search-indication {
     ion-card{
         ion-card-content{
+            padding: 5px !important;
             .client{
                 display: inline-block;
-                margin-right: 5px;
-                text-align: center;
+                margin-right: 7px;
                 img{
                     object-fit: cover;
                     display: block;
                     @include sizeAvatarSearch();
                     border-radius: $border-radius-avatar;
+                    margin: 0 auto;
                 }
             }            
         }

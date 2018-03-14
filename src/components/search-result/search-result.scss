@@ -1,3 +1,19 @@
 search-result {
-
+    ion-list{
+        ion-item{
+            .clientSearch{
+                img{
+                    object-fit: cover;
+                    display: block;
+                    @include sizeAvatarSearch();
+                    border-radius: $border-radius-avatar;
+                    display: inline-block;
+                }
+                span{
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            }
+        }
+    }
 }
