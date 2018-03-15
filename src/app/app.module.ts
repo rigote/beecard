@@ -33,6 +33,8 @@ import { PhotoServiceProvider } from '../providers/photo-service';
 import { SearchIndicationComponent } from '../components/search-indication/search-indication';
 import { SearchHeaderComponent } from '../components/search-header/search-header';
 import { SearchResultComponent } from '../components/search-result/search-result';
+import { CardComponent } from '../components/card/card';
+import { FabComponent } from '../components/fab/fab';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -58,7 +60,9 @@ export function createTranslateLoader(http: Http) {
     SearchIndicationComponent,
     SearchHeaderComponent,
     SearchResultComponent,
-    SearchPage
+    SearchPage,
+    CardComponent,
+    FabComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),

@@ -1,0 +1,55 @@
+card {
+    .corporate{
+        border-left: 10px solid #FF9900;
+    }
+    .card{
+        width: 100%;
+        height: auto;
+        box-shadow: $box-shadow-card;
+        border-radius: $border-radius-card;
+        margin-bottom: 15px;
+        position: relative;
+        .cardAvatar{
+            object-fit: cover;
+            display: block;
+            @include sizeAvatar();
+            border-radius: $border-radius-avatar;
+        }
+        h2{
+            font-size: 18px;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            vertical-align: top;
+            display: block;
+        }
+        span{
+            font-size: 14px;
+            color: #333;
+            text-align: left;
+            vertical-align: top;
+            display: block;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+        i{
+            &.settings{
+                margin: 10px auto 0;
+            }
+        }
+        .actions{
+            margin-top: 10px;
+            ion-col{
+                text-align: center;
+                i{
+                    display: block;
+                    margin-bottom: 10px;
+                    font-size: 24px;
+                }
+                font-size: 12px;
+            }
+        }
+    }
+}
