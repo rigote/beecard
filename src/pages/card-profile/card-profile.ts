@@ -5,6 +5,7 @@ import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
 import { LoginPage } from '../login/login';
 import { TranslateService } from '@ngx-translate/core';
+import { CreateCardPage} from '../create-card/create-card';
 //import { debug } from 'util';
 
 /*
@@ -60,6 +61,13 @@ export class CardProfilePage {
 
   dismiss() {
     this.viewCtrl.dismiss();
+  }
+
+  openPage(card: CardModel){
+    console.log(card.Id + " " + card.UserId);
+    ////this.navCtrl.setRoot(CreateCardPage);
+    this.navCtrl.push(CreateCardPage, {obj: card});
+
   }
 
 }

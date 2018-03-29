@@ -18,6 +18,7 @@
       <div class="boxProfile">
         <img src="{{card.AvatarImage}}" class="cardAvatar" alt="" *ngIf="card.AvatarImage" />
         <h2>{{card.FullName}}</h2>
+        <span (click)="openPage(card)"><i class="fa fa-edit" aria-hidden="true"></i></span>        
         <span>{{card.Occupation}}</span>
         <img src="{{card.CompanyLogo}}" alt="" class="branding" *ngIf="card.CompanyLogo" />
         <div *ngIf="card.SocialMedias" class="social">

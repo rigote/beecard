@@ -1,5 +1,8 @@
 <ion-header>
   <ion-navbar>
+      <ion-title>
+          {{ 'page.main-cards.title.title-main-cards' | translate }}
+        </ion-title>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -15,8 +18,9 @@
 <ion-content>
   <fab></fab>
   <ion-slides pager scroll="false">
+    <br>
+
     <ion-slide>
-      <h2>Meus cartões</h2>
       <ion-list *ngFor="let card of Cards" class="cardList">
         <card></card>
       </ion-list>

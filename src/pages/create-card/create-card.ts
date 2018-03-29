@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController, Platform } from 'ionic-angular';
-import { CardModel, CardType } from '../../models/CardModel';
+import { CardModel, CardType, SocialMediaType } from '../../models/CardModel';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { RemoteService } from '../../providers/remote-service';
@@ -23,6 +23,7 @@ export class CreateCardPage {
   userData: UserStorageModel;  
   skillList: Array<string> = new Array<string>();  
   base64Image: string;
+
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -75,7 +76,9 @@ export class CreateCardPage {
       Bio: ['', Validators.compose([])],
       Skill: ['', Validators.compose([])]
     });
-
+    
+    this.LoadDataToEdit();
+   
   }
 
   addSkill(){
@@ -84,6 +87,46 @@ export class CreateCardPage {
 
     this.form.controls['Skill'].reset();
   }
+
+
+
+  LoadDataToEdit(){
+    
+    if (this.navParams.get("obj") != null)
+    {
+      this.card = this.navParams.get("obj");
+      this.form = this.fb.group({
+        Fullname: this.card.FullName,
+        Email: this.card.Email,
+        PhoneNumber: this.card.Phone,
+        Cellphone: this.card.Cellphone,
+        Occupation: this.card.Occupation,
+        Website: this.card.Website,
+        Address: this.card.Address,
+        Address2: this.card.Address2,
+        Number: this.card.Number,
+        PostalCode: this.card.PostalCode,
+        Neighborhood: this.card.Neighborhood,
+        City: this.card.City,
+        State: this.card.State,
+        Twitter: this.card.SocialMedias.forEach(e => e.Type == SocialMediaType.Twitter),
+        Facebook: '',
+        Linkedin: '',
+        Instagram: '',
+        GooglePlus: '',
+        Youtube: '',
+        Bio: this.card.Bio,
+        Skill: ''
+      });
+
+      this.card.Skills.forEach(e => this.skillList.push(e));
+      
+      this.form.controls['Skill'].reset();
+
+    }
+
+  }
+
 
   createCard(){
 
