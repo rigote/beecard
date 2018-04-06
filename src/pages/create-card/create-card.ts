@@ -65,15 +65,7 @@ export class CreateCardPage {
       PostalCode: ['', Validators.compose([])],
       Neighborhood: ['', Validators.compose([])],
       City: ['', Validators.compose([])],
-      State: ['', Validators.compose([])],
-      Twitter: ['', Validators.compose([])],
-      Facebook: ['', Validators.compose([])],
-      Linkedin: ['', Validators.compose([])],
-      Instagram: ['', Validators.compose([])],
-      GooglePlus: ['', Validators.compose([])],
-      Youtube: ['', Validators.compose([])],
-      Bio: ['', Validators.compose([])],
-      Skill: ['', Validators.compose([])]
+      State: ['', Validators.compose([])]
     });
 
   }
