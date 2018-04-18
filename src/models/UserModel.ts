@@ -6,8 +6,8 @@ export class UserModel {
     public Password: string;
     public PhoneNumber: string;
     public Birthdate: Date;
-    public AvatarFileName: string;
-    public AvatarContent: string;
+    public AvatarBase64: string;
+    public AvatarExtension: string;
     public Status: boolean;
 
     updateModel(name: string, 
@@ -16,8 +16,8 @@ export class UserModel {
                 password: string, 
                 phoneNumber: string, 
                 birthdate: Date, 
-                avatarFileName: string, 
-                avatarContent: string,
+                avatarBase64: string, 
+                avatarExtension: string,
                 status: boolean) {
         this.Firstname = name;
         this.Lastname = lastname;
@@ -25,8 +25,8 @@ export class UserModel {
         this.Password = password;
         this.PhoneNumber = phoneNumber;
         this.Birthdate = birthdate;
-        this.AvatarContent = avatarContent;
-        this.AvatarFileName = avatarFileName;
+        this.AvatarBase64 = avatarBase64;
+        this.AvatarExtension = avatarExtension;
         this.Status = status;
     }
 

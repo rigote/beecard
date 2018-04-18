@@ -32,7 +32,6 @@ export class HomePage {
               public storage: StorageService,
               private barCode: BarcodeScanner
             ) {
-
     let userData = this.storage.getUserData();
     
     if (userData.AccessToken != null) {
@@ -56,7 +55,7 @@ export class HomePage {
       let card: CardModel = new CardModel();
 
       if (i < 5) {        
-        card.AvatarImage = "assets/images/avatar.jpg";
+        card.AvatarBase64 = "assets/images/avatar.jpg";
         card.Cellphone = "+55 11 98000-8000";
         card.CompanyLogo = "assets/images/logo-dell.png";
         card.Email = "stark@stark.com";
@@ -79,7 +78,7 @@ export class HomePage {
         card.City = "";        
       }
       else {
-        card.AvatarImage = "assets/images/avatar.jpg";
+        card.AvatarBase64 = "assets/images/avatar.jpg";
         card.Cellphone = "+55 11 98000-8999";
         card.CompanyLogo = null;
         card.Email = "teste@teste.com";

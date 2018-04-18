@@ -17,8 +17,8 @@
     <div class="card corporate">
       <ion-grid>
         <ion-row>
-          <ion-col col-auto *ngIf="card.AvatarImage">
-            <img src="{{card.AvatarImage}}" class="cardAvatar" alt="" (click)="cardProfileModal(card)">
+          <ion-col col-auto *ngIf="card.AvatarBase64">
+            <img src="{{card.AvatarBase64}}" class="cardAvatar" alt="" (click)="cardProfileModal(card)">
           </ion-col>
           <ion-col>
             <ion-row>

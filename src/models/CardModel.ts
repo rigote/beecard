@@ -4,7 +4,8 @@ import { link } from "fs";
 export class CardModel{
     public Id: string;
     public UserId: string;
-    public AvatarImage: string;    
+    public AvatarBase64: string;
+    public AvatarExtension: string;    
     public FullName: string;
     public Type: CardType;
     public Occupation: string;
@@ -32,7 +33,8 @@ export class CardModel{
         this.Skills = new Array<string>();
     }
 
-    updateModel(avatarImage: string,
+    updateModel(avatarBase64: string,
+                avatarExtension: string,
                 fullName: string,                 
                 type: CardType,
                 occupation: string,
@@ -57,7 +59,8 @@ export class CardModel{
                 state: string,
                 bio: string,
                 skills: Array<string>) {
-        this.AvatarImage = avatarImage;
+        this.AvatarBase64 = avatarBase64;
+        this.AvatarExtension = avatarExtension;
         this.FullName = fullName;
         this.Type = type,
         this.Occupation = occupation;

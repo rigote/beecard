@@ -6,43 +6,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
-    <div class="avatar-signup">
-        <img src="{{avatarImage}}" alt="" (click)="editAvatar()" />
-    </div>
-    <form [formGroup]="form">
-        <ion-item>
-            <ion-label color="text" stacked>{{ 'global.label.name' | translate }}</ion-label>
-            <ion-input color="dark" type="text" formControlName="Firstname" placeholder="{{ 'global.placeholder.name' | translate }}"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="text" stacked>{{ 'global.label.last-name' | translate }}</ion-label>
-            <ion-input color="dark" type="text" formControlName="Lastname" placeholder="{{ 'global.placeholder.last-name' | translate }}"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="text" stacked>{{ 'global.label.email' | translate }}</ion-label>
-            <ion-input color="dark" type="email" formControlName="Email" placeholder="{{ 'global.placeholder.email' | translate }}"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="text" stacked>{{ 'global.label.birthdate' | translate }}</ion-label>
-            <ion-datetime  displayFormat="DD/MM/YYYY" formControlName="Birthdate"></ion-datetime>
-          </ion-item>
-        <ion-item>
-            <ion-label color="text" stacked>{{ 'global.label.password' | translate }}</ion-label>
-            <ion-input color="dark" type="password" formControlName="Password" [(ngModel)]="pwd" placeholder="{{ 'global.placeholder.password' | translate }}"></ion-input>
-        </ion-item>
-        <div *ngIf="validatePassword(pwd) == 1">Weak</div>
-        <div *ngIf="validatePassword(pwd) == 2">Medium</div>
-        <div *ngIf="validatePassword(pwd) == 3">Strong</div>
-        <ion-item>
-            <ion-label color="text" stacked>{{ 'global.label.confirmPassword' | translate }}</ion-label>
-            <ion-input color="dark" type="password" formControlName="ConfirmPassword" placeholder="{{ 'global.placeholder.confirmPassword' | translate }}"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="text" stacked>{{ 'global.label.cellphone' | translate }}</ion-label>
-            <ion-input color="dark" type="tel" formControlName="PhoneNumber" placeholder="{{ 'global.placeholder.cellphone' | translate }}"></ion-input>
-        </ion-item>
-        <button ion-button full (click)="saveUser()" [disabled]="disabledButton">{{ 'global.button.confirm' | translate }}</button>
-    </form>
+    <account-form [edit]="editData"></account-form>
 </ion-content>

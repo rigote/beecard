@@ -124,8 +124,8 @@ export class RemoteService {
             let options = new RequestOptions({ headers: headers }); 
 
             this.users = this.http.put(this.apiEndpoint + '/users/' + id, model, options);
-            this.users.map(res => {
-                if (res && res._body.length > 0) return res.json();
+            this.users.map(res => {                
+                if (res && res.status == 204) return res.json();
             }).subscribe(data => {
                 resolve(true);
             },
@@ -161,9 +161,26 @@ export class RemoteService {
             let headers = new Headers({ 'Authorization': 'Bearer ' + token });
             let options = new RequestOptions({ headers: headers }); 
 
-            this.users = this.http.post(this.apiEndpoint + '/users/' + userId + '/cards', model, options);
-                this.users.map(res => {
+            this.personalCards = this.http.post(this.apiEndpoint + '/users/' + userId + '/cards', model, options);
+            this.personalCards.map(res => {
                     if (res && res._body.length > 0) return res.json();
+            }).subscribe(data => {
+                resolve(true);
+            },
+            err => {
+                reject(err);
+            });
+        });
+    }
+
+    updatePersonalCard(token: string, userId: string, cardId: string, model: CardModel): Promise<boolean> {
+        return new Promise((resolve, reject) => {
+            let headers = new Headers({ 'Authorization': 'Bearer ' + token });
+            let options = new RequestOptions({ headers: headers }); 
+
+            this.personalCards = this.http.put(this.apiEndpoint + '/users/' + userId + '/cards/' + cardId, model, options);
+            this.personalCards.map(res => {
+                    if (res && res.status == 204) return res.json();
             }).subscribe(data => {
                 resolve(true);
             },

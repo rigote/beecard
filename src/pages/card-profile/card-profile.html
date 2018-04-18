@@ -16,7 +16,7 @@
     
     <div class="boxCardProfile" *ngIf="card">
       <div class="boxProfile">
-        <img src="{{card.AvatarImage}}" class="cardAvatar" alt="" *ngIf="card.AvatarImage" />
+        <img src="{{card.AvatarBase64}}" class="cardAvatar" alt="" *ngIf="card.AvatarBase64" />
         <h2>{{card.FullName}}</h2>
         <span>{{card.Occupation}}</span>
         <img src="{{card.CompanyLogo}}" alt="" class="branding" *ngIf="card.CompanyLogo" />

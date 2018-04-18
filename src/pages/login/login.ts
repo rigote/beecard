@@ -80,7 +80,6 @@ export class LoginPage {
     this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(auth => {
       this.disabledButton = false;
       this.storage.setUserData(auth.Token, auth.ClientId);
-      loader.dismiss();
       this.navCtrl.setRoot(HomePage);
     }, error => {
       

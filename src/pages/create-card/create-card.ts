@@ -22,7 +22,7 @@ export class CreateCardPage {
   disabledButton: boolean = false;
   userData: UserStorageModel;  
   skillList: Array<string> = new Array<string>();  
-  base64Image: string;
+  base64Image: string = null;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -110,7 +110,7 @@ export class CreateCardPage {
 
     let cardModel = new CardModel();
 
-    cardModel.updateModel(null, cardForm.Fullname, CardType.Personal, cardForm.Occupation, cardForm.PhoneNumber, 
+    cardModel.updateModel(this.base64Image, null, cardForm.Fullname, CardType.Personal, cardForm.Occupation, cardForm.PhoneNumber, 
       cardForm.Cellphone, cardForm.Email, cardForm.Website, cardForm.Facebook, cardForm.Twitter, cardForm.Linkedin, cardForm.Instagram, cardForm.GooglePlus, cardForm.Youtube, 
       null, null, cardForm.Address, cardForm.Address2, cardForm.Number, cardForm.PostalCode, cardForm.City, cardForm.Neighborhood, cardForm.State, cardForm.Bio, 
       this.skillList);
@@ -176,6 +176,7 @@ export class CreateCardPage {
     this.photo.SelectImage(title, buttonCamera, buttonPhotoLibrary, buttonCancel).then(result => {
       this.base64Image = result;
     }).catch(err => {
+      this.base64Image = null;
       console.log(err);
     });    
   }
