@@ -1,4 +1,4 @@
-<div class="card corporate">
+<!--<div class="card corporate">
   <ion-grid>
     <ion-row>
       <ion-col col-auto>
@@ -21,13 +21,88 @@
     </ion-row>
     <ion-row class="actions">
       <ion-col>
-        <i class="fa fa-phone fa-lg" aria-hidden="true"></i>Call</ion-col>
+        <i class="fa fa-phone fa-xs" aria-hidden="true"></i>Call</ion-col>
       <ion-col>
-        <i class="fa fa-envelope-o fa-lg" aria-hidden="true"></i>E-mail</ion-col>
+        <i class="fa fa-envelope-o fa-xs" aria-hidden="true"></i>E-mail</ion-col>
       <ion-col>
-        <i class="fa fa-whatsapp fa-lg" aria-hidden="true"></i>Whatsapp</ion-col>
+        <i class="fa fa-whatsapp fa-xs" aria-hidden="true"></i>Whatsapp</ion-col>
       <ion-col>
-        <i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i>Mais</ion-col>
+        <i class="fa fa-ellipsis-h fa-xs" aria-hidden="true"></i>Mais</ion-col>
     </ion-row>
   </ion-grid>
+</div>-->
+
+<div class="flip-container" [class.flipped]="flipped">
+
+  <div class="flipper">
+
+    <div class="front">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <span (click)="flip()" class="option">
+              <i class="fas fa-redo" aria-hidden="true"></i>
+            </span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-auto>
+            <img src="assets/images/fotoPerfil.jpg" class="cardAvatar" alt="">
+            <small class="edit">Editar</small>
+          </ion-col>
+          <ion-col>
+            <h2>Guilherme Felipe Costa e Silva</h2>
+            <small>E-commerce Manager</small>
+            <img src="assets/images/rakuten.jpg" class="branding" alt="">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="style-card"></div>
+    </div>
+
+    <div class="back">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <span (click)="flip()" class="option">
+              <i class="fas fa-redo" aria-hidden="true"></i>
+            </span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-auto>
+            <img src="assets/images/qrcode.png" class="qrcode" alt="">
+          </ion-col>
+          <ion-col>
+            <ul>
+              <li>
+                <i class="fas fa-mobile-alt fa-xs icon" aria-hidden="true"></i>
+                +55 (11) 99999-9999
+              </li>
+              <li>
+                <i class="fas fa-phone fa-xs icon" aria-hidden="true"></i>
+                +55 (11) 3333-333 r.5222
+              </li>
+              <li>
+                <i class="fas fa-laptop fa-xs icon" aria-hidden="true"></i>
+                www.sitedaempresa.com.br
+              </li>
+              <li>
+                <i class="far fa-envelope fa-xs icon" aria-hidden="true"></i>
+                emaildapessoa@empresa.com.br
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt fa-xs icon" aria-hidden="true"></i>
+                Av. Francisco Matarazzo, 1500 <br>
+                Agua Branca - São Paulo - Sp
+              </li>
+            </ul>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="style-card"></div>
+    </div>
+
+  </div>
+
 </div>

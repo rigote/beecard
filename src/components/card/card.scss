@@ -1,55 +1,110 @@
-card {
-    .corporate{
-        border-left: 10px solid #FF9900;
+.ios,
+.md {
+  card {
+    .flip-container {
+      perspective: 1000px;
+      &.flipped .flipper {
+        transform: rotateY(180deg);
+      }
     }
-    .card{
+    .flip-container,
+    .front,
+    .back {
+      width: 90vw;
+      height: 31vh;
+      margin: 0 auto 10px;
+    }
+    .flipper {
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    .front,
+    .back {
+      display: flex;
+      background-color: #FFF;
+      backface-visibility: hidden;
+      box-shadow: $box-shadow-card;
+      border-radius: $border-radius-card;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    /* front pane, placed above back */
+    .front {
+      z-index: 2;
+      /* for firefox 31 */
+      transform: rotateY(0deg);
+      .cardAvatar {
+        display: block;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .edit {
         width: 100%;
-        height: auto;
-        box-shadow: $box-shadow-card;
-        border-radius: $border-radius-card;
-        margin-bottom: 15px;
-        position: relative;
-        .cardAvatar{
-            object-fit: cover;
-            display: block;
-            @include sizeAvatar();
-            border-radius: $border-radius-avatar;
-        }
-        h2{
-            font-size: 18px;
-            padding: 0;
-            margin: 0;
-            text-align: left;
-            vertical-align: top;
-            display: block;
-        }
-        span{
-            font-size: 14px;
-            color: #333;
-            text-align: left;
-            vertical-align: top;
-            display: block;
-        }
-        a{
-            text-decoration: none;
-            color: #333;
-        }
-        i{
-            &.settings{
-                margin: 10px auto 0;
-            }
-        }
-        .actions{
-            margin-top: 10px;
-            ion-col{
-                text-align: center;
-                i{
-                    display: block;
-                    margin-bottom: 10px;
-                    font-size: 24px;
-                }
-                font-size: 12px;
-            }
-        }
+        text-align: center;
+        margin-top: 5px;
+      }
+      h2 {
+        font-size: 16px;
+        margin: 15px 0 0;
+        text-align: right;
+      }
+      .branding {
+        float: right;
+        margin-top: 20px;
+      }
     }
+    /* back, initially hidden pane */
+    .back {
+      transform: rotateY(180deg);
+      .qrcode {
+        width: 100px;
+        height: 100px;
+      }
+      ul {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+        li {
+            float: left;
+            font-size: 12px;
+            margin-bottom: 2px;
+          i {
+              display: inline-block;
+            &.icon {
+              background-color: #4d4d4d;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              line-height: 30px;
+              color: #FFF;
+            }
+          }
+        }
+      }
+    }
+    .front,
+    .back {
+      .option {
+        color: #666;
+      }
+      span,
+      small {
+        float: right;
+      }
+      /*Style Card*/
+      .style-card {
+        background: #888;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 15px;
+        border-radius: 0 0 5px 5px;
+      }
+    }
+  }
 }

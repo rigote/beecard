@@ -12,11 +12,14 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
 
-  text: string;
+  flipped: boolean = false;
 
   constructor() {
-    console.log('Hello CardComponent Component');
-    this.text = 'Hello World';
+    
+  }
+
+  flip(){
+    this.flipped = !this.flipped;
   }
 
 }
