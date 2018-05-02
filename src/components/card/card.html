@@ -37,18 +37,14 @@
   <div class="flipper">
 
     <div class="front">
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <span (click)="flip()" class="option">
-              <i class="fas fa-redo" aria-hidden="true"></i>
-            </span>
-          </ion-col>
-        </ion-row>
+      <span (click)="flip()" class="option">
+        <i class="fas fa-redo" aria-hidden="true"></i>
+      </span>
+      <ion-grid class="frontGrid">
         <ion-row>
           <ion-col col-auto>
             <img src="assets/images/fotoPerfil.jpg" class="cardAvatar" alt="">
-            <small class="edit">Editar</small>
+            <small class="edit"><i class="fas fa-pencil-alt" aria-hidden="true"></i></small>
           </ion-col>
           <ion-col>
             <h2>Guilherme Felipe Costa e Silva</h2>
@@ -61,45 +57,41 @@
     </div>
 
     <div class="back">
+      <span (click)="flip()" class="option">
+        <i class="fas fa-redo" aria-hidden="true"></i>
+      </span>
       <ion-grid>
         <ion-row>
-          <ion-col>
-            <span (click)="flip()" class="option">
-              <i class="fas fa-redo" aria-hidden="true"></i>
-            </span>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-auto>
-            <img src="assets/images/qrcode.png" class="qrcode" alt="">
-          </ion-col>
           <ion-col>
             <ul>
               <li>
                 <i class="fas fa-mobile-alt fa-xs icon" aria-hidden="true"></i>
-                +55 (11) 99999-9999
+                <small>+55 (11) 99999-9999</small>
               </li>
               <li>
                 <i class="fas fa-phone fa-xs icon" aria-hidden="true"></i>
-                +55 (11) 3333-333 r.5222
+                <small>+55 (11) 3333-333 r.5222</small>
               </li>
               <li>
                 <i class="fas fa-laptop fa-xs icon" aria-hidden="true"></i>
-                www.sitedaempresa.com.br
+                <small>www.sitedaempresa.com.br</small>
               </li>
               <li>
                 <i class="far fa-envelope fa-xs icon" aria-hidden="true"></i>
-                emaildapessoa@empresa.com.br
+                <small>emaildapessoa@empresa.com.br</small>
               </li>
               <li>
                 <i class="fas fa-map-marker-alt fa-xs icon" aria-hidden="true"></i>
-                Av. Francisco Matarazzo, 1500 <br>
-                Agua Branca - São Paulo - Sp
+                <small>Av. Francisco Matarazzo, 1500 <br>
+                Agua Branca - São Paulo - Sp</small>
               </li>
             </ul>
           </ion-col>
         </ion-row>
       </ion-grid>
+      <span class="info">
+        <i class="fas fa-info" aria-hidden="true"></i>
+      </span>
       <div class="style-card"></div>
     </div>
 
