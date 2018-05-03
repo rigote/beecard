@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      {{ 'page.create-card.title.title-create-card' | translate }}
+      {{ 'page.create-card.title.title-edit-card' | translate }}
     </ion-title>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -10,5 +10,5 @@
 </ion-header>
 
 <ion-content padding>
-  <card-form [edit]="editData"></card-form>
+  <card-form [edit]="editData" [card-id]="cardId"></card-form>
 </ion-content>

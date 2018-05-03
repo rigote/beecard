@@ -36,6 +36,7 @@ import { SearchResultComponent } from '../components/search-result/search-result
 import { CardComponent } from '../components/card/card';
 import { FabComponent } from '../components/fab/fab';
 import { AccountFormComponent } from '../components/account-form/account-form';
+import { CardFormComponent } from '../components/card-form/card-form';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -64,7 +65,8 @@ export function createTranslateLoader(http: Http) {
     SearchPage,
     CardComponent,
     FabComponent,
-    AccountFormComponent
+    AccountFormComponent,
+    CardFormComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp),

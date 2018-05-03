@@ -329,7 +329,7 @@ export class AccountFormComponent {
   }
 
   ionViewDidLoad() {
-    debugger;
+    
   }
 
 }

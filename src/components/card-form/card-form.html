@@ -1,0 +1,58 @@
+<div *ngIf="loadCard()">
+  <form [formGroup]="form">
+    <ion-item-group>
+      <figure>
+        <img src="assets/images/fotoPerfil.jpg" *ngIf="base64Image == null" alt="" class="photoCard" />
+        <img src="{{base64Image}}" *ngIf="base64Image != null" alt="" class="photoCard" />
+      </figure>
+      <button class="editAvatar" (click)="editAvatar()">{{ 'page.create-card.button.edit-photo' | translate }}</button>
+      <ion-item-divider>{{ 'page.create-card.placeholder.personal-info' | translate }}</ion-item-divider>
+      <ion-item>
+        <i class="fa fa-user-circle fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Fullname" placeholder="{{ 'page.create-card.label.fullname' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-at fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="email" formControlName="Email" placeholder="{{ 'page.create-card.label.email' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-phone fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="tel" formControlName="PhoneNumber" placeholder="{{ 'page.create-card.label.phone' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-mobile fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="tel" formControlName="Cellphone" placeholder="{{ 'page.create-card.label.cell' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-link fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="url" formControlName="Website" placeholder="{{ 'page.create-card.label.website' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item-divider>{{ 'page.create-card.placeholder.address-info' | translate }}</ion-item-divider>
+      <ion-item>
+        <i class="fa fa-map-marker fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Address" placeholder="{{ 'page.create-card.label.address' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-map-marker fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Address2" placeholder="{{ 'page.create-card.label.address2' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-map-marker fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="PostalCode" placeholder="{{ 'page.create-card.label.postalCode' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-map-marker fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="Neighborhood" placeholder="{{ 'page.create-card.label.neighborhood' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-map-marker fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="City" placeholder="{{ 'page.create-card.label.city' | translate }}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <i class="fa fa-map-marker fa-fw" item-left aria-hidden="true"></i>
+        <ion-input type="text" formControlName="State" placeholder="{{ 'page.create-card.label.state' | translate }}"></ion-input>
+      </ion-item>
+    </ion-item-group>
+    <button ion-button full (click)="saveCard()" [disabled]="disabledButton">{{ 'page.create-card.button.save' | translate }}</button>
+  </form>
+</div>

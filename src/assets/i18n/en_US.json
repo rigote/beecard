@@ -92,11 +92,12 @@
         },
         "create-card": {
             "title": {
-                "title-create-card": "Create Card"
+                "title-create-card": "Create Card",
+                "title-edit-card": "Edit Card"
             },
             "button": {
                 "edit-photo": "Edit Photo",
-                "create-card": "Create Card"
+                "save": "Save"
             },
             "label": {
                 "fullname": "Full Name",
