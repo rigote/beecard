@@ -1,15 +1,22 @@
 account-form {
-    .avatar-signup {
-        text-align: center;
+  .avatar-signup {
+    img {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 10px;
     }
-    form {
-        ion-item {
-            padding: 0 !important;
-            margin-bottom: 10px !important;
-        }
-        button {
-            margin-top: 15px;
-            display: inline-block;
-        }
+  }
+  form {
+    ion-item {
+      padding: 0 !important;
+      margin-bottom: 10px !important;
     }
+    button {
+      margin-top: 15px;
+      display: inline-block;
+    }
+  }
 }
