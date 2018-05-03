@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 import { RemoteService } from '../../providers/remote-service';
 import { UserModel } from '../../models/UserModel';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
@@ -39,6 +39,7 @@ export class AccountFormComponent {
     private fb: FormBuilder,
     private translate: TranslateService,
     public storage: StorageService,
+    private loadingCtrl: LoadingController,
     public photoService: PhotoServiceProvider) {
   
   }
@@ -59,7 +60,8 @@ export class AccountFormComponent {
   loadUser(): boolean {
 
     if (!this.loaded) {
-      
+      let loader = this.loadingCtrl.create({ content: this.translate.instant("global.message.load_profile")});
+      loader.present();
       this.form = this.fb.group({
         Firstname: ['', Validators.compose([
           Validators.minLength(2),
@@ -96,7 +98,7 @@ export class AccountFormComponent {
         
         if (this.userData.AccessToken != null) {
           this.remoteServiceProvider.validateToken(this.userData.AccessToken).then(success => {
-            console.log('Sucesso');        
+            console.log('Sucesso');
           }, error => {
             this.navCtrl.setRoot(LoginPage);
           });
@@ -111,6 +113,7 @@ export class AccountFormComponent {
           this.form.controls['PhoneNumber'].setValue(success.PhoneNumber);
           this.form.controls['Birthdate'].setValue(success.Birthdate);
           this.avatarImage = success.AvatarBase64;
+          loader.dismiss();
         }, error => {
   
         });
@@ -123,7 +126,8 @@ export class AccountFormComponent {
   }
 
   saveUser(){
-    
+    let loader = this.loadingCtrl.create({ content: this.translate.instant("global.message.save_profile")});
+    loader.present();
     this.disabledButton = true;
 
     var userForm = this.form.value;   
@@ -196,7 +200,7 @@ export class AccountFormComponent {
 
         return false;
       }
-
+      loader.dismiss();
     }
 
     this.user = new UserModel();
@@ -218,6 +222,7 @@ export class AccountFormComponent {
           this.remoteServiceProvider.generateToken(userForm.Email, userForm.Password).then(auth => {
             this.disabledButton = false;
             this.storage.setUserData(auth.Token, auth.ClientId);
+            loader.dismiss();
             this.navCtrl.setRoot(HomePage);
           }, error => {
             
@@ -233,7 +238,6 @@ export class AccountFormComponent {
               else
                 message = "unexpected_error";
             }
-      
             this.errorAlert(message, () => {});
           });
         });
@@ -253,7 +257,6 @@ export class AccountFormComponent {
           else
             message = "unexpected_error";
         }
-          
         this.errorAlert(message, () => {});
   
       });
@@ -262,6 +265,7 @@ export class AccountFormComponent {
         this.disabledButton = false;
   
         this.successAlert("information_successfully_saved", () => {
+            loader.dismiss();
             this.navCtrl.setRoot(HomePage);
         });
       }, error => {

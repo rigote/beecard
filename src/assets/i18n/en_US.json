@@ -63,7 +63,8 @@
             "select_local_pick_image": "Select the local where you would like to pick a image",
             "load_cards": "Loading cards",
             "load_profile": "Loading profile",
-            "login_authentication": "Authentication in progress"
+            "login_authentication": "Authentication in progress",
+            "save_profile": "Salvando perfil"
         }
     },
     "sidebar": {
