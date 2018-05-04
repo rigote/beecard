@@ -16,6 +16,7 @@ import { FeedPage } from '../pages/feed/feed';
 import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { SignupPage } from '../pages/signup/signup';
 import { StorageService } from '../providers/storage-service';
+import { SplashPage } from '../pages/splash/splash';
 
 @Component({
   templateUrl: 'app.html'
@@ -24,7 +25,7 @@ import { StorageService } from '../providers/storage-service';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage = LoginPage;
+  rootPage = SplashPage;
 
   pages: Array<{ title: string, component: any }>;
 

@@ -18,6 +18,7 @@ import { ForgotPasswordPage } from '../pages/forgot-password/forgot-password';
 import { SignupPage } from '../pages/signup/signup';
 import { CardProfilePage } from './../pages/card-profile/card-profile';
 import { SearchPage } from '../pages/search/search';
+import { SplashPage } from '../pages/splash/splash';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -66,7 +67,8 @@ export function createTranslateLoader(http: Http) {
     CardComponent,
     FabComponent,
     AccountFormComponent,
-    CardFormComponent
+    CardFormComponent,
+    SplashPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -96,7 +98,8 @@ export function createTranslateLoader(http: Http) {
     ForgotPasswordPage,
     SignupPage,
     CardProfilePage,
-    SearchPage
+    SearchPage,
+    SplashPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler}, 
