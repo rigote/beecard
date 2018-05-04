@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { TranslateService } from '@ngx-translate/core';
+import { timer } from 'rxjs/observable/timer';
 
 import { HomePage } from '../pages/home/home';
 import { CreateCardPage } from '../pages/create-card/create-card';
@@ -26,6 +27,8 @@ export class MyApp {
   rootPage = LoginPage;
 
   pages: Array<{ title: string, component: any }>;
+
+  showSplash = true;
 
   constructor(
     public platform: Platform, translate: TranslateService, public storage: StorageService) {
@@ -60,6 +63,8 @@ export class MyApp {
     this.platform.ready().then(() => {
       StatusBar.styleDefault();
       Splashscreen.hide();
+
+      timer(3000).subscribe(()=> this.showSplash = false);
     });
   }
 
