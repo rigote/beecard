@@ -58,20 +58,19 @@ export class LoginPage {
     var formLogin = this.form.value;
 
     if (this.form.invalid || this.form.dirty) {
-      loader.dismiss();
       this.disabledButton = false;
       
       if (this.form.controls['Username'].errors) {
         if (this.form.controls['Username'].errors.required)
           this.errorAlert("username_required", () => {});
-
+          loader.dismiss();
         return false;
       }      
 
       if (this.form.controls['Password'].errors) {
         if (this.form.controls['Password'].errors.required)
           this.errorAlert("password_required", () => {});
-
+          loader.dismiss();
         return false;
       }
 
@@ -80,6 +79,7 @@ export class LoginPage {
     this.remoteServiceProvider.generateToken(formLogin.Username, formLogin.Password).then(auth => {
       this.disabledButton = false;
       this.storage.setUserData(auth.Token, auth.ClientId);
+      loader.dismiss();
       this.navCtrl.setRoot(HomePage);
     }, error => {
       
