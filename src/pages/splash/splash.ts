@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RemoteService } from '../../providers/remote-service';
 import { StorageService } from '../../providers/storage-service';
 import { LoginPage } from '../login/login';
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -21,7 +22,8 @@ export class SplashPage {
     
     if (userData.AccessToken != null) {
       this.remoteServiceProvider.validateToken(userData.AccessToken).then(success => {
-        console.log('Sucesso');        
+        console.log('Sucesso');   
+        this.navCtrl.setRoot(HomePage);   
       }, error => {
         this.navCtrl.push(LoginPage, { hideBackButton: true });
       });
