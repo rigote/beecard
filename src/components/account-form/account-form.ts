@@ -60,8 +60,6 @@ export class AccountFormComponent {
   loadUser(): boolean {
 
     if (!this.loaded) {
-      let loader = this.loadingCtrl.create({ content: this.translate.instant("global.message.load_profile")});
-      loader.present();
       this.form = this.fb.group({
         Firstname: ['', Validators.compose([
           Validators.minLength(2),
@@ -94,6 +92,8 @@ export class AccountFormComponent {
       });
       
       if (this.editData) {
+        let loader = this.loadingCtrl.create({ content: this.translate.instant("global.message.load_profile")});
+        loader.present();
         this.userData = this.storage.getUserData();
         
         if (this.userData.AccessToken != null) {
