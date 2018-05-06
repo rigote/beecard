@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
 /*
   Generated class for the ForgotPassword page.
@@ -13,7 +14,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ForgotPasswordPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, private translate: TranslateService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForgotPasswordPage');
