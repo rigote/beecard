@@ -200,7 +200,6 @@ export class AccountFormComponent {
 
         return false;
       }
-      loader.dismiss();
     }
 
     this.user = new UserModel();
